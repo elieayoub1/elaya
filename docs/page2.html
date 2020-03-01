@@ -104,8 +104,8 @@ body {
 
 
 <div class="top-container">
-  <h1>Page 2</h1>
-  <p>Click on Menu and select a topic</p>
+  <h1>End Of Day</h1>
+  <p>Click on Menu to change topic</p>
 </div>
 
 <div class="header" id="myHeader">
@@ -120,6 +120,96 @@ body {
 	<p align="center">Screen STSVWPEN: Pending Maintenances
 	<br>
 	<img src="STSVWPEN.PNG" alt="STSVWPEN" class="responsive" width="800" height="400"></p>
+	
+	<p>In STSVWPEN screen, you can base your queries on any or all of the following parameters and fetch records:
+	<li>Product ID</li>
+	<li>Description</li></p>
+
+	<p>Select any or all of the above parameters for a query and click ‘Search’ button. The records meeting the selected criteria are displayed.
+	<br>
+	System displays the all the pending maintenance pertaining to this branch:
+	<li>Function ID</li>
+	<li>Language Code</li>
+	<li>Description</li></p>
+
+	
+	<p align="center">Screen EISVWPNT: Pending Transactions
+	<br>
+	<img src="EISVWPNT.PNG" alt="EISVWPNT" class="responsive" width="800" height="400"></p>
+	
+	
+	<p>In EISVWPNT screen, you can base your queries on any or all of the following parameters and fetch records:
+	<br>
+	<li>Branch</li>
+	<li>Module</li>
+	<li>Reference Number</li>
+	<li>Events</li>
+	<li>ID</li></p>
+	
+	<p>Select any or all of the above parameters for a query and click ‘Search’ button. The records meeting the selected criteria are displayed.
+	System displays the following details pertaining to the fetched records</p>
+
+
+
+	<p align="center">Screen 9012: Current Open Tills. Using head teller
+	<br>
+	<img src="9012.PNG" alt="9012" class="responsive" width="800" height="400"></p>
+	
+	<p>The system defaults the current logged in branch code.<br>
+	The following details of the current branch are displayed for all the tellers:<br>
+	<li>User ID – the teller user ID</li>
+	<li>User Working – current log in status of the user</li>
+	<li><strong>Pending Transactions</strong> - number of transactions in the Pending Queue for the user</li>
+	<li>Tanked Transactions - number of transactions in the Tanked Queue for the user</li>
+	<li>Assigned Transactions - number of transactions in the Assigned Queue for the user</li>
+	<li>Unassigned Transactions - number of transactions in the Unassigned Queue for the user</li>
+	<li>Auto Reversal Pending - number of transaction pending to be auto reversed for the user</li></p>
+
+	
+	<p>After checking all these 3 screens (EISVWPNT, EISVWPNT, and 9012), we should take database backup</p>
+	<br>
+	<br>
+	<p>After database backup completed, now we can continue the EOD using Oracle FLEXCUBE by running the EODM</p>
+	<p align="center">Screen EODM: EOD Maintenance screen. To be execute for each branch.
+	<br>
+	<img src="eodm.PNG" alt="EODM" class="responsive" width="800" height="400"></p>
+	
+	<p>Click ‘Run EOD’ button to run the EOD for the branch.<br>
+	The following validations are done before running EOD:<br>
+	<li>Only the user who runs the EOD should be logged into the branch.</li>
+	<li>There must be Holiday maintenance to get the Next working day.</li>
+	<li>Balancing and closure processes for Till and Vault should be completed. There should not be any transaction in ‘Pending’ or ‘Assigned’ stage for a user</li>
+	<br>Once these have been successfully validated, EOD proceeds with the system date change by moving the Branch posting date to the next date. The Branch transaction sequence will also get reset as a consequence of the execution of Branch EOD. This signifies the Beginning of Day (BOD) for the Branch for the next working day and the Branch is ready for Transaction Input.</p>
+	<br>
+	
+	
+	<p align="center">screen AEDSTART from the head office.
+	<br>
+	<img src="aedstart.PNG" alt="AEDSTART" class="responsive" width="800" height="400"></p>
+	<p>Use the same options as shown in the above screen.</P>
+	
+	<br>
+	
+	<p>Note that the job BRNSCH is responsible for the EOD processing. This job should be scheduled.</p>
+	<p align="center">Use the screen SMSJOBBR, to check the BRNSCH status.
+	<br>
+	<img src="smsjobbr.PNG" alt="SMSJOBBR" class="responsive" width="800" height="400">
+	<br>If the job BRNSCH is not scheduled, click on BRNSCH and then click resume.</p>
+	<br>
+	
+	<p>Now we have to check the status of the EOD</p>
+	<p align="center">Using screen AESBRMTR: EOC Monitor
+	<br>
+	<img src="aesbrmtr.PNG" alt="AESBRMTR" class="responsive" width="800" height="400">
+
+	<p>EOC Status:<br>
+	<li>N: not running</li>
+	<li>W: working</li>
+	<li>A: aborted</li>
+	<li>C: completed</li><p>
+	
+	<br>
+	<p>When the EOD compete (status =C) for all branches. We should take another database backup</p>
 
   </div>
 
