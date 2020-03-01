@@ -1,109 +1,176 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<title>FIJJLA</title>
-
-
-<script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="w3pro.css">
-<link rel="stylesheet" href="w3-theme-teal.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
 <body>
 
-<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
-<div class="w3-container w3-theme-d2">
-  <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
-  <br>
-  <div class="w3-padding w3-center">
-    <img class="w3-circle" src="news.jpg" alt="avatar" style="width:75%">
-  </div>
-</div>
-<a class="w3-bar-item w3-button" href="#">Trendy News</a>
-<a class="w3-bar-item w3-button" href="#">Friends</a>
-<a class="w3-bar-item w3-button" href="#">Messages</a>
-</nav>
-
-<header class="w3-top w3-bar w3-theme">
-  <button class="w3-bar-item w3-button w3-xlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
-  <h3 class="w3-bar-item">Trendy News</h3>
-</header>
-
-<div class="w3-container" style="margin-top:50px">
-<br>
-<div class="w3-cell" style="width:30%">
-    <img class="w3-circle" src="shep-smith.jpg" style="width:100%">
-  </div>
-<div class="w3-cell-row">
+<div id="mySidenav" class="sidenav">
   
-  <br>
-  <div class="w3-cell w3-container">
-    <h3>Shepard Smith</h3>
-    <p>Shepard Smith makes shocking announcement that he is leaving Fox News.</p>
-	<p>New York (CNN Business)Shepard Smith, the chief Fox News anchor who was despised by President Trump, said on his Friday program that after more than two decades at the network, he was stepping down and leaving the company.
-<p>"This is my last newscast here," Smith said, adding that he was "eternally grateful" to Fox for the opportunities it has afforded him.</p>
-<p>Smith, who joined the channel at its inception in 1996, said that he recently asked Fox to allow him to leave and begin a "new chapter" and that after management requested he stay, the network obliged. This is incredibly unusual in the cable news business, where long-term contracts lock in anchors for years at a time. Fox said that in the meantime, a rotating cast of anchors would fill the 3 p.m. time-slot.
-<p>Smith indicated that he has agreed to what is known as a "non-compete," a clause in a contract that ensures he won't immediately jump from one network to another. This means he will not be immediately joining CNN, MSNBC or another network, despite rampant speculation in the news business that he might.</p>
-<p>"Under our agreement, I won't be reporting elsewhere, at least in the near feature," he said, indicating that he'll be able to spend more time with family now. "And then we'll see what comes along."</p>
-<p>Such a departure, occurring suddenly on a Friday afternoon in the middle of an anchor's contract cycle, suggest a severe fissure between Smith and Fox management, though both sides spoke favorably of one another when announcing the exit.</p>
-Chris Giglio, a spokesperson for Smith, dismissed speculation the anchor was forced out of the network.
-"The decision to leave was Shep's and his alone -- he will be taking an extended period of time off to be with his family," Giglio said. "Following that -- who knows -- he is not retiring."</p>
+  <h2><a>Menu</a></h2>
+    <a><input type="text" id="mySearch" onkeyup="myFunction1()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <li><a href="#">HTML</a></li>
+	  <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+      <li><a href="#">PHP</a></li>
+      <li><a href="#">Python</a></li>
+      <li><a href="#">jQuery</a></li>
+      <li><a href="#">SQL</a></li>
+      <li><a href="#">Bootstrap</a></li>
+      <li><a href="#">Node.js</a></li>
+    </ul></a>
 	
-  </div>
-</div>  
-<hr>
-<hr>
-
-
-
-
-<div class="w3-cell" style="width:30%">
-    <img class="w3-circle" src="patriots.jpg" style="width:100%">
-  </div>
-<div class="w3-cell-row">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
   
-  <br>
-  <div class="w3-cell w3-container">
-    <h3>Patriots</h3>
-    
-	<p>Patriots Talk Podcast: What do Pats need and what can they offer as trade deadline approaches?</p>
-	
-	<p>The NFL trade deadline is Oct. 29 and the Patriots, despite their 6-0 start, appear to have plenty of needs on offense  - wide receiver? tight end? Tom E. Curran and Phil Perry have their assessment.</p>
-	
-	<p>2:35 - Tom E. Curran and Phil Perry rank the Patriots offensive concerns after another unimpressive performance from that side of the ball against the Giants. They begin with tight end. Next up is the running game (6:25). And finally, the wide receiver corps (12:24).</p>
-	
-	<p>22:11 - With the trade deadline on Oct. 29, the Patriots need to determine what they need and what they have to offer. Phil and Tom discuss the picks Bill Belichick could trade away and the players at tight end and wide receiver he could target.</p>
-	
-	<p>26:52 - Tom wonders if Michael Bennett will be traded or if he'll end up as a key member of the defense. He continues by explaining how the historic tear the Patriots defense is on is actually sustainable.</p>
-	
-	<p>32:26 - Rob Gronkowski or Tyler Eifert: Which player will be on the Patriots roster by Thanksgiving?</p>
-	
-  </div>
-</div>  
-<hr>
-<hr>
-
-
-
-
-
-
-
 </div>
 
-<footer class="w3-container w3-bottom w3-theme w3-margin-top">
-  <h4>FIJJLA 2019</h4>
-</footer>
+
+<div class="top-container">
+  <h1>Scroll Down</h1>
+  <p>Scroll down to see the sticky effect.</p>
+</div>
+
+<div class="header" id="myHeader">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+</div>
+
+<div class="content">
+  <h3>On Scroll Sticky Header</h3>
+  <p>The header will stick to the top when you reach its scroll position.</p>
+  <p>Scroll back up to remove the sticky effect.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p><p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p><p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p><p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p><p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+</div>
+
+
 
 <script>
-closeSidebar();
-function openSidebar() {
-  document.getElementById("mySidebar").style.display = "block";
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
 }
 
-function closeSidebar() {
-  document.getElementById("mySidebar").style.display = "none";
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
 }
+
+function myFunction1() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+
 </script>
 
+
+   
 </body>
+</html> 
