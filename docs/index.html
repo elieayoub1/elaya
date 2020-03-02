@@ -5,12 +5,13 @@
 <script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <style>
 body {
+  margin: 0;
   font-family: "Lato", sans-serif;
 }
 
 
 .top-container {
-  background-color: #f1f1f1;
+  background-color: #93EAD7;
   padding: 30px;
   text-align: center;
 }
@@ -23,6 +24,23 @@ body {
 
 .content {
   padding: 16px;
+  
+}
+
+.content1 {
+  padding: 16px;
+  
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #F5F5F5;
+}
+
+.content2 {
+  padding: 16px;
+  
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #93EAD7;
 }
 
 .sticky {
@@ -71,10 +89,24 @@ body {
   margin-left: 50px;
 }
 
+
+
+ul {
+  color: white;
+}
+
+
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
 </style>
 
 </head>
@@ -90,8 +122,6 @@ body {
 	
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
   
   
   
@@ -99,7 +129,7 @@ body {
 
 
 <div class="top-container">
-  <h1>Welcome to ToolBox</h1>
+  <h1>Welcome to Fijjla InfoBox</h1>
   <p>Click on Menu and select a topic</p>
 </div>
 
@@ -108,10 +138,19 @@ body {
 </div>
 
 <div class="content">
-  <h3>On Scroll Sticky Header</h3>
-  <p>The header will stick to the top when you reach its scroll position.</p>
-  <p>Scroll back up to remove the sticky effect.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <h3>InfoBox</h3>
+  
+	<section>
+	<p align="center">
+	<img src="img/steps.png" alt="steps" class="mySlides" width="40%">
+	<img src="img/dbbackup.png" alt="dbbackup" class="mySlides" width="40%">
+	<img src="img/bulk.png" alt="bulk" class="mySlides"width="40%">
+	<img src="img/winscp.PNG" alt="winscp" class="mySlides" width="40%">
+	<img src="img/totaldrcr.PNG" alt="winscp" class="mySlides" width="40%">
+	</p>
+	</section>
+	
+	
   </div>
 
 
@@ -153,6 +192,21 @@ function myFunction() {
   } else {
     header.classList.remove("sticky");
   }
+}
+
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
 }
 
 
