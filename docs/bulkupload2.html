@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+
+.top-container {
+  background-color: #93EAD7;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+  
+}
+
+.content1 {
+  padding: 16px;
+  
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #F5F5F5;
+}
+
+.content2 {
+  padding: 16px;
+  
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #93EAD7;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+ul {
+  color: white;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  
+  <h2><a>Menu</a></h2>
+    <a><input type="text" id="mySearch" onkeyup="myFunction1()" placeholder="Search.." title="Type in a category" ></a>
+    <ul id="myMenu">
+      <script src="menu.js"></script>
+    </ul>
+	
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  
+  
+  
+</div>
+
+
+<div class="top-container">
+  <h1>Bulk Upload - Using Upload Tables</h1>
+  <p>Click on Menu to change topic</p>
+</div>
+
+<div class="header" id="myHeader">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+</div>
+
+<div class="content">
+  <h3>Bulk Upload - Using Upload Tables</h3>
+  <h4>Excel file (multiple debit/credit) to FLEXCUBE</h4>
+  
+	<p align="center">
+	<img src="img/bulk.png" alt="bulk" class="responsive" width="400" height="400"></p>
+  
+	<p>It is a bank system that allows performing several transactions at one go. For instance: salary payment, dividends and direct debits.</p>
+	
+	
+	<div class="content1">
+	<p>1-	Prepare Excel template like the following:</p>
+	<p align="center">
+	<img src="img/excell.PNG" alt="template" class="responsive" width="800" height="400"></p>
+	<li>TEMPLATE_ID: Should be unique and 4 characters.
+	<li>DR_CR: debit or credit indicator</li>
+	<li>AC_GL_NO: Account or GL number</li>
+	<li>BRANCH_CODE: Branch Code</li>
+	<li>CCY: Currency</li>
+	<li>AMOUNT: Amount</li>
+	<li>ADDL_TEXT: Additional text</li>
+	<p>Note: total debit amount should be equal to total credit amount.</p>
+
+	</div>
+	
+	<div class="content1">
+	<p>2-	Import Excel using Oracle SQL Developer: Right click on “TEMPALTE” table and then click on “Import Data…”</p>
+	<p align="center">
+	<img src="img/import1.png" alt="import1" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>3-	Click Next and then click Finish:</p>
+	<p align="center">
+	<img src="img/import2.png" alt="import2" class="responsive" width="800" height="400"></p>
+	</div>
+
+	<div class="content1">
+	<p>When import complete, you should receive the following message: Task successful and import committed.</p>
+	<p align="center">
+	<img src="img/import3.png" alt="import3" class="responsive" width="400" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>4-	Check if there are error messages under ERROR_MSG column</p>
+	<p align="center">
+	<img src="img/ERROR_MSG.PNG" alt="ERROR_MSG" class="responsive" width="800" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>5-	Fix all errors and import Excel again. ERROR_MSG should be clean.</p>
+	<p align="center">
+	<img src="img/noerror.PNG" alt="noerror" class="responsive" width="800" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>6-	Open Oracle FLEXCUBE, to check if the template is successfully populated. Using screen ID: DESJNLPR
+	<br>In our example, the template ID is A002.
+	<br>Double click on A002 row to check the detailed page
+	</p>
+	<p align="center">
+	<img src="img/DESJNLPR.PNG" alt="DESJNLPR" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>Check if all records exist.</p>
+	<p align="center">
+	<img src="img/DEDJNLPR.PNG" alt="DEDJNLPR" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>7-	Using Maker, create new Journal Entry by fetching records from our template A002. Launch the screen DEDJNLON and click on New</p>
+	<p align="center">
+	<img src="img/DEDJNLON.PNG" alt="DEDJNLON" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>8-	A page will open to create new Batch.
+	<br>Enter value in the Description field. For example: Salary upload. And click on OK button.
+	</p>
+	<p align="center">
+	<img src="img/DEDJNLONnew.PNG" alt="DEDJNLON_New" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>9-	The Batch Number is 0002 and it’s created automatically.
+	<br>Click on Template Code and select our template A002, and then click on Fetch
+	<br>Select a Value Date and click on Save Button</p>
+	<p align="center">
+	<img src="img/totaldrcr.PNG" alt="DEDJNLON_New" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	
+	
+  </div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+function myFunction1() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+
+</script>
+
+
+   
+</body>
+</html> 

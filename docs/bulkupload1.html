@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+
+.top-container {
+  background-color: #93EAD7;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+  
+}
+
+.content1 {
+  padding: 16px;
+  
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #F5F5F5;
+}
+
+.content2 {
+  padding: 16px;
+  
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #93EAD7;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+ul {
+  color: white;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  
+  <h2><a>Menu</a></h2>
+    <a><input type="text" id="mySearch" onkeyup="myFunction1()" placeholder="Search.." title="Type in a category" ></a>
+    <ul id="myMenu">
+      <script src="menu.js"></script>
+    </ul>
+	
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  
+  
+  
+</div>
+
+
+<div class="top-container">
+  <h1>Bulk Upload - Using Template</h1>
+  <p>Click on Menu to change topic</p>
+</div>
+
+<div class="header" id="myHeader">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+</div>
+
+<div class="content">
+  <h3>Bulk Upload - Using Template</h3>
+  <h4>Excel file (multiple debit/credit) to FLEXCUBE</h4>
+  
+	<p align="center">
+	<img src="img/bulk.png" alt="bulk" class="responsive" width="400" height="400"></p>
+  
+	<p>It is a bank system that allows performing several transactions at one go. For instance: salary payment, dividends and direct debits.</p>
+	
+	
+	<div class="content1">
+	<p>1-	Prepare Excel template like the following:</p>
+	<p align="center">
+	<img src="img/excell.PNG" alt="template" class="responsive" width="800" height="400"></p>
+	<li>TEMPLATE_ID: Should be unique and 4 characters.
+	<li>DR_CR: debit or credit indicator</li>
+	<li>AC_GL_NO: Account or GL number</li>
+	<li>BRANCH_CODE: Branch Code</li>
+	<li>CCY: Currency</li>
+	<li>AMOUNT: Amount</li>
+	<li>ADDL_TEXT: Additional text</li>
+	<p>Note: total debit amount should be equal to total credit amount.</p>
+
+	</div>
+	
+	<div class="content1">
+	<p>2-	Import Excel using Oracle SQL Developer: Right click on “TEMPALTE” table and then click on “Import Data…”</p>
+	<p align="center">
+	<img src="img/import1.png" alt="import1" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>3-	Click Next and then click Finish:</p>
+	<p align="center">
+	<img src="img/import2.png" alt="import2" class="responsive" width="800" height="400"></p>
+	</div>
+
+	<div class="content1">
+	<p>When import complete, you should receive the following message: Task successful and import committed.</p>
+	<p align="center">
+	<img src="img/import3.png" alt="import3" class="responsive" width="400" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>4-	Check if there are error messages under ERROR_MSG column</p>
+	<p align="center">
+	<img src="img/ERROR_MSG.PNG" alt="ERROR_MSG" class="responsive" width="800" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>5-	Fix all errors and import Excel again. ERROR_MSG should be clean.</p>
+	<p align="center">
+	<img src="img/noerror.PNG" alt="noerror" class="responsive" width="800" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>6-	Open Oracle FLEXCUBE, to check if the template is successfully populated. Using screen ID: DESJNLPR
+	<br>In our example, the template ID is A002.
+	<br>Double click on A002 row to check the detailed page
+	</p>
+	<p align="center">
+	<img src="img/DESJNLPR.PNG" alt="DESJNLPR" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>Check if all records exist.</p>
+	<p align="center">
+	<img src="img/DEDJNLPR.PNG" alt="DEDJNLPR" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>7-	Using Maker, create new Journal Entry by fetching records from our template A002. Launch the screen DEDJNLON and click on New</p>
+	<p align="center">
+	<img src="img/DEDJNLON.PNG" alt="DEDJNLON" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>8-	A page will open to create new Batch.
+	<br>Enter value in the Description field. For example: Salary upload. And click on OK button.
+	</p>
+	<p align="center">
+	<img src="img/DEDJNLONnew.PNG" alt="DEDJNLON_New" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	<div class="content1">
+	<p>9-	The Batch Number is 0002 and it’s created automatically.
+	<br>Click on Template Code and select our template A002, and then click on Fetch
+	<br>Select a Value Date and click on Save Button</p>
+	<p align="center">
+	<img src="img/totaldrcr.PNG" alt="DEDJNLON_New" class="responsive" width="1100" height="400"></p>
+	</div>
+	
+	
+	<br>
+	
+	<div class="content2">
+	<p>DBA should create this Table:</p>
+	<p><font size="-1">CREATE TABLE "BULK"."TEMPLATE" 
+	<br>(	"TEMPLATE_ID" VARCHAR2(4 CHAR), 
+	<br>"DR_CR" VARCHAR2(1 CHAR), 
+	<br>"AC_GL_NO" VARCHAR2(20 CHAR), 
+	<br>"TXN_CODE" VARCHAR2(12 CHAR), 
+	<br>"ADDL_TEXT" VARCHAR2(350 CHAR), 
+	<br>"BRANCH_CODE" VARCHAR2(3 CHAR), 
+	<br>"CCY" VARCHAR2(3 CHAR), 
+	<br>"AMOUNT" NUMBER, 
+	<br>"ERROR_MSG" VARCHAR2(400 BYTE)
+	<br> ) SEGMENT CREATION IMMEDIATE 
+	<br> PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+	<br>NOCOMPRESS LOGGING
+	<br> STORAGE(INITIAL 131072 NEXT 131072 MINEXTENTS 1 MAXEXTENTS 2147483645
+	<br> PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+	<br> BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+	<br> TABLESPACE "FCCDATASML" ;
+	<br>
+	<br> CREATE OR REPLACE EDITIONABLE TRIGGER "BULK"."TRIGGER1" 
+	<br>BEFORE INSERT ON TEMPLATE 
+	<br>REFERENCING NEW AS NEW OLD AS OLD
+	<br>FOR EACH ROW
+	<br>
+	<br>DECLARE 
+	<br>
+	<br>BATCH_COUNT INTEGER;
+	<br>COUNT_AC INTEGER;
+	<br>COUNT_GL INTEGER;
+	<br>DIFF NUMBER;
+	<br>XSERIAL_NO INTEGER;
+	<br>XCUST_NO VARCHAR2(20);
+	<br>XAC_OR_GL VARCHAR2(4);
+	<br>XTODAY DATE;
+	<br>XERROR_MSG VARCHAR2(400);
+	<br>AC_GL_ERROR EXCEPTION;
+	<br>DR_CR_ERROR EXCEPTION;
+	<br>
+	<br>PRAGMA EXCEPTION_INIT(AC_GL_ERROR, -20111);
+	<br>PRAGMA EXCEPTION_INIT(DR_CR_ERROR, -20112);
+	<br>
+	<br>
+	<br>BEGIN
+	<br>
+	<br>/*
+	<br>DESJNLPR: Journal Template Maintenance
+	<br>DEDJNLON: Journal Entry Input, select from template.
+	<br>grant all privileges ON STTM_CUST_ACCOUNT TO BULK;
+	<br>grant all privileges ON DETM_JRNL_TMPL_DETAIL TO BULK;
+	<br>grant all privileges ON DETM_JRNL_TMPL_MASTER TO BULK;
+	<br>grant all privileges ON STTM_DATES TO BULK;
+	<br>grant all privileges ON STTB_ACCOUNT TO BULK;
+	<br>*/
+	<br>
+	<br>
+	<br>	-- PRE CHECKS
+	<br>	IF(LENGTH(:NEW.TEMPLATE_ID) <> 4) THEN
+	<br>        RETURN;
+	<br>    END IF;
+	<br>
+	<br>	-- PRE CHECKS
+	<br>	IF(UPPER(:NEW.DR_CR) NOT IN ('D','C')) THEN
+	<br>        DELETE FROM FCUBS.DETM_JRNL_TMPL_DETAIL WHERE TEMPLATE_ID = :NEW.TEMPLATE_ID;
+	<br>		DELETE FROM FCUBS.DETM_JRNL_TMPL_MASTER WHERE TEMPLATE_ID = :NEW.TEMPLATE_ID;
+	<br>		XERROR_MSG := 'DR - CR ERROR';
+	<br>		:NEW.ERROR_MSG := XERROR_MSG;
+	<br>        RAISE_APPLICATION_ERROR(-20112,'DR - CR ERROR');
+	<br>		--RETURN;
+	<br>    END IF;
+	<br>
+	<br>
+	<br>	--populate DETM_JRNL_TMPL_DETAIL
+	<br>	XCUST_NO:=NULL;
+	<br>	XERROR_MSG := '';
+	<br>
+	<br>	-- CHECK IF ACCOUNT OR GL
+	<br>	SELECT COUNT(1)
+	<br>    INTO COUNT_AC
+	<br>    FROM FCUBS.STTM_CUST_ACCOUNT WHERE CUST_AC_NO = :NEW.AC_GL_NO
+	<br>	AND RECORD_STAT = 'O' AND AUTH_STAT = 'A';
+	<br>
+	<br>	SELECT COUNT(1)
+	<br>    INTO COUNT_GL
+	<br>    FROM FCUBS.STTB_ACCOUNT WHERE AC_GL_NO = :NEW.AC_GL_NO AND AC_OR_GL = 'G' AND GL_STAT_DE_POST = 'Y';
+	<br>
+	<br>	IF(COUNT_AC = 1) THEN
+	<br>		XAC_OR_GL := 'A';
+	<br>	END IF;
+	<br>
+	<br>	IF(COUNT_GL = 1) THEN
+	<br>		XAC_OR_GL := 'G';
+	<br>	END IF;
+	<br>
+	<br>	IF(COUNT_GL = 0 AND COUNT_AC = 0) THEN
+	<br>		DELETE FROM FCUBS.DETM_JRNL_TMPL_DETAIL WHERE TEMPLATE_ID = :NEW.TEMPLATE_ID;
+	<br>		DELETE FROM FCUBS.DETM_JRNL_TMPL_MASTER WHERE TEMPLATE_ID = :NEW.TEMPLATE_ID;
+	<br>		XERROR_MSG := 'AC - GL not exist or close';
+	<br>		:NEW.ERROR_MSG := XERROR_MSG;
+	<br>       RAISE_APPLICATION_ERROR(-20111, :NEW.AC_GL_NO || ': Not exist or close');
+	<br>		--RETURN;
+	<br>	END IF;
+	<br>	-- END OF: CHECK IF ACCOUNT OR GL
+	<br>
+	<br>    IF(XAC_OR_GL = 'A') THEN
+	<br>        SELECT CUST_NO
+	<br>        INTO XCUST_NO
+	<br>        FROM FCUBS.STTM_CUST_ACCOUNT
+	<br>        WHERE CUST_AC_NO = :NEW.AC_GL_NO;
+	<br>   END IF;
+	<br>
+	<br>	SELECT COUNT(1)
+	<br>    INTO XSERIAL_NO
+	<br>    FROM FCUBS.DETM_JRNL_TMPL_DETAIL WHERE TEMPLATE_ID = :NEW.TEMPLATE_ID;
+	<br>
+	<br>    Insert into FCUBS.DETM_JRNL_TMPL_DETAIL 
+	<br>    (TEMPLATE_ID,SERIAL_NO,DR_CR,AC_GL_NO,AC_OR_GL,TXN_CODE,ADDL_TEXT,BRANCH_CODE,CCY,CUST_NO,AMOUNT) values
+	<br>    (:NEW.TEMPLATE_ID,XSERIAL_NO +1,UPPER(:NEW.DR_CR),:NEW.AC_GL_NO,XAC_OR_GL,'777',:NEW.ADDL_TEXT,:NEW.BRANCH_CODE,:NEW.CCY,XCUST_NO,:NEW.AMOUNT);
+	<br>
+	<br>
+	<br>	--populate DETM_JRNL_TMPL_MASTER
+	<br>	SELECT COUNT(1)
+	<br>    INTO BATCH_COUNT
+	<br>    FROM FCUBS.DETM_JRNL_TMPL_MASTER WHERE TEMPLATE_ID = :NEW.TEMPLATE_ID;
+	<br>
+	<br>    IF(BATCH_COUNT = 0) THEN
+	<br>
+	<br>    SELECT TODAY
+	<br>    INTO XTODAY
+	<br>    FROM FCUBS.STTM_DATES
+	<br>    WHERE BRANCH_CODE = :NEW.BRANCH_CODE;
+	<br>
+	<br>    Insert into FCUBS.DETM_JRNL_TMPL_MASTER 
+	<br>    (TEMPLATE_ID,DESCRIPTION,RECORD_STAT,AUTH_STAT,MOD_NO,MAKER_ID,MAKER_DT_STAMP,CHECKER_ID,CHECKER_DT_STAMP,ONCE_AUTH) values
+	<br>    (:NEW.TEMPLATE_ID,'BULK UPLOAD','O','A',1,'MIGUSER',XTODAY,'MIGUSER1',XTODAY,'Y');
+	<br>
+	<br>    END IF;
+	<br>
+	<br>	EXCEPTION
+	<br>		WHEN AC_GL_ERROR THEN
+	<br>			DELETE FROM FCUBS.DETM_JRNL_TMPL_DETAIL WHERE TEMPLATE_ID = :NEW.TEMPLATE_ID;
+	<br>			DELETE FROM FCUBS.DETM_JRNL_TMPL_MASTER WHERE TEMPLATE_ID = :NEW.TEMPLATE_ID;
+	<br>           :NEW.ERROR_MSG := XERROR_MSG;
+	<br>		WHEN DR_CR_ERROR THEN
+	<br>			DELETE FROM FCUBS.DETM_JRNL_TMPL_DETAIL WHERE TEMPLATE_ID = :NEW.TEMPLATE_ID;
+	<br>			DELETE FROM FCUBS.DETM_JRNL_TMPL_MASTER WHERE TEMPLATE_ID = :NEW.TEMPLATE_ID;
+	<br>            :NEW.ERROR_MSG := XERROR_MSG;
+	<br>
+	<br>END;
+	<br>/
+	<br>ALTER TRIGGER "BULK"."TRIGGER1" ENABLE;</font></p>
+	</div>
+	
+  </div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+function myFunction1() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+
+</script>
+
+
+   
+</body>
+</html> 
