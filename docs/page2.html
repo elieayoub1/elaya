@@ -5,13 +5,13 @@
 <script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <style>
 body {
-  padding: 1px;
+  margin: 0;
   font-family: "Lato", sans-serif;
 }
 
 
 .top-container {
-  background-color: #f1f1f1;
+  background-color: #93EAD7;
   padding: 30px;
   text-align: center;
 }
@@ -20,18 +20,25 @@ body {
   padding: 10px 16px;
   background: #555;
   color: #f1f1f1;
-  margin: 20px;
 }
 
 .content {
   padding: 16px;
+  
+}
+
+.content1 {
+  padding: 16px;
+  
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #F5F5F5;
 }
 
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
-margin: 20px;
 }
 
 .sticky + .content {
@@ -72,6 +79,12 @@ margin: 20px;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+}
+
+p.new1 {
+  
+  border-radius: 5px;
+  background-color: red;
 }
 
 @media screen and (max-height: 450px) {
@@ -118,10 +131,16 @@ margin: 20px;
 
 <div class="content">
   <h3>End Of Day</h3>
-  <p>Using oracle FLEXCUBE, run the pre-check screens to see if there is any pending maintenance, pending transactions, or any open till/vault.</p>
+  
+	<p align="center">
+	<img src="steps.png" alt="steps" class="responsive" width="800" height="400"></p>
+  
+	<p>Using oracle FLEXCUBE, run the pre-check screens to see if there is any pending maintenance, pending transactions, or any open till/vault.</p>
 	<p>All Transactions and maintenances should be authorized.</p>
 	<p>All Tills and Vaults should be closed.</p>
-	<p align="center">Screen STSVWPEN: Pending Maintenances
+	
+	<div class="content1">
+	<p align="center"><font size="-1">Screen STSVWPEN: Pending Maintenances</font>
 	<br>
 	<img src="STSVWPEN.PNG" alt="STSVWPEN" class="responsive" width="800" height="400"></p>
 	
@@ -135,12 +154,14 @@ margin: 20px;
 	<li>Function ID</li>
 	<li>Language Code</li>
 	<li>Description</li></p>
-
+	</div>
 	
-	<p align="center">Screen EISVWPNT: Pending Transactions
+	<br>
+	
+	<div class="content1">
+	<p align="center"><font size="-1">Screen EISVWPNT: Pending Transactions</font>
 	<br>
 	<img src="EISVWPNT.PNG" alt="EISVWPNT" class="responsive" width="800" height="400"></p>
-	
 	
 	<p>In EISVWPNT screen, you can base your queries on any or all of the following parameters and fetch records:
 	<br>
@@ -152,10 +173,12 @@ margin: 20px;
 	
 	<p>Select any or all of the above parameters for a query and click ‘Search’ button. The records meeting the selected criteria are displayed.
 	System displays the following details pertaining to the fetched records</p>
+	</div>
 
-
-
-	<p align="center">Screen 9012: Current Open Tills. Using head teller
+	<br>
+	
+	<div class="content1">
+	<p align="center"><font size="-1">Screen 9012: Current Open Tills. Using head teller</font>
 	<br>
 	<img src="9012.PNG" alt="9012" class="responsive" width="800" height="400"></p>
 	
@@ -168,13 +191,15 @@ margin: 20px;
 	<li>Assigned Transactions - number of transactions in the Assigned Queue for the user</li>
 	<li>Unassigned Transactions - number of transactions in the Unassigned Queue for the user</li>
 	<li>Auto Reversal Pending - number of transaction pending to be auto reversed for the user</li></p>
-
+	</div>
 	
+	<br>
 	<p>After checking all these 3 screens (EISVWPNT, EISVWPNT, and 9012), we should take database backup</p>
 	<br>
-	<br>
+	
+	<div class="content1">
 	<p>After database backup completed, now we can continue the EOD using Oracle FLEXCUBE by running the EODM</p>
-	<p align="center">Screen EODM: EOD Maintenance screen. To be execute for each branch.
+	<p align="center"><font size="-1">Screen EODM: EOD Maintenance screen. To be execute for each branch.</font>
 	<br>
 	<img src="eodm.PNG" alt="EODM" class="responsive" width="800" height="400"></p>
 	
@@ -184,25 +209,32 @@ margin: 20px;
 	<li>There must be Holiday maintenance to get the Next working day.</li>
 	<li>Balancing and closure processes for Till and Vault should be completed. There should not be any transaction in ‘Pending’ or ‘Assigned’ stage for a user</li>
 	<br>Once these have been successfully validated, EOD proceeds with the system date change by moving the Branch posting date to the next date. The Branch transaction sequence will also get reset as a consequence of the execution of Branch EOD. This signifies the Beginning of Day (BOD) for the Branch for the next working day and the Branch is ready for Transaction Input.</p>
+	</div>
+	
 	<br>
 	
-	
-	<p align="center">screen AEDSTART from the head office.
+	<div class="content1">
+	<p align="center"><font size="-1">screen AEDSTART from the head office.</font>
 	<br>
 	<img src="aedstart.PNG" alt="AEDSTART" class="responsive" width="800" height="400"></p>
 	<p>Use the same options as shown in the above screen.</P>
+	</div>
 	
 	<br>
 	
+	<div class="content1">
 	<p>Note that the job BRNSCH is responsible for the EOD processing. This job should be scheduled.</p>
-	<p align="center">Use the screen SMSJOBBR, to check the BRNSCH status.
+	<p align="center"><font size="-1">Use the screen SMSJOBBR, to check the BRNSCH status.</font>
 	<br>
 	<img src="smsjobbr.PNG" alt="SMSJOBBR" class="responsive" width="800" height="400">
 	<br>If the job BRNSCH is not scheduled, click on BRNSCH and then click resume.</p>
+	</div>
+	
 	<br>
 	
+	<div class="content1">
 	<p>Now we have to check the status of the EOD</p>
-	<p align="center">Using screen AESBRMTR: EOC Monitor
+	<p align="center"><font size="-1">Using screen AESBRMTR: EOC Monitor</font>
 	<br>
 	<img src="aesbrmtr.PNG" alt="AESBRMTR" class="responsive" width="800" height="400">
 
@@ -211,7 +243,7 @@ margin: 20px;
 	<li>W: working</li>
 	<li>A: aborted</li>
 	<li>C: completed</li><p>
-	
+	</div>
 	<br>
 	<p>When the EOD compete (status =C) for all branches. We should take another database backup</p>
 
