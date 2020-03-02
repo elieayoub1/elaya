@@ -135,118 +135,47 @@ ul {
 	<p align="center">
 	<img src="dbbackup.png" alt="steps" class="responsive" width="800" height="400"></p>
   
-	<p>Using oracle FLEXCUBE, run the pre-check screens to see if there is any pending maintenance, pending transactions, or any open till/vault.</p>
-	<p>All Transactions and maintenances should be authorized.</p>
-	<p>All Tills and Vaults should be closed.</p>
+	<p>Database backup is the process of backing up the operational state, architecture and stored data of database software. It enables the creation of a duplicate instance or copy of a database in case the primary database crashes, is corrupted or is lost.</p>
+	
 	
 	<div class="content1">
-	<p align="center"><font size="-1">Screen STSVWPEN: Pending Maintenances</font>
-	<br>
-	<img src="STSVWPEN.PNG" alt="STSVWPEN" class="responsive" width="800" height="400"></p>
 	
-	<p>In STSVWPEN screen, you can base your queries on any or all of the following parameters and fetch records:
-	<li>Product ID</li>
-	<li>Description</li></p>
+	<p>In this example:
+	<li>Database server: 192.168.1.102</li>
+	<li>schema: FCUBS</li>
+	<li>system password: sys</li></p>
+	</div>
+	
+	<div class="content1">
+	<p>Using MobaXterm, open ssh session to the database server: ssh oracle@192.168.1.102</p>
+	<p align="center">
+	<img src="ssh.PNG" alt="ssh" class="responsive" width="800" height="400"></p>
+	
+	<p>Run the script: ./beod.sh</p>
+	<p align="center">
+	<img src="beod.PNG" alt="beod" class="responsive" width="800" height="400"></p>
+	
+	<p>This script will take a database backup (tables and sequences). We will use this backup to restore the database in case of any failure during the EOD later on.</p>
+	<p>The Backup name = BEOD-"server time".dmp</p>
+	<p>When database backup completed, the output should be like the following picture:</p>
+	<p align="center">
+	<img src="beodcompleted.PNG" alt="beodcompleted" class="responsive" width="800" height="400"></p>
+	<p>Note that the backup destination is: /data/DMP/</p>
 
-	<p>Select any or all of the above parameters for a query and click ‘Search’ button. The records meeting the selected criteria are displayed.
-	<br>
-	System displays the all the pending maintenance pertaining to this branch:
-	<li>Function ID</li>
-	<li>Language Code</li>
-	<li>Description</li></p>
 	</div>
-	
-	<br>
 	
 	<div class="content1">
-	<p align="center"><font size="-1">Screen EISVWPNT: Pending Transactions</font>
-	<br>
-	<img src="EISVWPNT.PNG" alt="EISVWPNT" class="responsive" width="800" height="400"></p>
-	
-	<p>In EISVWPNT screen, you can base your queries on any or all of the following parameters and fetch records:
-	<br>
-	<li>Branch</li>
-	<li>Module</li>
-	<li>Reference Number</li>
-	<li>Events</li>
-	<li>ID</li></p>
-	
-	<p>Select any or all of the above parameters for a query and click ‘Search’ button. The records meeting the selected criteria are displayed.
-	System displays the following details pertaining to the fetched records</p>
+	<p>When the EOD compete (status =C) for all branches. We should take another database backup using MobaXterm by running the script: ./aeod.sh (follow the same steps as ./beod.sh).</p>
+	<p>The Backup name = AEOD-"server time".dmp</p>
+	<p>When the ./aeod.sh complete, you will find the backup on the database server under the following directory: /data/DMP/</p>
 	</div>
-
-	<br>
 	
 	<div class="content1">
-	<p align="center"><font size="-1">Screen 9012: Current Open Tills. Using head teller</font>
-	<br>
-	<img src="9012.PNG" alt="9012" class="responsive" width="800" height="400"></p>
-	
-	<p>The system defaults the current logged in branch code.<br>
-	The following details of the current branch are displayed for all the tellers:<br>
-	<li>User ID – the teller user ID</li>
-	<li>User Working – current log in status of the user</li>
-	<li><strong>Pending Transactions</strong> - number of transactions in the Pending Queue for the user</li>
-	<li>Tanked Transactions - number of transactions in the Tanked Queue for the user</li>
-	<li>Assigned Transactions - number of transactions in the Assigned Queue for the user</li>
-	<li>Unassigned Transactions - number of transactions in the Unassigned Queue for the user</li>
-	<li>Auto Reversal Pending - number of transaction pending to be auto reversed for the user</li></p>
+	<p>Use WinScp to copy the generated backup to external hard drive.</p>
+	<p align="center">
+	<img src="winscp.PNG" alt="winscp" class="responsive" width="800" height="400"></p>
 	</div>
 	
-	<br>
-	<p>After checking all these 3 screens (EISVWPNT, EISVWPNT, and 9012), we should take database backup</p>
-	<br>
-	
-	<div class="content1">
-	<p>After database backup completed, now we can continue the EOD using Oracle FLEXCUBE by running the EODM</p>
-	<p align="center"><font size="-1">Screen EODM: EOD Maintenance screen. To be execute for each branch.</font>
-	<br>
-	<img src="eodm.PNG" alt="EODM" class="responsive" width="800" height="400"></p>
-	
-	<p>Click ‘Run EOD’ button to run the EOD for the branch.<br>
-	The following validations are done before running EOD:<br>
-	<li>Only the user who runs the EOD should be logged into the branch.</li>
-	<li>There must be Holiday maintenance to get the Next working day.</li>
-	<li>Balancing and closure processes for Till and Vault should be completed. There should not be any transaction in ‘Pending’ or ‘Assigned’ stage for a user</li>
-	<br>Once these have been successfully validated, EOD proceeds with the system date change by moving the Branch posting date to the next date. The Branch transaction sequence will also get reset as a consequence of the execution of Branch EOD. This signifies the Beginning of Day (BOD) for the Branch for the next working day and the Branch is ready for Transaction Input.</p>
-	</div>
-	
-	<br>
-	
-	<div class="content1">
-	<p align="center"><font size="-1">screen AEDSTART from the head office.</font>
-	<br>
-	<img src="aedstart.PNG" alt="AEDSTART" class="responsive" width="800" height="400"></p>
-	<p>Use the same options as shown in the above screen.</P>
-	</div>
-	
-	<br>
-	
-	<div class="content1">
-	<p>Note that the job BRNSCH is responsible for the EOD processing. This job should be scheduled.</p>
-	<p align="center"><font size="-1">Use the screen SMSJOBBR, to check the BRNSCH status.</font>
-	<br>
-	<img src="smsjobbr.PNG" alt="SMSJOBBR" class="responsive" width="800" height="400">
-	<br>If the job BRNSCH is not scheduled, click on BRNSCH and then click resume.</p>
-	</div>
-	
-	<br>
-	
-	<div class="content1">
-	<p>Now we have to check the status of the EOD</p>
-	<p align="center"><font size="-1">Using screen AESBRMTR: EOC Monitor</font>
-	<br>
-	<img src="aesbrmtr.PNG" alt="AESBRMTR" class="responsive" width="800" height="400">
-
-	<p>EOC Status:<br>
-	<li>N: not running</li>
-	<li>W: working</li>
-	<li>A: aborted</li>
-	<li>C: completed</li><p>
-	</div>
-	<br>
-	<p>When the EOD compete (status =C) for all branches. We should take another database backup</p>
-
   </div>
 
 
