@@ -1,4 +1,3 @@
-document.write("<li><a href='index.html'><span>Home<\/span><\/a><\/li>");
-document.write("<li><a href='page2.html'><span>End Of Day (EOD)<\/span><\/a><\/li>");
-document.write("<li><a href='page3.html'><span>Database Backup<\/span><\/a><\/li>");
-document.write("<li><a href='page3.html'><span>Oracle<\/span><\/a><\/li>");
+document.write("<a href='#'><span>Oracle<\/span><\/a>");
+document.write("<li><a href='eod.html'><span>End Of Day (EOD)<\/span><\/a><\/li>");
+document.write("<li><a href='dbbackup.html'><span>Database Backup<\/span><\/a><\/li>");
