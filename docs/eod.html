@@ -7,6 +7,7 @@
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
+  font-size: 14px;
 }
 
 
@@ -143,9 +144,24 @@ ul {
 	<p align="center">
 	<img src="img/steps.png" alt="steps" class="responsive" width="600" height="400"></p>
   
+	<div class="content1">
+	<p><span style='color:red'>What is End of Day (EOD)?</span><br><br>
+		EOD is set of many batches/functions/processes that runs on a daily basis executed automatically and in specific sequence to tie up all the operations for the current financial day and prepare FLEXCUBE for the next working day as defined in the system calendar.<br><br>
+		Each branch can have different set of batches based on the services and products maintained to that branch. For example, if a branch provides loans for customer, then the EOD for this branch should include the CLBATCH responsible for loans while it’s not mandatory to set this batch to another branch that does not provide loans or not allowed to have such service.<br><br>
+		Therefore, the EOD execution time could be different form one branch to another; based on the number of batches, customers, transactions…<br><br>
+		Before starting the EOD operation, it’s mandatory to take a database backup, in case of any failure during the EOD; the DBA team can restore the backup, fix the problem and restart the EOD processes.<br><br>
+		The <a href='dbbackup.html'>database backup</a> is also covered in our site.<br>
+	</p>
+	</div>
+    <br>
+	
+	<div class="content1">
+	<p><span style='color:red'>EOD steps</span></p>
+	
 	<p>Using oracle FLEXCUBE, run the pre-check screens to see if there is any pending maintenance, pending transactions, or any open till/vault.</p>
 	<p>All Transactions and maintenances should be authorized.</p>
 	<p>All Tills and Vaults should be closed.</p>
+	</div>
 	
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- site1 -->

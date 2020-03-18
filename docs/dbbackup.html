@@ -7,6 +7,7 @@
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
+  font-size: 14px;
 }
 
 
@@ -143,7 +144,19 @@ ul {
 	<p align="center">
 	<img src="img/dbbackup.png" alt="steps" class="responsive" width="600" height="400"></p>
   
-	<p>Database backup is the process of backing up the operational state, architecture and stored data of database software. It enables the creation of a duplicate instance or copy of a database in case the primary database crashes, is corrupted or is lost.</p>
+	<div class="content1">
+	<p><span style='color:red'>Database backup</span> is the process of backing up the operational state, architecture and stored data of database software. It enables the creation of a duplicate instance or copy of a database in case the main database crashes, is corrupted or is lost.<br><br>
+	There are several ways to take a database backup, like expdp (export dump), exp (the traditional export dump), tar (copy of physical files), and rman (Oracle Recovery Manager)…<br><br>
+	For Oracle FLEXCUBE, and exactly before starting the <a href='eod.html'>EOD</a> operation, we will use the expdp method to take our database backup.<br><br>
+	Before we proceed, we will explain the Oracle Database, and how the backup may be different from system/application to another.<br><br>
+	The Oracle Database is set of multiple objects like: Tables, Views, Triggers, Sequences, Functions, Procedures, Packages, and many other objects.<br><br>
+	Some applications may only use Tables. In this case the backup should include tables and there will be no need to backup all the other objects.<br><br>
+	Another application may use Tables and Views. In this case we should backup these 2 objects and ignore the remaining ones.<br><br>
+	So, the idea is to take a backup of all objects that are used by the application. We call it a full database backup.<br><br>
+	The Oracle FLEXCUBE solution uses all the database objects mentioned before (Tables, Views, Triggers, Sequences, Functions, Procedures, and Packages) in addition to some other objects that are not listed here.<br><br>
+	However, for the EOD purpose, there is no need that our backup to include all these objects (full backup), because most of them will remain unchanged even after the EOD operation complete. The only objects that change before and after the EOD are Tables data, and Sequences. Therefore, our backup should include at least these 2 objects. Consequently, the backup time and space will be less than the full database backup.<br><br>
+	The export command should include the following option: <span style='color:blue'>INCLUDE=TABLE,SEQUENCE</span></p>
+	</div>
 	
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- site1 -->
@@ -160,7 +173,7 @@ ul {
 	
 	<div class="content1">
 	
-	<p>In this example:
+	<p><span style='color:red'>In this example:</span>
 	<li>Database server: 192.168.1.102</li>
 	<li>schema: FCUBS</li>
 	<li>system password: sys</li></p>
