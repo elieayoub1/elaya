@@ -4,6 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <style>
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
@@ -42,6 +47,17 @@ body {
   margin: 8px;
   border-radius: 15px;
   background-color: #93EAD7;
+}
+
+.content3 {
+  padding: 4px;
+  width: 50%;
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #93EAD7;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .sticky {
@@ -143,7 +159,14 @@ ul {
   
 	<p align="center">
 	<img src="img/steps.png" alt="steps" class="responsive" width="600" height="400"></p>
-  
+	
+	<p class="content3" align="center" >
+	<a href="#section1">1</a><span>&nbsp;</span>
+	<a href="#section2">2</a><span>&nbsp;</span>
+	<a href="#section3">3</a><span>&nbsp;</span>
+	<a href="#section4">4</a><span>&nbsp;</span>
+	<a href="#section5">5</a><span>&nbsp;</span></p>
+	
 	<div class="content1">
 	<p><span style='color:red'>What is End of Day (EOD)?</span><br><br>
 		EOD is set of many batches/functions/processes that runs on a daily basis executed automatically and in specific sequence to tie up all the operations for the current financial day and prepare FLEXCUBE for the next working day as defined in the system calendar.<br><br>
@@ -155,7 +178,7 @@ ul {
 	</div>
     <br>
 	
-	<div class="content1">
+	<div class="content1" id="section1">
 	<p><span style='color:red'>EOD steps</span></p>
 	
 	<p>Using oracle FLEXCUBE, run the pre-check screens to see if there is any pending maintenance, pending transactions, or any open till/vault.</p>
@@ -231,13 +254,13 @@ ul {
 	</div>
 	
 	<br>
-	<div class="content2">
-	<p>After checking all these 3 screens (EISVWPNT, EISVWPNT, and 9012), we should take database backup</p>
+	<div class="content2" id="section2">
+	<p>After checking all these 3 screens (EISVWPNT, EISVWPNT, and 9012), we should take <a href='dbbackup.html'>database backup</a></p>
 	</div>
 	<br>
 	
 	
-	<div class="content1">
+	<div class="content1" id="section3">
 	<p>After database backup completed, now we can continue the EOD using Oracle FLEXCUBE by running the EODM</p>
 	<p align="center"><font size="-1">Screen EODM: EOD Maintenance screen. To be execute for each branch.</font>
 	<br>
@@ -253,7 +276,7 @@ ul {
 	
 	<br>
 	
-	<div class="content1">
+	<div class="content1" id="section4">
 	<p align="center"><font size="-1">screen AEDSTART from the head office.</font>
 	<br>
 	<img src="img/aedstart.PNG" alt="AEDSTART" class="responsive" width="800" height="400"></p>
@@ -285,8 +308,8 @@ ul {
 	<li>C: completed</li><p>
 	</div>
 	<br>
-	<div class="content2">
-	<p>When the EOD compete (status =C) for all branches. We should take another database backup</p>
+	<div class="content2" id="section5">
+	<p>When the EOD compete (status =C) for all branches. We should take another <a href='dbbackup.html'>database backup</a></p>
 	</div>
 	
   </div>

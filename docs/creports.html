@@ -4,6 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <style>
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
@@ -42,6 +47,17 @@ body {
   margin: 8px;
   border-radius: 15px;
   background-color: #93EAD7;
+}
+
+.content3 {
+  padding: 4px;
+  width: 50%;
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #93EAD7;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .sticky {
@@ -143,10 +159,24 @@ ul {
   
 	<p align="center">
 	<img src="img/creports.png" alt="steps" class="responsive" width="800" height="400"></p>
-  
-	<p>Canned reports are pre-configured reports shipped with oracle FLEXCUBE media. They can be lunched from UBS Menu itself without the need to use BI Publisher.</p>
-	<p>To configure canned reports, follow the below steps:</p>
 	
+	<p class="content3" align="center" >
+	<a href="#section1">1</a><span>&nbsp;</span>
+	<a href="#section2">2</a><span>&nbsp;</span>
+	<a href="#section3">3</a><span>&nbsp;</span>
+	<a href="#section4">4</a><span>&nbsp;</span></p>
+	
+	<div class="content1">
+	
+	<p><span style='color:red'>Canned reports</span> are around 300 pre-configured reports shipped with oracle FLEXCUBE media. They can be lunched from UBS Menu itself without the need to use BI Publisher.<br>
+	Canned reports are treated like any other screen in FLEXCUBE. For example, SMRNWUSR generates report for new created users between specific dates.<br>
+	Therefore, each report screen should be assigned to a role so it can be accessed by the authorized operator.<br><br>
+	The advantage of canned reports is that they are pre-configured and generate really useful information.<br>
+	However, the disadvantage of these reports is that they are generic reports that do not totally fit into the bank requirements. For example, a bank may ask to change, add, or remove a field from a report. Consequently, the reporting team should do the customization/modification, and keep track of all these changes. In case of patching, fixing the Oracle FLEXCUBE, the reporting team should re-apply these changes again; because the patch my override the existing modified report.</p>
+
+	
+	<p>To configure canned reports, follow the below steps:</p>
+	</div>
 	
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- site1 -->
@@ -161,7 +191,7 @@ ul {
 	</script>
 	
 	
-	<div class="content1">
+	<div class="content1" id="section1">
 	<p align="center"><font size="-1">BI Publisher: JDBC Maintenances</font>
 	<br>
 	<img src="img/OBIEE_JDBC.PNG" alt="OBIEE_JDBC" class="responsive" width="800" height="400"></p>
@@ -177,7 +207,7 @@ ul {
 	<br>
 	
 	
-	<div class="content1">
+	<div class="content1" id="section2">
 	<p align="center"><font size="-1">FCReports: upload canned reports</font>
 	<br>
 	<img src="img/OBIEE_FCReports.PNG" alt="FCReports" class="responsive" width="800" height="400"></p>
@@ -188,7 +218,7 @@ ul {
 	
 	<br>
 	
-	<div class="content1">
+	<div class="content1" id="section3">
 	<p align="center"><font size="-1">Configure DSN</font>
 	<br>
 	<img src="img/DSN1.PNG" alt="FCReports" class="responsive" width="800" height="400"></p>
@@ -239,7 +269,7 @@ ul {
 	
 	<br>
 	
-	<div class="content1">
+	<div class="content1" id="section4">
 	<p align="center"><font size="-1">Reporting Parameters Maintenance </font>
 	<br>
 	<img src="img/RPDRPRAM.PNG" alt="fcubs_properties" class="responsive" width="800" height="400"></p>
