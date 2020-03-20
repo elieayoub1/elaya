@@ -152,6 +152,45 @@ ul {
   height: auto;
 }
 
+
+
+
+
+.myul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.myli {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+.myli:last-child {
+  border-right: none;
+}
+
+.myli a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.myli a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+
+
 </style>
 
 </head>
@@ -183,6 +222,7 @@ ul {
 
 <div class="header" id="myHeader">
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+  
 </div>
 
 <div class="content">
@@ -389,12 +429,15 @@ function myFunction() {
 
 </script>
 
-<div class="footer" id="myfooter">
-	<a href='eod.html'><span>End Of Day (EOD)</span></a>
-	<a href='dbbackup.html'><span>Database Backup</span></a>
-	<a href='bulkupload1.html'><span>Bulk Upload - Using Template</span></a>
-	<a href='creports.html'><span>Canned Reports</span></a>
-</div>
+
+
+<ul class="myul">
+  <li class="myli"><a class="active" href='eod.html'>End Of Day</a></li>
+  <li class="myli"><a href='dbbackup.html'>Database Backup</a></li>
+  <li class="myli"><a href='bulkupload1.html'>Bulk Upload - Using Template</a></li>
+  <li class="myli"><a href='creports.html'>Canned Reports</a></li>
+  <li class="myli" style="float:right"><a href='index.html'>Home</a></li>
+</ul>
    
 </body>
 </html> 
