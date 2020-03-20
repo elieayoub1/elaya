@@ -26,9 +26,15 @@
 
 
 <style>
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
+  font-size: 14px;
 }
 
 
@@ -49,7 +55,6 @@ body {
   background: #DAD8D8;
   color: #FFFFFF;
 }
-
 
 .content {
   padding: 16px;
@@ -72,6 +77,17 @@ body {
   background-color: #93EAD7;
 }
 
+.content3 {
+  padding: 4px;
+  width: 50%;
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #93EAD7;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -82,27 +98,7 @@ body {
   padding-top: 102px;
 }
 
-.content3 {
-  padding: 8px;
-  width: 70%;
-  margin: 8px;
-  border-radius: 15px;
-  background-color: #ADFAFF;
-  margin-left: auto;
-  margin-right: auto;
 
-}
-
-.content4 {
-  padding: 8px;
-  width: 100%;
-  margin: 8px;
-  border-radius: 15px;
-  background-color: #DAD8D8;
-  margin-left: auto;
-  margin-right: auto;
-
-}
 
 .sidenav {
   height: 100%;
@@ -156,11 +152,7 @@ ul {
   height: auto;
 }
 
-.mySlides {
-	max-width: 100%;
-  width: auto;
-  height: 250px;
-}
+
 
 
 
@@ -199,14 +191,13 @@ ul {
 }
 
 
+
 </style>
 
 </head>
 <body>
 
-
 <div id="mySidenav" class="sidenav">
-  
   
   <h2><a href='index.html'>Menu</a></h2>
     <a><input type="text" id="mySearch" onkeyup="myFunction1()" placeholder="Search.." title="Type in a category" ></a>
@@ -221,71 +212,181 @@ ul {
   
 </div>
 
+
 <div class="top-container">
-
+	
 	<span style="font-size:12px; vertical-align:middle; line-height: 40px; float:right" ><img src="icon1.png" alt="steps"  width="70"></img></span>
-
-  <h1>Welcome to Fijjla <span style='color:red'>Info</span><span style='color:blue'>Box</span></h1>
-  
-	<p  align="center" >
-		<span style='color:red'>Info</span><span style='color:blue'>Box</span> is set of multiple articles/documents generated from real cases based on a personal experience.
-		<br>The main purpose of InfoBox is to share knowledge and experience with others.
-		
-	</p>
-  <p>Click on Menu and select a topic</p>
+	
+  <h1>End Of Day</h1>
+  <p>Click on Menu to change topic</p>
 </div>
-
-
 
 <div class="header" id="myHeader">
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
   
-  
-  
-  <span style="font-size:12px; vertical-align:middle; line-height: 40px; float:right" >
-	<script src="visit.js"></script>
-  </span>
-  <span style="font-size:12px; vertical-align:middle; line-height: 40px; float:right" >Visitors: </span>
 </div>
 
 <div class="content">
-
+  <h3>End Of Day</h3>
   
-  <h3><span style='color:red'>Info</span><span style='color:blue'>Box</span></h3>
-  
-	<!--<div class="content4" align="center" >
-		<p class="content3" align="center" >
-		<span style='color:red'>Info</span><span style='color:blue'>Box</span> is set of multiple articles/documents generated from real cases based on a personal experience.
-		<br>The main purpose of InfoBox is to share knowledge and experience with others.
-		</p>
-	</div>-->
-	
-	<section>
 	<p align="center">
-	<img src="img/steps.png" alt="steps" class="mySlides" width="600">
-	<img src="img/dbbackup.png" alt="dbbackup" class="mySlides" width="600">
-	<img src="img/bulk.png" alt="bulk" class="mySlides"width="600">
-	<img src="img/winscp.PNG" alt="winscp" class="mySlides" width="600">
-	<img src="img/totaldrcr.PNG" alt="totaldrcr" class="mySlides" width="600">
-	<img src="img/creports1.png" alt="creports" class="mySlides" width="600">
-	</p>
-	</section>
+	<img src="img/steps.png" alt="steps" class="responsive" width="600" height="400"></p>
 	
+	<p class="content3" align="center" >
+	<a href="#section1">1</a><span>&nbsp;&nbsp;</span>
+	<a href="#section2">2</a><span>&nbsp;&nbsp;</span>
+	<a href="#section3">3</a><span>&nbsp;&nbsp;</span>
+	<a href="#section4">4</a><span>&nbsp;&nbsp;</span>
+	<a href="#section5">5</a><span>&nbsp;&nbsp;</span></p>
+	
+	<div class="content1">
+	<p><span style='color:red'>What is End of Day (EOD)?</span><br><br>
+		EOD is set of many batches/functions/processes that runs on a daily basis executed automatically and in specific sequence to tie up all the operations for the current financial day and prepare FLEXCUBE for the next working day as defined in the system calendar.<br><br>
+		Each branch can have different set of batches based on the services and products maintained to that branch. For example, if a branch provides loans for customer, then the EOD for this branch should include the CLBATCH responsible for loans while it’s not mandatory to set this batch to another branch that does not provide loans or not allowed to have such service.<br><br>
+		Therefore, the EOD execution time could be different form one branch to another; based on the number of batches, customers, transactions…<br><br>
+		Before starting the EOD operation, it’s mandatory to take a database backup, in case of any failure during the EOD; the DBA team can restore the backup, fix the problem and restart the EOD processes.<br><br>
+		The <a href='dbbackup.html'>database backup</a> is also covered in our site.<br>
+	</p>
+	</div>
+    <br>
+	
+	<div class="content1" id="section1">
+	<p><span style='color:red'>EOD steps</span></p>
+	
+	<p>Using oracle FLEXCUBE, run the pre-check screens to see if there is any pending maintenance, pending transactions, or any open till/vault.</p>
+	<p>All Transactions and maintenances should be authorized.</p>
+	<p>All Tills and Vaults should be closed.</p>
+	</div>
+	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- site1 -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1005888209614542"
+		 data-ad-slot="5673539792"
+		 data-ad-format="horizontal"
+		 data-full-width-responsive="true"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	
+	
+	<div class="content1">
+	<p align="center"><font size="-1">Screen STSVWPEN: Pending Maintenances</font>
+	<br>
+	<img src="img/STSVWPEN.PNG" alt="STSVWPEN" class="responsive" width="800" height="400"></p>
+	
+	<p>In STSVWPEN screen, you can base your queries on any or all of the following parameters and fetch records:
+	<li>Product ID</li>
+	<li>Description</li></p>
+
+	<p>Select any or all of the above parameters for a query and click ‘Search’ button. The records meeting the selected criteria are displayed.
+	<br>
+	System displays the all the pending maintenance pertaining to this branch:
+	<li>Function ID</li>
+	<li>Language Code</li>
+	<li>Description</li></p>
+	</div>
+	
+	<br>
+	
+	<div class="content1">
+	<p align="center"><font size="-1">Screen EISVWPNT: Pending Transactions</font>
+	<br>
+	<img src="img/EISVWPNT.PNG" alt="EISVWPNT" class="responsive" width="800" height="400"></p>
+	
+	<p>In EISVWPNT screen, you can base your queries on any or all of the following parameters and fetch records:
+	<br>
+	<li>Branch</li>
+	<li>Module</li>
+	<li>Reference Number</li>
+	<li>Events</li>
+	<li>ID</li></p>
+	
+	<p>Select any or all of the above parameters for a query and click ‘Search’ button. The records meeting the selected criteria are displayed.
+	System displays the following details pertaining to the fetched records</p>
+	</div>
+
+	<br>
+	
+	<div class="content1">
+	<p align="center"><font size="-1">Screen 9012: Current Open Tills. Using head teller</font>
+	<br>
+	<img src="img/9012.PNG" alt="9012" class="responsive" width="800" height="400"></p>
+	
+	<p>The system defaults the current logged in branch code.<br>
+	The following details of the current branch are displayed for all the tellers:<br>
+	<li>User ID – the teller user ID</li>
+	<li>User Working – current log in status of the user</li>
+	<li><strong>Pending Transactions</strong> - number of transactions in the Pending Queue for the user</li>
+	<li>Tanked Transactions - number of transactions in the Tanked Queue for the user</li>
+	<li>Assigned Transactions - number of transactions in the Assigned Queue for the user</li>
+	<li>Unassigned Transactions - number of transactions in the Unassigned Queue for the user</li>
+	<li>Auto Reversal Pending - number of transaction pending to be auto reversed for the user</li></p>
+	</div>
+	
+	<br>
+	<div class="content2" id="section2">
+	<p>After checking all these 3 screens (EISVWPNT, EISVWPNT, and 9012), we should take <a href='dbbackup.html'>database backup</a></p>
+	</div>
+	<br>
+	
+	
+	<div class="content1" id="section3">
+	<p>After database backup completed, now we can continue the EOD using Oracle FLEXCUBE by running the EODM</p>
+	<p align="center"><font size="-1">Screen EODM: EOD Maintenance screen. To be execute for each branch.</font>
+	<br>
+	<img src="img/eodm.PNG" alt="EODM" class="responsive" width="800" height="400"></p>
+	
+	<p>Click ‘Run EOD’ button to run the EOD for the branch.<br>
+	The following validations are done before running EOD:<br>
+	<li>Only the user who runs the EOD should be logged into the branch.</li>
+	<li>There must be Holiday maintenance to get the Next working day.</li>
+	<li>Balancing and closure processes for Till and Vault should be completed. There should not be any transaction in ‘Pending’ or ‘Assigned’ stage for a user</li>
+	<br>Once these have been successfully validated, EOD proceeds with the system date change by moving the Branch posting date to the next date. The Branch transaction sequence will also get reset as a consequence of the execution of Branch EOD. This signifies the Beginning of Day (BOD) for the Branch for the next working day and the Branch is ready for Transaction Input.</p>
+	</div>
+	
+	<br>
+	
+	<div class="content1" id="section4">
+	<p align="center"><font size="-1">screen AEDSTART from the head office.</font>
+	<br>
+	<img src="img/aedstart.PNG" alt="AEDSTART" class="responsive" width="800" height="400"></p>
+	<p>Use the same options as shown in the above screen.</P>
+	</div>
+	
+	<br>
+	
+	<div class="content1">
+	<p>Note that the job BRNSCH is responsible for the EOD processing. This job should be scheduled.</p>
+	<p align="center"><font size="-1">Use the screen SMSJOBBR, to check the BRNSCH status.</font>
+	<br>
+	<img src="img/smsjobbr.PNG" alt="SMSJOBBR" class="responsive" width="800" height="400">
+	<br>If the job BRNSCH is not scheduled, click on BRNSCH and then click resume.</p>
+	</div>
+	
+	<br>
+	
+	<div class="content1">
+	<p>Now we have to check the status of the EOD</p>
+	<p align="center"><font size="-1">Using screen AESBRMTR: EOC Monitor</font>
+	<br>
+	<img src="img/aesbrmtr.PNG" alt="AESBRMTR" class="responsive" width="800" height="400">
+
+	<p>EOC Status:<br>
+	<li>N: not running</li>
+	<li>W: working</li>
+	<li>A: aborted</li>
+	<li>C: completed</li><p>
+	</div>
+	<br>
+	<div class="content2" id="section5">
+	<p>When the EOD compete (status =C) for all branches. We should take another <a href='dbbackup.html'>database backup</a></p>
+	</div>
 	
   </div>
 
-  
-<ul class="myul" style="border-bottom:1px solid #bbb">
-  <li class="myli" style="float:right"><a class="active" href='index.html'>Home</a></li>
-</ul>
 
-<ul class="myul">
-  <li class="myli"><a href='eod.html'>EOD</a></li>
-  <li class="myli"><a href='dbbackup.html'>Database Backup</a></li>
-  <li class="myli"><a href='bulkupload1.html'>Bulk Upload</a></li>
-  <li class="myli"><a href='creports.html'>Canned Reports</a></li>
-  
-</ul>
 
 <script>
 function openNav() {
@@ -326,25 +427,19 @@ function myFunction() {
   }
 }
 
-// Automatic Slideshow - change image every 3 seconds
-var myIndex = 0;
-carousel();
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}
-  x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 3000);
-}
-
 
 </script>
 
+<ul class="myul" style="border-bottom:1px solid #bbb">
+  <li class="myli" style="float:right"><a  href='index.html'>Home</a></li>
+</ul>
 
+<ul class="myul">
+  <li class="myli"><a class="active" href='eod.html'>EOD</a></li>
+  <li class="myli"><a href='dbbackup.html'>Database Backup</a></li>
+  <li class="myli"><a href='bulkupload1.html'>Bulk Upload</a></li>
+  <li class="myli"><a href='creports.html'>Canned Reports</a></li>
+</ul>
    
 </body>
 </html> 
