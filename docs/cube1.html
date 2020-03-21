@@ -15,11 +15,12 @@
 body { font-family: sans-serif; }
 
 .scene {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #CCC;
+  width: 220px;
+  height: 220px;
+  border: 10px solid #CCC;
   margin: 80px;
   perspective: 400px;
+  background-color: #CCC;
 }
 
 .cube {
@@ -50,7 +51,7 @@ body { font-family: sans-serif; }
   text-align: center;
 }
 
-.cube__face--front  { background: hsla(  0, 100%, 50%, 0.7); }
+.cube__face--front  { background: hsla(  0, 100%, 50%, 0.8); }
 .cube__face--right  { background: hsla( 60, 100%, 50%, 0.7); }
 .cube__face--back   { background: hsla(120, 100%, 50%, 0.7); }
 .cube__face--left   { background: hsla(180, 100%, 50%, 0.7); }
@@ -84,22 +85,22 @@ label { margin-right: 10px; }
 </div>
 <p class="radio-group">
   <label>
-    <input type="radio" name="rotate-cube-side" value="front" checked /> front
+    <input type="radio" id="front" name="rotate-cube-side" value="front" checked /> front
   </label>
   <label>
-    <input type="radio" name="rotate-cube-side" value="right" /> right
+    <input type="radio" id="right" name="rotate-cube-side" value="right" /> right
   </label>
   <label>
-    <input type="radio" name="rotate-cube-side" value="back" /> back
+    <input type="radio" id="back" name="rotate-cube-side" value="back" /> back
   </label>
   <label>
-    <input type="radio" name="rotate-cube-side" value="left" /> left
+    <input type="radio" id="left" name="rotate-cube-side" value="left" /> left
   </label>
   <label>
-    <input type="radio" name="rotate-cube-side" value="top" /> top
+    <input type="radio" id="top" name="rotate-cube-side" value="top" /> top
   </label>
   <label>
-    <input type="radio" name="rotate-cube-side" value="bottom" /> bottom
+    <input type="radio" id="bottom" name="rotate-cube-side" value="bottom" /> bottom
   </label>
 </p>
 
@@ -117,6 +118,7 @@ function changeSide() {
   var showClass = 'show-' + checkedRadio.value;
   if ( currentClass ) {
     cube.classList.remove( currentClass );
+	
   }
   cube.classList.add( showClass );
   currentClass = showClass;
@@ -125,6 +127,41 @@ function changeSide() {
 changeSide();
 
 radioGroup.addEventListener( 'change', changeSide );
+
+
+//hello
+
+var myVar = setInterval(myTimer, 1400);
+
+var i=0;
+
+function myTimer() {
+  var d = new Date();
+  if(i==0 || i== 3)
+  {
+	  document.getElementById("left").checked = true;
+	  changeSide();
+  }
+  if(i==1 || i== 4)
+  {
+	  document.getElementById("top").checked = true;
+	  changeSide();
+  }
+  if(i==2 || i== 5)
+  {
+	  document.getElementById("bottom").checked = true;
+	  changeSide();
+  }
+  
+  i++;
+  
+  if(i>=6)
+  {
+	//i=0;
+	clearInterval(myVar);
+  }
+  
+}
 
 </script>
 
