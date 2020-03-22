@@ -6,7 +6,15 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126945561-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-126945561-3');
+</script>
 
 <style>
 
@@ -27,9 +35,9 @@ body { font-family: sans-serif; }
 .grid-item {
   background-color: #2196F3;
   border: 1px solid rgba(0, 0, 0, 0.8);
-  font-size: 14px;
+  font-size: 10px;
   text-align: left;
-  padding: 8px;
+  padding: 4px;
   margin: 4px;
   border-radius: 10px;
 }
@@ -95,7 +103,7 @@ label { margin-right: 10px; }
 
 
 .scene1 {
-  border: 1px solid #CCC;
+  
   
   position: relative;
   width: 210px;
@@ -119,7 +127,7 @@ label { margin-right: 10px; }
   height: 120px;
   left: 10px;
   top: 10px;
-  border: 2px solid black;
+  border: 1px solid black;
   line-height: 116px;
   font-size: 80px;
   font-weight: bold;
@@ -265,22 +273,22 @@ label { margin-right: 10px; }
 
 <p class="radio-group">
   <label class="grid-item">
-    <input type="radio" id="front" style="width:10%" name="rotate-cube-side" value="front" checked /> 1
+    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 1
   </label>
   <label class="grid-item">
-    <input type="radio" id="right" style="width:10%" name="rotate-cube-side" value="right" /> 2
+    <input type="radio" id="back" style="width:90%" name="rotate-cube-side" value="back" /> 2
   </label>
   <label class="grid-item">
-    <input type="radio" id="back" style="width:10%" name="rotate-cube-side" value="back" /> 3
+    <input type="radio" id="right" style="width:90%" name="rotate-cube-side" value="right" /> 3
   </label>
   <label class="grid-item">
-    <input type="radio" id="left" style="width:10%" name="rotate-cube-side" value="left" /> 4
+    <input type="radio" id="left" style="width:90%" name="rotate-cube-side" value="left" /> 4
   </label>
   <label class="grid-item">
-    <input type="radio" id="top" style="width:10%" name="rotate-cube-side" value="top" /> 5
+    <input type="radio" id="top" style="width:90%" name="rotate-cube-side" value="top" /> 5
   </label>
   <label class="grid-item">
-    <input type="radio" id="bottom" style="width:10%" name="rotate-cube-side" value="bottom" /> 6
+    <input type="radio" id="bottom" style="width:90%" name="rotate-cube-side" value="bottom" /> 6
   </label>
 </p>
 
@@ -308,10 +316,7 @@ label { margin-right: 10px; }
   </div>
 </div>
 
-<p style="text-align: center;">
-  <button class="previous-button"><<</button>
-  <button class="next-button">>></button>
-</p>
+
 
 
 
@@ -347,33 +352,165 @@ radioGroup.addEventListener( 'change', changeSide );
 
 var myVar = setInterval(myTimer, 1400);
 
-var i=0;
+var i=2;
+var j=1;
+var k=0;
 
 function myTimer() {
   var d = new Date();
-  if(i==0 || i== 3)
+  
+  if(j==1)
   {
-	  document.getElementById("left").checked = true;
-	  changeSide();
-  }
-  if(i==1 || i== 4)
-  {
-	  document.getElementById("top").checked = true;
-	  changeSide();
-  }
-  if(i==2 || i== 5)
-  {
-	  document.getElementById("bottom").checked = true;
-	  changeSide();
+	  if(i==1)
+	  {
+		  document.getElementById("front").checked = true;
+		  changeSide();
+	  }
+	  if(i==2)
+	  {
+		  document.getElementById("top").checked = true;
+		  changeSide();
+	  }
+	  if(i==3)
+	  {
+		  document.getElementById("right").checked = true;
+		  changeSide();
+	  }
+	  if(i==4)
+	  {
+		  document.getElementById("left").checked = true;
+		  changeSide();
+	  }
+	  if(i==5)
+	  {
+		  document.getElementById("back").checked = true;
+		  changeSide();
+	  }
+	  if(i==6)
+	  {
+		  document.getElementById("bottom").checked = true;
+		  changeSide();
+	  }
   }
   
+  if(j==2)
+  {
+	  if(i==1)
+	  {
+		  document.getElementById("bottom").checked = true;
+		  changeSide();
+	  }
+	  if(i==2)
+	  {
+		  document.getElementById("back").checked = true;
+		  changeSide();
+	  }
+	  if(i==3)
+	  {
+		  document.getElementById("right").checked = true;
+		  changeSide();
+	  }
+	  if(i==4)
+	  {
+		  document.getElementById("left").checked = true;
+		  changeSide();
+	  }
+	  if(i==5)
+	  {
+		  document.getElementById("top").checked = true;
+		  changeSide();
+	  }
+	  if(i==6)
+	  {
+		  document.getElementById("top").checked = true;
+		  changeSide();
+	  }
+  }
+  
+  if(j==3)
+  {
+	  if(i==1)
+	  {
+		  document.getElementById("front").checked = true;
+		  changeSide();
+	  }
+	  if(i==2)
+	  {
+		  document.getElementById("back").checked = true;
+		  changeSide();
+	  }
+	  if(i==3)
+	  {
+		  document.getElementById("right").checked = true;
+		  changeSide();
+	  }
+	  if(i==4)
+	  {
+		  document.getElementById("left").checked = true;
+		  changeSide();
+	  }
+	  if(i==5)
+	  {
+		  document.getElementById("top").checked = true;
+		  changeSide();
+	  }
+	  if(i==6)
+	  {
+		  document.getElementById("bottom").checked = true;
+		  changeSide();
+	  }
+  }
+  
+  
+  
+  if(j==4)
+  {
+	  if(i==1)
+	  {
+		  document.getElementById("top").checked = true;
+		  changeSide();
+	  }
+	  if(i==2)
+	  {
+		  document.getElementById("bottom").checked = true;
+		  changeSide();
+	  }
+	  if(i==3)
+	  {
+		  document.getElementById("right").checked = true;
+		  changeSide();
+	  }
+	  if(i==4)
+	  {
+		  document.getElementById("left").checked = true;
+		  changeSide();
+	  }
+	  if(i==5)
+	  {
+		  document.getElementById("front").checked = true;
+		  changeSide();
+	  }
+	  if(i==6)
+	  {
+		  document.getElementById("back").checked = true;
+		  changeSide();
+	  }
+  }
+  
+
+ 
   i++;
   
-  if(i>=6)
-  {
-	//i=0;
-	clearInterval(myVar);
+  if(i>=7)
+  { 
+	k ++;
+	if(k<2)
+	{
+		i=1;
+	}
   }
+  
+  
   
 }
 
@@ -393,20 +530,10 @@ function rotateCarousel() {
   carousel.style.transform = 'translateZ(-288px) rotateY(' + angle + 'deg)';
 }
 
-var prevButton = document.querySelector('.previous-button');
-prevButton.addEventListener( 'click', function() {
-  selectedIndex--;
-  rotateCarousel();
-});
 
-var nextButton = document.querySelector('.next-button');
-nextButton.addEventListener( 'click', function() {
-  selectedIndex++;
-  rotateCarousel();
-});
 
-var nextButton = document.querySelector('.button1');
-nextButton.addEventListener( 'click', function() {
+var nextButton1 = document.querySelector('.button1');
+nextButton1.addEventListener( 'click', function() {
 	//english
 	document.getElementById("f1").innerHTML = "Please";
 	document.getElementById("f2").innerHTML = "Stay";
@@ -414,27 +541,31 @@ nextButton.addEventListener( 'click', function() {
 	document.getElementById("f4").innerHTML = "Please";
 	document.getElementById("f5").innerHTML = "Stay";
 	document.getElementById("f6").innerHTML = "At Home";
-	
+	k=0;
+	i=1;
+	j=1;
   selectedIndex =0;
   rotateCarousel();
 });
 
-var nextButton = document.querySelector('.button2');
-nextButton.addEventListener( 'click', function() {
-	//arabic
-	document.getElementById("f1").innerHTML = "1";
-	document.getElementById("f2").innerHTML = "2";
-	document.getElementById("f3").innerHTML = "3";
-	document.getElementById("f4").innerHTML = "4";
-	document.getElementById("f5").innerHTML = "5";
-	document.getElementById("f6").innerHTML = "6";
-	
+var nextButton2 = document.querySelector('.button2');
+nextButton2.addEventListener( 'click', function() {
+	//arabic يرجى البقاء في المنزل
+	document.getElementById("f1").innerHTML = "يرجى";
+	document.getElementById("f2").innerHTML = "البقاء";
+	document.getElementById("f3").innerHTML = "في المنزل";
+	document.getElementById("f4").innerHTML = "لا داعي";
+	document.getElementById("f5").innerHTML = "للهلع";
+	document.getElementById("f6").innerHTML = "يرجى";
+	k=0;
+	i=1;
+	j=2;
   selectedIndex =1;
   rotateCarousel();
 });
 
-var nextButton = document.querySelector('.button3');
-nextButton.addEventListener( 'click', function() {
+var nextButton3 = document.querySelector('.button3');
+nextButton3.addEventListener( 'click', function() {
 	//italian per favore, stai a casa
 	document.getElementById("f1").innerHTML = "per favore";
 	document.getElementById("f2").innerHTML = "stai";
@@ -442,27 +573,31 @@ nextButton.addEventListener( 'click', function() {
 	document.getElementById("f4").innerHTML = "per favore";
 	document.getElementById("f5").innerHTML = "stai";
 	document.getElementById("f6").innerHTML = "a casa";
-	
+	k=0;
+	i=1;
+	j=1;
   selectedIndex =2;
   rotateCarousel();
 });
 
-var nextButton = document.querySelector('.button4');
-nextButton.addEventListener( 'click', function() {
+var nextButton4 = document.querySelector('.button4');
+nextButton4.addEventListener( 'click', function() {
 	//french s'il vous plaît restez à la maison
 	document.getElementById("f1").innerHTML = "s il vous";
 	document.getElementById("f2").innerHTML = "plait";
 	document.getElementById("f3").innerHTML = "restez";
-	document.getElementById("f4").innerHTML = "s il vous";
-	document.getElementById("f5").innerHTML = "plait, restez";
-	document.getElementById("f6").innerHTML = "a la maison";
-	
+	document.getElementById("f4").innerHTML = "a la maison";
+	document.getElementById("f5").innerHTML = "s il vous";
+	document.getElementById("f6").innerHTML = "plait";
+	k=0;
+	i=1;
+	j=3;
   selectedIndex =3;
   rotateCarousel();
 });
 
-var nextButton = document.querySelector('.button5');
-nextButton.addEventListener( 'click', function() {
+var nextButton5 = document.querySelector('.button5');
+nextButton5.addEventListener( 'click', function() {
 	//german Bitte bleib zu Hause
 	document.getElementById("f1").innerHTML = "Bitte";
 	document.getElementById("f2").innerHTML = "bleib";
@@ -470,13 +605,15 @@ nextButton.addEventListener( 'click', function() {
 	document.getElementById("f4").innerHTML = "Bitte";
 	document.getElementById("f5").innerHTML = "bleib";
 	document.getElementById("f6").innerHTML = "zu Hause";
-	
+	k=0;
+	i=1;
+	j=1;
   selectedIndex =4;
   rotateCarousel();
 });
 
-var nextButton = document.querySelector('.button6');
-nextButton.addEventListener( 'click', function() {
+var nextButton6 = document.querySelector('.button6');
+nextButton6.addEventListener( 'click', function() {
 
 	//english
 	document.getElementById("f1").innerHTML = "Please";
@@ -485,19 +622,32 @@ nextButton.addEventListener( 'click', function() {
 	document.getElementById("f4").innerHTML = "Please";
 	document.getElementById("f5").innerHTML = "Stay";
 	document.getElementById("f6").innerHTML = "At Home";
-	
+	k=0;
+	j=1;
+	i=1;
   selectedIndex =5;
   rotateCarousel();
 });
 
-var nextButton = document.querySelector('.button7');
-nextButton.addEventListener( 'click', function() {
+var nextButton7 = document.querySelector('.button7');
+nextButton7.addEventListener( 'click', function() {
+
+	//arabic ae 
+	document.getElementById("f1").innerHTML = "تكفون";
+	document.getElementById("f2").innerHTML = "بس ظلو";
+	document.getElementById("f3").innerHTML = "بس ظلو";
+	document.getElementById("f4").innerHTML = "بالبيت";
+	document.getElementById("f5").innerHTML = "لا تخافون";
+	document.getElementById("f6").innerHTML = "بالبيت";
+	k=0;
+	i=1;
+	j=1;
   selectedIndex =6;
   rotateCarousel();
 });
 
-var nextButton = document.querySelector('.button8');
-nextButton.addEventListener( 'click', function() {
+var nextButton8 = document.querySelector('.button8');
+nextButton8.addEventListener( 'click', function() {
 	//hindi कृपया घर पर रहें
 
 	document.getElementById("f1").innerHTML = "कृपया";
@@ -506,13 +656,26 @@ nextButton.addEventListener( 'click', function() {
 	document.getElementById("f4").innerHTML = "कृपया";
 	document.getElementById("f5").innerHTML = "पर रहें";
 	document.getElementById("f6").innerHTML = "घर";
-	
+	k=0;
+	j=1;
+	i=1;
   selectedIndex =7;
   rotateCarousel();
 });
 
-var nextButton = document.querySelector('.button9');
-nextButton.addEventListener( 'click', function() {
+var nextButton9 = document.querySelector('.button9');
+nextButton9.addEventListener( 'click', function() {
+
+	//arabic iraq فدوة اروحلكم بس أبقو بالبيت
+	document.getElementById("f1").innerHTML = "بس أبقو";
+	document.getElementById("f2").innerHTML = "بالبيت";
+	document.getElementById("f3").innerHTML = "بس أبقو";
+	document.getElementById("f4").innerHTML = "بالبيت";
+	document.getElementById("f5").innerHTML = "فدوة";
+	document.getElementById("f6").innerHTML = "اروحلكم";
+	k=0;
+	i=1;
+	j=4;
   selectedIndex =8;
   rotateCarousel();
 });
