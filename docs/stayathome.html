@@ -255,6 +255,49 @@ label { margin-right: 10px; }
 
 
 
+
+
+.myul {
+
+position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 11px;
+}
+
+.myli {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+.myli:last-child {
+  border-right: none;
+}
+
+.myli a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.myli a:hover:not(.active) {
+  background-color: #111;
+}
+
+
+.active {
+  background-color: #4CAF50;
+}
+
+
 </style>
 
 </head>
@@ -321,6 +364,10 @@ label { margin-right: 10px; }
 
 
 
+<ul class="myul">
+  <li class="myli"><a href='index.html'>Home</a></li>
+  <li class="myli"><a href='https://www.youtube.com/watch?v=QCYMX9IY_NY&list=UUdQl_iHJiSH-wIGHXroJaBQ'>YouTube</a></li>
+</ul>
 
 
 
