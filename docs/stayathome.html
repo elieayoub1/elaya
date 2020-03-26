@@ -16,6 +16,11 @@
   gtag('config', 'UA-126945561-3');
 </script>
 
+
+
+
+
+
 <style>
 
 * { box-sizing: border-box; }
@@ -304,6 +309,8 @@ position: fixed;
 </head>
 <body>
 
+
+
 <div class="scene">
   <div class="cube">
     <div class="cube__face cube__face--front"  id="f1">Please</div>
@@ -346,7 +353,7 @@ position: fixed;
 
 
 <!--carousel-->
-<div class="scene1">
+<div class="scene1" onclick="showCoords(event)" ontouchstart="xstart1(event)" ontouchmove="myFunction(event)">
   <div class="carousel">
     <div class="carousel__cell"><button class="button1"></button></div>
     <div class="carousel__cell"><button class="button2"></button></div>
@@ -362,9 +369,205 @@ position: fixed;
 
 
 
+<script>
+
+var x1 = 0;
+var x2 = 0;
+
+
+function xstart1(event) {
+  var x = event.touches[0].clientX;
+  x1 = x;
+  //document.getElementById("demo").innerHTML = "start" +x1 + " " + x2;
+}
+
+function myFunction(event) {
+  var x = event.touches[0].clientX;
+
+  //document.getElementById("demo").innerHTML = x + ", " + y;
+  //document.getElementById("demo").innerHTML = "moving" +x1 + " " + x;
+  
+  if( Math.abs(x-x1) > 120 ) {
+	  if (x > x1  )
+	  {
+		selectedIndex--;
+	  }
+	  
+	  if (x < x1 )
+	  {
+		selectedIndex++;
+	  }
+	  //document.getElementById("demo").innerHTML = "end " +Math.abs(x-x1);
+	  changeflag();
+	}
+  
+}
+
+function xend1(event) {
+  var x = event.touches[0].clientX;
+  x2 = x;
+  
+  
+  
+}
+
+function changeflag()
+{
+	/*
+	if(selectedIndex < 0)
+	{
+		selectedIndex = 8;
+	}
+	if (selectedIndex > 8)
+	{
+		selectedIndex = 0;
+	}*/
+  
+	var selectedIndex1 = ((selectedIndex % 9) + 9) % 9;
+	
+	if(selectedIndex1 == 0 )
+	{
+		//english
+		document.getElementById("f1").innerHTML = "Please";
+		document.getElementById("f2").innerHTML = "Stay";
+		document.getElementById("f3").innerHTML = "At Home";
+		document.getElementById("f4").innerHTML = "Please";
+		document.getElementById("f5").innerHTML = "Stay";
+		document.getElementById("f6").innerHTML = "At Home";
+		j=1;
+	}
+	if(selectedIndex1 == 1 )
+	{
+		//arabic يرجى البقاء في المنزل
+		document.getElementById("f1").innerHTML = "يرجى";
+		document.getElementById("f2").innerHTML = "البقاء";
+		document.getElementById("f3").innerHTML = "في المنزل";
+		document.getElementById("f4").innerHTML = "لا داعي";
+		document.getElementById("f5").innerHTML = "للهلع";
+		document.getElementById("f6").innerHTML = "يرجى";
+		j=2;
+	}
+	if(selectedIndex1 == 2 )
+	{
+		//italian per favore, stai a casa
+		document.getElementById("f1").innerHTML = "per favore";
+		document.getElementById("f2").innerHTML = "stai";
+		document.getElementById("f3").innerHTML = "a casa";
+		document.getElementById("f4").innerHTML = "per favore";
+		document.getElementById("f5").innerHTML = "stai";
+		document.getElementById("f6").innerHTML = "a casa";
+		j=1;
+	}
+
+	if(selectedIndex1 == 3 )
+	{
+		//french s'il vous plaît restez à la maison
+		document.getElementById("f1").innerHTML = "s il vous";
+		document.getElementById("f2").innerHTML = "plait";
+		document.getElementById("f3").innerHTML = "restez";
+		document.getElementById("f4").innerHTML = "a la maison";
+		document.getElementById("f5").innerHTML = "s il vous";
+		document.getElementById("f6").innerHTML = "plait";
+		j=3;
+	}
+	
+	if(selectedIndex1 == 4 )
+	{
+	
+		//german Bitte bleib zu Hause
+		document.getElementById("f1").innerHTML = "Bitte";
+		document.getElementById("f2").innerHTML = "bleib";
+		document.getElementById("f3").innerHTML = "zu Hause";
+		document.getElementById("f4").innerHTML = "Bitte";
+		document.getElementById("f5").innerHTML = "bleib";
+		document.getElementById("f6").innerHTML = "zu Hause";
+		j=1;
+	}
+	
+	if(selectedIndex1 == 5 )
+	{
+		//english
+		document.getElementById("f1").innerHTML = "Please";
+		document.getElementById("f2").innerHTML = "Stay";
+		document.getElementById("f3").innerHTML = "At Home";
+		document.getElementById("f4").innerHTML = "Please";
+		document.getElementById("f5").innerHTML = "Stay";
+		document.getElementById("f6").innerHTML = "At Home";
+		j=1;
+	}
+	
+	if(selectedIndex1 == 6 )
+	{
+		//arabic ae 
+		document.getElementById("f1").innerHTML = "تكفون";
+		document.getElementById("f2").innerHTML = "بس ظلو";
+		document.getElementById("f3").innerHTML = "بس ظلو";
+		document.getElementById("f4").innerHTML = "بالبيت";
+		document.getElementById("f5").innerHTML = "لا تخافون";
+		document.getElementById("f6").innerHTML = "بالبيت";
+		j=1;
+	}
+
+	if(selectedIndex1 == 7 )
+	{
+		//hindi कृपया घर पर रहें
+		document.getElementById("f1").innerHTML = "कृपया";
+		document.getElementById("f2").innerHTML = "पर रहें";
+		document.getElementById("f3").innerHTML = "घर";
+		document.getElementById("f4").innerHTML = "कृपया";
+		document.getElementById("f5").innerHTML = "पर रहें";
+		document.getElementById("f6").innerHTML = "घर";
+		j=1;
+	}
+	
+	if(selectedIndex1 == 8 )
+	{
+		//arabic iraq فدوة اروحلكم بس أبقو بالبيت
+		document.getElementById("f1").innerHTML = "بس أبقو";
+		document.getElementById("f2").innerHTML = "بالبيت";
+		document.getElementById("f3").innerHTML = "بس أبقو";
+		document.getElementById("f4").innerHTML = "بالبيت";
+		document.getElementById("f5").innerHTML = "فدوة";
+		document.getElementById("f6").innerHTML = "اروحلكم";
+		j=4;
+	}
+	
+	k=0;
+	i=1;
+	rotateCarousel();
+}
+
+function showCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  //document.getElementById("demo").innerHTML = coords;
+  
+  var testDiv = document.getElementById("back");
+  //document.getElementById("demo").innerHTML =  "X coords: " + x + ", x0 coords: " + testDiv.offsetLeft;
+  
+  if ( x > testDiv.offsetLeft )
+  {
+	//document.getElementById("demo").innerHTML = "Right " + selectedIndex;
+	selectedIndex++;
+  }
+  else
+  {
+	//document.getElementById("demo").innerHTML = "Left " + selectedIndex;
+	selectedIndex--;
+  }
+  
+  changeflag();
+  
+
+}
+
+</script>
+
+
 <div style="text-align: center;">
 <br>
-<iframe  width="424" height="240" src="https://www.youtube.com/embed/QCYMX9IY_NY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe  width="400" height="240" src="https://www.youtube.com/embed/QCYMX9IY_NY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
@@ -585,153 +788,6 @@ function rotateCarousel() {
 
 
 
-var nextButton1 = document.querySelector('.button1');
-nextButton1.addEventListener( 'click', function() {
-	//english
-	document.getElementById("f1").innerHTML = "Please";
-	document.getElementById("f2").innerHTML = "Stay";
-	document.getElementById("f3").innerHTML = "At Home";
-	document.getElementById("f4").innerHTML = "Please";
-	document.getElementById("f5").innerHTML = "Stay";
-	document.getElementById("f6").innerHTML = "At Home";
-	k=0;
-	i=1;
-	j=1;
-  selectedIndex =0;
-  rotateCarousel();
-});
-
-var nextButton2 = document.querySelector('.button2');
-nextButton2.addEventListener( 'click', function() {
-	//arabic يرجى البقاء في المنزل
-	document.getElementById("f1").innerHTML = "يرجى";
-	document.getElementById("f2").innerHTML = "البقاء";
-	document.getElementById("f3").innerHTML = "في المنزل";
-	document.getElementById("f4").innerHTML = "لا داعي";
-	document.getElementById("f5").innerHTML = "للهلع";
-	document.getElementById("f6").innerHTML = "يرجى";
-	k=0;
-	i=1;
-	j=2;
-  selectedIndex =1;
-  rotateCarousel();
-});
-
-var nextButton3 = document.querySelector('.button3');
-nextButton3.addEventListener( 'click', function() {
-	//italian per favore, stai a casa
-	document.getElementById("f1").innerHTML = "per favore";
-	document.getElementById("f2").innerHTML = "stai";
-	document.getElementById("f3").innerHTML = "a casa";
-	document.getElementById("f4").innerHTML = "per favore";
-	document.getElementById("f5").innerHTML = "stai";
-	document.getElementById("f6").innerHTML = "a casa";
-	k=0;
-	i=1;
-	j=1;
-  selectedIndex =2;
-  rotateCarousel();
-});
-
-var nextButton4 = document.querySelector('.button4');
-nextButton4.addEventListener( 'click', function() {
-	//french s'il vous plaît restez à la maison
-	document.getElementById("f1").innerHTML = "s il vous";
-	document.getElementById("f2").innerHTML = "plait";
-	document.getElementById("f3").innerHTML = "restez";
-	document.getElementById("f4").innerHTML = "a la maison";
-	document.getElementById("f5").innerHTML = "s il vous";
-	document.getElementById("f6").innerHTML = "plait";
-	k=0;
-	i=1;
-	j=3;
-  selectedIndex =3;
-  rotateCarousel();
-});
-
-var nextButton5 = document.querySelector('.button5');
-nextButton5.addEventListener( 'click', function() {
-	//german Bitte bleib zu Hause
-	document.getElementById("f1").innerHTML = "Bitte";
-	document.getElementById("f2").innerHTML = "bleib";
-	document.getElementById("f3").innerHTML = "zu Hause";
-	document.getElementById("f4").innerHTML = "Bitte";
-	document.getElementById("f5").innerHTML = "bleib";
-	document.getElementById("f6").innerHTML = "zu Hause";
-	k=0;
-	i=1;
-	j=1;
-  selectedIndex =4;
-  rotateCarousel();
-});
-
-var nextButton6 = document.querySelector('.button6');
-nextButton6.addEventListener( 'click', function() {
-
-	//english
-	document.getElementById("f1").innerHTML = "Please";
-	document.getElementById("f2").innerHTML = "Stay";
-	document.getElementById("f3").innerHTML = "At Home";
-	document.getElementById("f4").innerHTML = "Please";
-	document.getElementById("f5").innerHTML = "Stay";
-	document.getElementById("f6").innerHTML = "At Home";
-	k=0;
-	j=1;
-	i=1;
-  selectedIndex =5;
-  rotateCarousel();
-});
-
-var nextButton7 = document.querySelector('.button7');
-nextButton7.addEventListener( 'click', function() {
-
-	//arabic ae 
-	document.getElementById("f1").innerHTML = "تكفون";
-	document.getElementById("f2").innerHTML = "بس ظلو";
-	document.getElementById("f3").innerHTML = "بس ظلو";
-	document.getElementById("f4").innerHTML = "بالبيت";
-	document.getElementById("f5").innerHTML = "لا تخافون";
-	document.getElementById("f6").innerHTML = "بالبيت";
-	k=0;
-	i=1;
-	j=1;
-  selectedIndex =6;
-  rotateCarousel();
-});
-
-var nextButton8 = document.querySelector('.button8');
-nextButton8.addEventListener( 'click', function() {
-	//hindi कृपया घर पर रहें
-
-	document.getElementById("f1").innerHTML = "कृपया";
-	document.getElementById("f2").innerHTML = "पर रहें";
-	document.getElementById("f3").innerHTML = "घर";
-	document.getElementById("f4").innerHTML = "कृपया";
-	document.getElementById("f5").innerHTML = "पर रहें";
-	document.getElementById("f6").innerHTML = "घर";
-	k=0;
-	j=1;
-	i=1;
-  selectedIndex =7;
-  rotateCarousel();
-});
-
-var nextButton9 = document.querySelector('.button9');
-nextButton9.addEventListener( 'click', function() {
-
-	//arabic iraq فدوة اروحلكم بس أبقو بالبيت
-	document.getElementById("f1").innerHTML = "بس أبقو";
-	document.getElementById("f2").innerHTML = "بالبيت";
-	document.getElementById("f3").innerHTML = "بس أبقو";
-	document.getElementById("f4").innerHTML = "بالبيت";
-	document.getElementById("f5").innerHTML = "فدوة";
-	document.getElementById("f6").innerHTML = "اروحلكم";
-	k=0;
-	i=1;
-	j=4;
-  selectedIndex =8;
-  rotateCarousel();
-});
 
 
 
