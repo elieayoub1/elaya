@@ -324,7 +324,7 @@ position: fixed;
 
 <p class="radio-group">
   <label class="grid-item">
-    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 6
+    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 7
   </label>
   <label class="grid-item">
     <input type="radio" id="back" style="width:90%" name="rotate-cube-side" value="back" /> 2
@@ -374,12 +374,6 @@ position: fixed;
 var x1 = 0;
 var x2 = 0;
 
-function myFunction(event) {
-  var x = event.touches[0].clientX;
-  var y = event.touches[0].clientY;
-  //document.getElementById("demo").innerHTML = x + ", " + y;
-  document.getElementById("demo").innerHTML = "moving" +x1 + " " + x;
-}
 
 function xstart1(event) {
   var x = event.touches[0].clientX;
@@ -387,21 +381,33 @@ function xstart1(event) {
   document.getElementById("demo").innerHTML = "start" +x1 + " " + x2;
 }
 
+function myFunction(event) {
+  var x = event.touches[0].clientX;
+  var y = event.touches[0].clientY;
+  //document.getElementById("demo").innerHTML = x + ", " + y;
+  document.getElementById("demo").innerHTML = "moving" +x1 + " " + x;
+  
+  if( Math.abs(x-x1) > 50 ) {
+	  if (x > x1  )
+	  {
+		selectedIndex++;
+	  }
+	  
+	  if (x < x )
+	  {
+		selectedIndex++;
+	  }
+	  document.getElementById("demo").innerHTML = "end" +x1 + " " + x;
+	  changeflag();
+	}
+  
+}
+
 function xend1(event) {
   var x = event.touches[0].clientX;
   x2 = x;
   
-  if (x2 > x1 )
-  {
-	selectedIndex++;
-  }
   
-  if (x2 < x1 )
-  {
-	selectedIndex++;
-  }
-  document.getElementById("demo").innerHTML = "end" +x1 + " " + x2;
-  changeflag();
   
 }
 
