@@ -324,7 +324,7 @@ position: fixed;
 
 <p class="radio-group">
   <label class="grid-item">
-    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 1
+    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 2
   </label>
   <label class="grid-item">
     <input type="radio" id="back" style="width:90%" name="rotate-cube-side" value="back" /> 2
@@ -353,7 +353,7 @@ position: fixed;
 
 
 <!--carousel-->
-<div class="scene1" onclick="showCoords(event)" ontouchstart="xstart1(event)" ontouchend="xend1(event)">
+<div class="scene1" onclick="showCoords(event)" ontouchstart="xstart1(event)" ontouchend="xend1(event)" ontouchmove="myFunction(event)">
   <div class="carousel">
     <div class="carousel__cell"><button class="button1"></button></div>
     <div class="carousel__cell"><button class="button2"></button></div>
@@ -373,6 +373,12 @@ position: fixed;
 
 var x1 = 0;
 var x2 = 0;
+
+function myFunction(event) {
+  var x = event.touches[0].clientX;
+  var y = event.touches[0].clientY;
+  document.getElementById("demo").innerHTML = x + ", " + y;
+}
 
 function xstart1(event) {
   var x = event.touches[0].clientX;
