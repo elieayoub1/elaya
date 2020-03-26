@@ -324,7 +324,7 @@ position: fixed;
 
 <p class="radio-group">
   <label class="grid-item">
-    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 9
+    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 0
   </label>
   <label class="grid-item">
     <input type="radio" id="back" style="width:90%" name="rotate-cube-side" value="back" /> 2
@@ -397,7 +397,7 @@ function myFunction(event) {
 	  {
 		selectedIndex++;
 	  }
-	  document.getElementById("demo").innerHTML = "end" +x1 + " " + x;
+	  document.getElementById("demo").innerHTML = "end " +Math.abs(x-x1);
 	  changeflag();
 	}
   
