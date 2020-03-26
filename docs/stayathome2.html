@@ -324,7 +324,7 @@ position: fixed;
 
 <p class="radio-group">
   <label class="grid-item">
-    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 2
+    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 3
   </label>
   <label class="grid-item">
     <input type="radio" id="back" style="width:90%" name="rotate-cube-side" value="back" /> 2
@@ -377,12 +377,14 @@ var x2 = 0;
 function myFunction(event) {
   var x = event.touches[0].clientX;
   var y = event.touches[0].clientY;
-  document.getElementById("demo").innerHTML = x + ", " + y;
+  //document.getElementById("demo").innerHTML = x + ", " + y;
+  document.getElementById("demo").innerHTML = "moving" +x1 + " " + x2;
 }
 
 function xstart1(event) {
   var x = event.touches[0].clientX;
   x1 = x;
+  document.getElementById("demo").innerHTML = "start" +x1 + " " + x2;
 }
 
 function xend1(event) {
@@ -398,7 +400,7 @@ function xend1(event) {
   {
 	selectedIndex++;
   }
-  
+  document.getElementById("demo").innerHTML = "end" +x1 + " " + x2;
   changeflag();
   
 }
