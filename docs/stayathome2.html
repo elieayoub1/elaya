@@ -324,7 +324,7 @@ position: fixed;
 
 <p class="radio-group">
   <label class="grid-item">
-    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 0
+    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 1
   </label>
   <label class="grid-item">
     <input type="radio" id="back" style="width:90%" name="rotate-cube-side" value="back" /> 2
@@ -413,6 +413,7 @@ function xend1(event) {
 
 function changeflag()
 {
+	/*
 	if(selectedIndex < 0)
 	{
 		selectedIndex = 8;
@@ -420,9 +421,11 @@ function changeflag()
 	if (selectedIndex > 8)
 	{
 		selectedIndex = 0;
-	}
+	}*/
   
-	if(selectedIndex == 0 )
+	var selectedIndex1 = ((selectedIndex % 9) + 9) % 9;
+	
+	if(selectedIndex1 == 0 )
 	{
 		//english
 		document.getElementById("f1").innerHTML = "Please";
@@ -433,7 +436,7 @@ function changeflag()
 		document.getElementById("f6").innerHTML = "At Home";
 		j=1;
 	}
-	if(selectedIndex == 1 )
+	if(selectedIndex1 == 1 )
 	{
 		//arabic يرجى البقاء في المنزل
 		document.getElementById("f1").innerHTML = "يرجى";
@@ -444,7 +447,7 @@ function changeflag()
 		document.getElementById("f6").innerHTML = "يرجى";
 		j=2;
 	}
-	if(selectedIndex == 2 )
+	if(selectedIndex1 == 2 )
 	{
 		//italian per favore, stai a casa
 		document.getElementById("f1").innerHTML = "per favore";
@@ -456,7 +459,7 @@ function changeflag()
 		j=1;
 	}
 
-	if(selectedIndex == 3 )
+	if(selectedIndex1 == 3 )
 	{
 		//french s'il vous plaît restez à la maison
 		document.getElementById("f1").innerHTML = "s il vous";
@@ -468,7 +471,7 @@ function changeflag()
 		j=3;
 	}
 	
-	if(selectedIndex == 4 )
+	if(selectedIndex1 == 4 )
 	{
 	
 		//german Bitte bleib zu Hause
@@ -481,7 +484,7 @@ function changeflag()
 		j=1;
 	}
 	
-	if(selectedIndex == 5 )
+	if(selectedIndex1 == 5 )
 	{
 		//english
 		document.getElementById("f1").innerHTML = "Please";
@@ -493,7 +496,7 @@ function changeflag()
 		j=1;
 	}
 	
-	if(selectedIndex == 6 )
+	if(selectedIndex1 == 6 )
 	{
 		//arabic ae 
 		document.getElementById("f1").innerHTML = "تكفون";
@@ -505,7 +508,7 @@ function changeflag()
 		j=1;
 	}
 
-	if(selectedIndex == 7 )
+	if(selectedIndex1 == 7 )
 	{
 		//hindi कृपया घर पर रहें
 		document.getElementById("f1").innerHTML = "कृपया";
@@ -517,7 +520,7 @@ function changeflag()
 		j=1;
 	}
 	
-	if(selectedIndex == 8 )
+	if(selectedIndex1 == 8 )
 	{
 		//arabic iraq فدوة اروحلكم بس أبقو بالبيت
 		document.getElementById("f1").innerHTML = "بس أبقو";
