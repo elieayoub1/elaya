@@ -353,7 +353,7 @@ position: fixed;
 
 
 <!--carousel-->
-<div class="scene1" onclick="showCoords(event)">
+<div class="scene1" onclick="showCoords(event)" ontouchstart="xstart1(event)" ontouchend="xend1(event)">
   <div class="carousel">
     <div class="carousel__cell"><button class="button1"></button></div>
     <div class="carousel__cell"><button class="button2"></button></div>
@@ -370,25 +370,43 @@ position: fixed;
 <p id="demo"></p>
 
 <script>
-function showCoords(event) {
-  var x = event.clientX;
-  var y = event.clientY;
-  var coords = "X coords: " + x + ", Y coords: " + y;
-  document.getElementById("demo").innerHTML = coords;
+
+var x1 = 0;
+var x2 = 0;
+
+function xstart1(event) {
+  var x = event.touches[0].clientX;
+  x1 = x;
+}
+
+function xend1(event) {
+  var x = event.touches[0].clientX;
+  x2 = x;
   
-  var testDiv = document.getElementById("back");
-  document.getElementById("demo").innerHTML =  "X coords: " + x + ", x0 coords: " + testDiv.offsetLeft;
-  
-  if ( x > testDiv.offsetLeft )
+  if (x2 > x1 )
   {
-	document.getElementById("demo").innerHTML = "Right";
 	selectedIndex++;
   }
-  else
+  
+  if (x2 < x1 )
   {
-	document.getElementById("demo").innerHTML = "Left";
-	selectedIndex--;
+	selectedIndex++;
   }
+  
+  changeflag();
+  
+}
+
+function changeflag()
+{
+	if(selectedIndex < 0)
+	{
+		selectedIndex = 8;
+	}
+	if (selectedIndex > 8)
+	{
+		selectedIndex = 0;
+	}
   
 	if(selectedIndex == 0 )
 	{
@@ -501,6 +519,32 @@ function showCoords(event) {
 	i=1;
 	rotateCarousel();
 }
+
+function showCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  document.getElementById("demo").innerHTML = coords;
+  
+  var testDiv = document.getElementById("back");
+  document.getElementById("demo").innerHTML =  "X coords: " + x + ", x0 coords: " + testDiv.offsetLeft;
+  
+  if ( x > testDiv.offsetLeft )
+  {
+	document.getElementById("demo").innerHTML = "Right " + selectedIndex;
+	selectedIndex++;
+  }
+  else
+  {
+	document.getElementById("demo").innerHTML = "Left " + selectedIndex;
+	selectedIndex--;
+  }
+  
+  changeflag();
+  
+
+}
+
 </script>
 
 
