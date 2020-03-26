@@ -324,7 +324,7 @@ position: fixed;
 
 <p class="radio-group">
   <label class="grid-item">
-    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 8
+    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 9
   </label>
   <label class="grid-item">
     <input type="radio" id="back" style="width:90%" name="rotate-cube-side" value="back" /> 2
@@ -390,7 +390,7 @@ function myFunction(event) {
   if( Math.abs(x-x1) > 120 ) {
 	  if (x > x1  )
 	  {
-		selectedIndex++;
+		selectedIndex--;
 	  }
 	  
 	  if (x < x1 )
