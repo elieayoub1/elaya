@@ -174,12 +174,17 @@
 		if (canvas.width  < window.innerWidth)
             {
                 canvas.width  = window.innerWidth - 90;
+				canvas.height = (window.innerWidth * 1.2) - 50;
             }
-		if (canvas.height < window.innerHeight)
+		//if (canvas.height < window.innerHeight)
+            //{
+                //canvas.height = window.innerHeight - 50;
+            //}
+		if ( window.innerWidth > 600)
             {
-                canvas.height = window.innerHeight - 50;
-            }
-			
+                canvas.width  = 500;
+				canvas.height = 600;
+            }	
             
     }
 </script>
