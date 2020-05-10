@@ -433,6 +433,44 @@ ul {
 
 
 
+
+.myul1 {
+
+position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 11px;
+}
+
+.myli1 {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+.myli1:last-child {
+  border-right: none;
+}
+
+.myli1 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.myli1 a:hover:not(.active) {
+  background-color: #111;
+}
+
+
+
 #sketchpadapp {
     /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
     -webkit-touch-callout: none;
@@ -567,7 +605,17 @@ ul {
 	</div>
 	
 	<hr>
-	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Display 2 - Horizontal -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1005888209614542"
+		 data-ad-slot="5024306797"
+		 data-ad-format="auto"
+		 data-full-width-responsive="true"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
 	<hr>
 	
 	<div class="content1">
@@ -619,6 +667,11 @@ ul {
 	<br>dead for our freedom
 	</p>
 	</div>
+	
+	
+	<ul class="myul1">
+	  <li class="myli1"><span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Menu</span></li>
+	</ul>
 
 <script>
 function openNav() {
