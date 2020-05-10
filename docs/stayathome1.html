@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Stay At Home</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126945561-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126945561-3');
+</script>
+
+
+
+
+
+
+<style>
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+
+.radio-group {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #CCC;
+  padding: 10px;
+  margin: 8px auto;
+  width: 320px;
+  border-radius: 15px; 
+}
+.grid-item {
+  background-color: #2196F3;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 10px;
+  text-align: left;
+  padding: 4px;
+  margin: 4px;
+  border-radius: 10px;
+}
+
+
+.scene {
+  width: 220px;
+  height: 220px;
+  border: 10px solid #CCC;
+  margin: auto;
+  perspective: 400px;
+  background-color: #CCC;
+
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+.cube.show-front  { transform: translateZ(-100px) rotateY(   0deg); }
+.cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
+.cube.show-back   { transform: translateZ(-100px) rotateY(-180deg); }
+.cube.show-left   { transform: translateZ(-100px) rotateY(  90deg); }
+.cube.show-top    { transform: translateZ(-100px) rotateX( -90deg); }
+.cube.show-bottom { transform: translateZ(-100px) rotateX(  90deg); }
+
+.cube__face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  line-height: 200px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.cube__face--front  { background: hsla(  0, 100%, 50%, 0.8); }
+.cube__face--right  { background: hsla( 60, 100%, 50%, 0.7); }
+.cube__face--back   { background: hsla(120, 100%, 50%, 0.7); }
+.cube__face--left   { background: hsla(180, 100%, 50%, 0.7); }
+.cube__face--top    { background: hsla(240, 100%, 50%, 0.7); }
+.cube__face--bottom { background: hsla(300, 100%, 50%, 0.7); }
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+label { margin-right: 10px; }
+
+
+
+
+
+
+.scene1 {
+  
+  
+  position: relative;
+  width: 210px;
+  height: 140px;
+  margin: auto;
+  perspective: 400px;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translateZ(-288px);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.carousel__cell {
+  position: absolute;
+  width: 190px;
+  height: 120px;
+  left: 10px;
+  top: 10px;
+  border: 1px solid black;
+  line-height: 116px;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.carousel__cell:nth-child(9n+1) { background: hsla(  0, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+2) { background: hsla( 40, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+3) { background: hsla( 80, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+4) { background: hsla(120, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+5) { background: hsla(160, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+6) { background: hsla(200, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+7) { background: hsla(240, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+8) { background: hsla(280, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+0) { background: hsla(320, 100%, 50%, 0.8); }
+
+.carousel__cell:nth-child(1) { transform: rotateY(  0deg) translateZ(288px); }
+.carousel__cell:nth-child(2) { transform: rotateY( 40deg) translateZ(288px); }
+.carousel__cell:nth-child(3) { transform: rotateY( 80deg) translateZ(288px); }
+.carousel__cell:nth-child(4) { transform: rotateY(120deg) translateZ(288px); }
+.carousel__cell:nth-child(5) { transform: rotateY(160deg) translateZ(288px); }
+.carousel__cell:nth-child(6) { transform: rotateY(200deg) translateZ(288px); }
+.carousel__cell:nth-child(7) { transform: rotateY(240deg) translateZ(288px); }
+.carousel__cell:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
+.carousel__cell:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
+
+
+
+.button1 {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background-image: url("flags/us.png");
+	background-size: cover;
+}
+
+.button2 {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background-image: url("flags/lb.png");
+	background-size: cover;
+}
+
+.button3 {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background-image: url("flags/it.png");
+	background-size: cover;
+}
+
+
+.button4 {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background-image: url("flags/fr.png");
+	background-size: cover;
+}
+
+
+.button5 {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background-image: url("flags/gr.png");
+	background-size: cover;
+}
+
+
+.button6 {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background-image: url("flags/ca.png");
+	background-size: cover;
+}
+
+
+.button7 {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background-size: cover;
+	background-image: url("flags/ae.png");
+}
+
+
+.button8 {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background-size: cover;
+	background-image: url("flags/in.png");
+}
+
+
+.button9 {
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	background-image: url("flags/iq.png");
+	background-size: cover;
+}
+
+
+
+
+
+.myul {
+
+position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 11px;
+}
+
+.myli {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+.myli:last-child {
+  border-right: none;
+}
+
+.myli a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.myli a:hover:not(.active) {
+  background-color: #111;
+}
+
+
+.active {
+  background-color: #4CAF50;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+
+
+<div class="scene">
+  <div class="cube">
+    <div class="cube__face cube__face--front"  id="f1">Please</div>
+    <div class="cube__face cube__face--back"   id="f2">Stay</div>
+    <div class="cube__face cube__face--right"  id="f3">At Home</div>
+    <div class="cube__face cube__face--left"   id="f4">Please</div>
+    <div class="cube__face cube__face--top"    id="f5">Stay</div>
+    <div class="cube__face cube__face--bottom" id="f6">At Home</div>
+  </div>
+</div>
+
+<p class="radio-group">
+  <label class="grid-item">
+    <input type="radio" id="front" style="width:90%" name="rotate-cube-side" value="front" checked /> 1
+  </label>
+  <label class="grid-item">
+    <input type="radio" id="back" style="width:90%" name="rotate-cube-side" value="back" /> 2
+  </label>
+  <label class="grid-item">
+    <input type="radio" id="right" style="width:90%" name="rotate-cube-side" value="right" /> 3
+  </label>
+  <label class="grid-item">
+    <input type="radio" id="left" style="width:90%" name="rotate-cube-side" value="left" /> 4
+  </label>
+  <label class="grid-item">
+    <input type="radio" id="top" style="width:90%" name="rotate-cube-side" value="top" /> 5
+  </label>
+  <label class="grid-item">
+    <input type="radio" id="bottom" style="width:90%" name="rotate-cube-side" value="bottom" /> 6
+  </label>
+</p>
+
+
+
+
+
+
+
+
+
+
+<!--carousel-->
+<div class="scene1" onclick="showCoords(event)" ontouchstart="xstart1(event)" ontouchmove="myFunction(event)">
+  <div class="carousel">
+    <div class="carousel__cell"><button class="button1"></button></div>
+    <div class="carousel__cell"><button class="button2"></button></div>
+    <div class="carousel__cell"><button class="button3"></button></div>
+    <div class="carousel__cell"><button class="button4"></button></div>
+    <div class="carousel__cell"><button class="button5"></button></div>
+    <div class="carousel__cell"><button class="button6"></button></div>
+    <div class="carousel__cell"><button class="button7"></button></div>
+    <div class="carousel__cell"><button class="button8"></button></div>
+    <div class="carousel__cell"><button class="button9"></button></div>
+  </div>
+</div>
+
+
+
+<script>
+
+var x1 = 0;
+var x2 = 0;
+
+
+function xstart1(event) {
+  var x = event.touches[0].clientX;
+  x1 = x;
+  //document.getElementById("demo").innerHTML = "start" +x1 + " " + x2;
+}
+
+function myFunction(event) {
+  var x = event.touches[0].clientX;
+
+  //document.getElementById("demo").innerHTML = x + ", " + y;
+  //document.getElementById("demo").innerHTML = "moving" +x1 + " " + x;
+  
+  if( Math.abs(x-x1) > 120 ) {
+	  if (x > x1  )
+	  {
+		selectedIndex--;
+	  }
+	  
+	  if (x < x1 )
+	  {
+		selectedIndex++;
+	  }
+	  //document.getElementById("demo").innerHTML = "end " +Math.abs(x-x1);
+	  changeflag();
+	}
+  
+}
+
+function xend1(event) {
+  var x = event.touches[0].clientX;
+  x2 = x;
+  
+  
+  
+}
+
+function changeflag()
+{
+	/*
+	if(selectedIndex < 0)
+	{
+		selectedIndex = 8;
+	}
+	if (selectedIndex > 8)
+	{
+		selectedIndex = 0;
+	}*/
+  
+	var selectedIndex1 = ((selectedIndex % 9) + 9) % 9;
+	
+	if(selectedIndex1 == 0 )
+	{
+		//english
+		document.getElementById("f1").innerHTML = "Please";
+		document.getElementById("f2").innerHTML = "Stay";
+		document.getElementById("f3").innerHTML = "At Home";
+		document.getElementById("f4").innerHTML = "Please";
+		document.getElementById("f5").innerHTML = "Stay";
+		document.getElementById("f6").innerHTML = "At Home";
+		j=1;
+	}
+	if(selectedIndex1 == 1 )
+	{
+		//arabic يرجى البقاء في المنزل
+		document.getElementById("f1").innerHTML = "يرجى";
+		document.getElementById("f2").innerHTML = "البقاء";
+		document.getElementById("f3").innerHTML = "في المنزل";
+		document.getElementById("f4").innerHTML = "لا داعي";
+		document.getElementById("f5").innerHTML = "للهلع";
+		document.getElementById("f6").innerHTML = "يرجى";
+		j=2;
+	}
+	if(selectedIndex1 == 2 )
+	{
+		//italian per favore, stai a casa
+		document.getElementById("f1").innerHTML = "per favore";
+		document.getElementById("f2").innerHTML = "stai";
+		document.getElementById("f3").innerHTML = "a casa";
+		document.getElementById("f4").innerHTML = "per favore";
+		document.getElementById("f5").innerHTML = "stai";
+		document.getElementById("f6").innerHTML = "a casa";
+		j=1;
+	}
+
+	if(selectedIndex1 == 3 )
+	{
+		//french s'il vous plaît restez à la maison
+		document.getElementById("f1").innerHTML = "s il vous";
+		document.getElementById("f2").innerHTML = "plait";
+		document.getElementById("f3").innerHTML = "restez";
+		document.getElementById("f4").innerHTML = "a la maison";
+		document.getElementById("f5").innerHTML = "s il vous";
+		document.getElementById("f6").innerHTML = "plait";
+		j=3;
+	}
+	
+	if(selectedIndex1 == 4 )
+	{
+	
+		//german Bitte bleib zu Hause
+		document.getElementById("f1").innerHTML = "Bitte";
+		document.getElementById("f2").innerHTML = "bleib";
+		document.getElementById("f3").innerHTML = "zu Hause";
+		document.getElementById("f4").innerHTML = "Bitte";
+		document.getElementById("f5").innerHTML = "bleib";
+		document.getElementById("f6").innerHTML = "zu Hause";
+		j=1;
+	}
+	
+	if(selectedIndex1 == 5 )
+	{
+		//english
+		document.getElementById("f1").innerHTML = "Please";
+		document.getElementById("f2").innerHTML = "Stay";
+		document.getElementById("f3").innerHTML = "At Home";
+		document.getElementById("f4").innerHTML = "Please";
+		document.getElementById("f5").innerHTML = "Stay";
+		document.getElementById("f6").innerHTML = "At Home";
+		j=1;
+	}
+	
+	if(selectedIndex1 == 6 )
+	{
+		//arabic ae 
+		document.getElementById("f1").innerHTML = "تكفون";
+		document.getElementById("f2").innerHTML = "بس ظلو";
+		document.getElementById("f3").innerHTML = "بس ظلو";
+		document.getElementById("f4").innerHTML = "بالبيت";
+		document.getElementById("f5").innerHTML = "لا تخافون";
+		document.getElementById("f6").innerHTML = "بالبيت";
+		j=1;
+	}
+
+	if(selectedIndex1 == 7 )
+	{
+		//hindi कृपया घर पर रहें
+		document.getElementById("f1").innerHTML = "कृपया";
+		document.getElementById("f2").innerHTML = "पर रहें";
+		document.getElementById("f3").innerHTML = "घर";
+		document.getElementById("f4").innerHTML = "कृपया";
+		document.getElementById("f5").innerHTML = "पर रहें";
+		document.getElementById("f6").innerHTML = "घर";
+		j=1;
+	}
+	
+	if(selectedIndex1 == 8 )
+	{
+		//arabic iraq فدوة اروحلكم بس أبقو بالبيت
+		document.getElementById("f1").innerHTML = "بس أبقو";
+		document.getElementById("f2").innerHTML = "بالبيت";
+		document.getElementById("f3").innerHTML = "بس أبقو";
+		document.getElementById("f4").innerHTML = "بالبيت";
+		document.getElementById("f5").innerHTML = "فدوة";
+		document.getElementById("f6").innerHTML = "اروحلكم";
+		j=4;
+	}
+	
+	k=0;
+	i=1;
+	rotateCarousel();
+}
+
+function showCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  //document.getElementById("demo").innerHTML = coords;
+  
+  var testDiv = document.getElementById("back");
+  //document.getElementById("demo").innerHTML =  "X coords: " + x + ", x0 coords: " + testDiv.offsetLeft;
+  
+  if ( x > testDiv.offsetLeft )
+  {
+	//document.getElementById("demo").innerHTML = "Right " + selectedIndex;
+	selectedIndex++;
+  }
+  else
+  {
+	//document.getElementById("demo").innerHTML = "Left " + selectedIndex;
+	selectedIndex--;
+  }
+  
+  changeflag();
+  
+
+}
+
+</script>
+
+	<hr>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- site1 -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1005888209614542"
+		 data-ad-slot="5673539792"
+		 data-ad-format="horizontal"
+		 data-full-width-responsive="true"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
+	<hr>
+	
+	<h4><span style='color:white'>sports, health, food, fashion, car, cosmetics</span></h1>
+	
+<ul class="myul">
+  <li class="myli"><a href='casa.html'>Home</a></li>
+  <li class="myli"><a href='https://www.youtube.com/watch?v=siTrn5TBhew&list=PLmi5tLKsnodkI__heWRZw-MJtMneoQeeR'>YouTube</a><li>
+</ul>
+
+<br>
+<br>
+<br>
+
+
+
+<script>
+
+var cube = document.querySelector('.cube');
+var radioGroup = document.querySelector('.radio-group');
+var currentClass = '';
+
+function changeSide() {
+  var checkedRadio = radioGroup.querySelector(':checked');
+  var showClass = 'show-' + checkedRadio.value;
+  if ( currentClass ) {
+    cube.classList.remove( currentClass );
+	
+  }
+  cube.classList.add( showClass );
+  currentClass = showClass;
+}
+// set initial side
+changeSide();
+
+radioGroup.addEventListener( 'change', changeSide );
+
+
+//hello
+
+var myVar = setInterval(myTimer, 1400);
+
+var i=2;
+var j=1;
+var k=0;
+
+function myTimer() {
+  var d = new Date();
+  
+  if(j==1)
+  {
+	  if(i==1)
+	  {
+		  document.getElementById("front").checked = true;
+		  changeSide();
+	  }
+	  if(i==2)
+	  {
+		  document.getElementById("top").checked = true;
+		  changeSide();
+	  }
+	  if(i==3)
+	  {
+		  document.getElementById("right").checked = true;
+		  changeSide();
+	  }
+	  if(i==4)
+	  {
+		  document.getElementById("left").checked = true;
+		  changeSide();
+	  }
+	  if(i==5)
+	  {
+		  document.getElementById("back").checked = true;
+		  changeSide();
+	  }
+	  if(i==6)
+	  {
+		  document.getElementById("bottom").checked = true;
+		  changeSide();
+	  }
+  }
+  
+  if(j==2)
+  {
+	  if(i==1)
+	  {
+		  document.getElementById("bottom").checked = true;
+		  changeSide();
+	  }
+	  if(i==2)
+	  {
+		  document.getElementById("back").checked = true;
+		  changeSide();
+	  }
+	  if(i==3)
+	  {
+		  document.getElementById("right").checked = true;
+		  changeSide();
+	  }
+	  if(i==4)
+	  {
+		  document.getElementById("left").checked = true;
+		  changeSide();
+	  }
+	  if(i==5)
+	  {
+		  document.getElementById("top").checked = true;
+		  changeSide();
+	  }
+	  if(i==6)
+	  {
+		  document.getElementById("top").checked = true;
+		  changeSide();
+	  }
+  }
+  
+  if(j==3)
+  {
+	  if(i==1)
+	  {
+		  document.getElementById("front").checked = true;
+		  changeSide();
+	  }
+	  if(i==2)
+	  {
+		  document.getElementById("back").checked = true;
+		  changeSide();
+	  }
+	  if(i==3)
+	  {
+		  document.getElementById("right").checked = true;
+		  changeSide();
+	  }
+	  if(i==4)
+	  {
+		  document.getElementById("left").checked = true;
+		  changeSide();
+	  }
+	  if(i==5)
+	  {
+		  document.getElementById("top").checked = true;
+		  changeSide();
+	  }
+	  if(i==6)
+	  {
+		  document.getElementById("bottom").checked = true;
+		  changeSide();
+	  }
+  }
+  
+  
+  
+  if(j==4)
+  {
+	  if(i==1)
+	  {
+		  document.getElementById("top").checked = true;
+		  changeSide();
+	  }
+	  if(i==2)
+	  {
+		  document.getElementById("bottom").checked = true;
+		  changeSide();
+	  }
+	  if(i==3)
+	  {
+		  document.getElementById("right").checked = true;
+		  changeSide();
+	  }
+	  if(i==4)
+	  {
+		  document.getElementById("left").checked = true;
+		  changeSide();
+	  }
+	  if(i==5)
+	  {
+		  document.getElementById("front").checked = true;
+		  changeSide();
+	  }
+	  if(i==6)
+	  {
+		  document.getElementById("back").checked = true;
+		  changeSide();
+	  }
+  }
+  
+
+ 
+  i++;
+  
+  if(i>=7)
+  { 
+	k ++;
+	if(k<2)
+	{
+		i=1;
+	}
+  }
+  
+  
+  
+}
+
+
+
+
+
+
+
+//carousel
+var carousel = document.querySelector('.carousel');
+var cellCount = 9;
+var selectedIndex = 0;
+
+function rotateCarousel() {
+  var angle = selectedIndex / cellCount * -360;
+  carousel.style.transform = 'translateZ(-288px) rotateY(' + angle + 'deg)';
+}
+
+
+
+
+
+
+</script>
+
+
+   
+</body>
+</html> 

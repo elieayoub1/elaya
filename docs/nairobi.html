@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>LA CASA DE PAPEL</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "9c00a8da-786a-4c91-9ea2-2faab64b9fe4",
+    });
+  });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126945561-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126945561-3');
+</script>
+
+
+
+<style>
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+
+
+.top-container {
+  background-color: #93EAD7;
+  padding: 90px;
+  text-align: center;
+  
+  background-image:url(img/casa.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.footer {
+  padding: 10px 16px;
+  background: #DAD8D8;
+  color: #FFFFFF;
+}
+
+.content {
+  padding: 16px;
+  
+}
+
+.content1 {
+  padding: 16px;
+  
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #F5F5F5;
+}
+
+.content2 {
+  padding: 16px;
+  
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #93EAD7;
+}
+
+.content3 {
+  padding: 4px;
+  width: 80%;
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #93EAD7;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.content4 {
+  padding: 0px;
+  
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav .closebtn1 {
+	position: absolute;
+	top: 10;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+
+ul {
+  color: white;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.myul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 11px;
+}
+
+.myli {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+.myli:last-child {
+  border-right: none;
+}
+
+.myli a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.myli a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+
+
+
+
+
+.myul1 {
+
+position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 11px;
+}
+
+.myli1 {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+.myli1:last-child {
+  border-right: none;
+}
+
+.myli1 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.myli1 a:hover:not(.active) {
+  background-color: #111;
+}
+
+
+
+#sketchpadapp {
+    /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.leftside {
+    float:left;
+    width:220px;
+    height:285px;
+    background-color:#def;
+    padding:10px;
+    border-radius:4px;
+}
+.rightside {
+    float:left;
+    margin-left:10px;
+}
+#sketchpad {
+	
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border:2px solid #888;
+    border-radius:4px;
+    position:relative; /* Necessary for correct mouse co-ords in Firefox */
+    background-image:url(img/casa1.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+    cursor: pointer;
+}
+
+#sketchpad1 {
+	
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border:2px solid #888;
+    border-radius:4px;
+    position:relative; /* Necessary for correct mouse co-ords in Firefox */
+    background-image:url(img/casa2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+    cursor: pointer;
+}
+
+#clearbutton {
+    font-size: 15px;
+    padding: 10px;
+    -webkit-appearance: none;
+    background: #eee;
+    border: 1px solid #888;
+	
+	background-image: url(img/clear.png); 
+    background-color: transparent; 
+    background-repeat: no-repeat;  
+    background-position: 0px 0px;  
+               
+    cursor: pointer;       
+    height: 50px;   
+	width: 110px;  	
+    padding-left: 16px;    
+    vertical-align: middle;
+	text-align: right;
+}
+
+
+
+</style>
+
+</head>
+
+<body onload="init()">
+
+<div id="mySidenav" class="sidenav">
+  
+  <h2><a href='casa.html'>Menu</a></h2>
+  
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href='stayathome1.html'><span style='color:red'>Stay Home</span></a>
+  <a href='https://www.youtube.com/watch?v=siTrn5TBhew&list=PLmi5tLKsnodkI__heWRZw-MJtMneoQeeR'>YouTube</a>
+  
+  <br>
+  <a href='theprofessor.html'>The Professor</a>
+  <a href='tokyo.html'>Tokyo</a>
+  <a href='nairobi.html'>Nairobi</a>
+  <a href='berlin.html'>Berlin</a>
+  <a href='denver.html'>Denver</a>
+  <a href='rio.html'>Rio</a>
+  
+  
+  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
+  
+</div>
+
+
+<div class="top-container">
+	
+  <h1 style="background-color:black"><span style='color:white'>LA CASA</span><span style='color:red'> DE </span><span style='color:white'>PAPEL</span> </h1>
+
+</div>
+
+<div class="header" id="myHeader">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+</div>
+
+<div class="content">
+  <h3>Nairobi</h3>
+  
+
+	<hr>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-format="fluid"
+		 data-ad-layout-key="-gw-3+1f-3d+2z"
+		 data-ad-client="ca-pub-1005888209614542"
+		 data-ad-slot="9383411407"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<hr>
+	
+	<p align="center">
+	<img src="img/nairobi1.jpg" alt="steps" class="responsive" width="600" height="400"></p>
+	
+	<hr>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Display 2 - Horizontal -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1005888209614542"
+		 data-ad-slot="5024306797"
+		 data-ad-format="auto"
+		 data-full-width-responsive="true"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<hr>
+	
+	<p align="center">
+	<img src="img/nairobi2.jpg" alt="steps" class="responsive" width="600" height="400"></p>
+	
+	<p align="center">
+	<img src="img/nairobi3.jpg" alt="steps" class="responsive" width="600" height="400"></p>
+	
+	<p align="center">
+	<img src="img/nairobi4.jpg" alt="steps" class="responsive" width="600" height="400"></p>
+	
+	<p align="center">
+	<img src="img/nairobi5.jpg" alt="steps" class="responsive" width="600" height="400"></p>
+	
+	<h4><span style='color:white'>sports, health, food, fashion, car, cosmetics</span></h1>
+	
+	
+	
+	
+	<ul class="myul1">
+	  <li class="myli1"><span style="font-size:25px;cursor:pointer" onclick="openNav()">&#9776; Menu</span></li>
+	</ul>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+
+
+
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+
+</script>
+
+
+   
+</body>
+</html> 
