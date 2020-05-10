@@ -2,10 +2,10 @@
 <html>
 <head>
 
-<title>Einstein riddles</title>
+<title>LA CASA DE PAPEL</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
@@ -32,6 +32,7 @@
 <script type="text/javascript">
     // Variables for referencing the canvas and 2dcanvas context
     var canvas,ctx;
+	var canvas1,ctx1;
 
     // Variables to keep track of the mouse position and left-button status 
     var mouseX,mouseY,mouseDown=0;
@@ -77,9 +78,16 @@
         mouseDown=1;
         drawDot(ctx,mouseX,mouseY,5);
     }
+	function sketchpad_mouseDown1() {
+        mouseDown=1;
+        drawDot(ctx1,mouseX,mouseY,5);
+    }
 
     // Keep track of the mouse button being released
     function sketchpad_mouseUp() {
+        mouseDown=0;
+    }
+	function sketchpad_mouseUp1() {
         mouseDown=0;
     }
 
@@ -91,6 +99,15 @@
         // Draw a dot if the mouse button is currently being pressed
         if (mouseDown==1) {
             drawDot(ctx,mouseX,mouseY,5);
+        }
+    }
+	function sketchpad_mouseMove1(e) { 
+        // Update the mouse co-ordinates when moved
+        getMousePos(e);
+
+        // Draw a dot if the mouse button is currently being pressed
+        if (mouseDown==1) {
+            drawDot(ctx1,mouseX,mouseY,5);
         }
     }
 
@@ -119,6 +136,15 @@
         // Prevents an additional mousedown event being triggered
         event.preventDefault();
     }
+	function sketchpad_touchStart1() {
+        // Update the touch co-ordinates
+        getTouchPos();
+
+        drawDot(ctx1,touchX,touchY,5);
+
+        // Prevents an additional mousedown event being triggered
+        event.preventDefault();
+    }
 
     // Draw something and prevent the default scrolling when touch movement is detected
     function sketchpad_touchMove(e) { 
@@ -127,6 +153,16 @@
 
         // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
         drawDot(ctx,touchX,touchY,5); 
+
+        // Prevent a scrolling action as a result of this touchmove triggering.
+        event.preventDefault();
+    }
+	function sketchpad_touchMove1(e) { 
+        // Update the touch co-ordinates
+        getTouchPos(e);
+
+        // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
+        drawDot(ctx1,touchX,touchY,5); 
 
         // Prevent a scrolling action as a result of this touchmove triggering.
         event.preventDefault();
@@ -154,10 +190,13 @@
     function init() {
         // Get the specific canvas element from the HTML document
         canvas = document.getElementById('sketchpad');
+		canvas1 = document.getElementById('sketchpad1');
 
         // If the browser supports the canvas tag, get the 2d drawing context for this canvas
         if (canvas.getContext)
             ctx = canvas.getContext('2d');
+		if (canvas1.getContext)
+            ctx1 = canvas1.getContext('2d');
 
         // Check that we have a valid context to draw on/with before adding event handlers
         if (ctx) {
@@ -170,11 +209,21 @@
             canvas.addEventListener('touchstart', sketchpad_touchStart, false);
             canvas.addEventListener('touchmove', sketchpad_touchMove, false);
         }
+		if (ctx1) {
+            // React to mouse events on the canvas, and mouseup on the entire document
+            canvas1.addEventListener('mousedown', sketchpad_mouseDown1, false);
+            canvas1.addEventListener('mousemove', sketchpad_mouseMove1, false);
+            window.addEventListener('mouseup', sketchpad_mouseUp1, false);
+
+            // React to touch events on the canvas
+            canvas1.addEventListener('touchstart', sketchpad_touchStart1, false);
+            canvas1.addEventListener('touchmove', sketchpad_touchMove1, false);
+        }
 		
 		if (canvas.width  < window.innerWidth)
             {
                 canvas.width  = window.innerWidth - 90;
-				canvas.height = (window.innerWidth * 1.2) - 50;
+				canvas.height = (window.innerWidth * 1.3) - 50;
             }
 		//if (canvas.height < window.innerHeight)
             //{
@@ -183,7 +232,22 @@
 		if ( window.innerWidth > 600)
             {
                 canvas.width  = 500;
-				canvas.height = 600;
+				canvas.height = 500 * 1.3;
+            }	
+		
+		if (canvas1.width  < window.innerWidth)
+            {
+                canvas1.width  = window.innerWidth - 90;
+				canvas1.height = (window.innerWidth * 1.3) - 50;
+            }
+		//if (canvas.height < window.innerHeight)
+            //{
+                //canvas.height = window.innerHeight - 50;
+            //}
+		if ( window.innerWidth > 600)
+            {
+                canvas1.width  = 500;
+				canvas1.height = 500 * 1.3;
             }	
             
     }
@@ -397,27 +461,51 @@ ul {
     margin-left: auto;
     margin-right: auto;
     display: block;
-	
-   
     border:2px solid #888;
     border-radius:4px;
     position:relative; /* Necessary for correct mouse co-ords in Firefox */
-    background-image:url(img/Picture2.jpg);
+    background-image:url(img/casa1.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
-	
 	background-size: 100% 100%;
     cursor: pointer;
-	
-	
-    
 }
+
+#sketchpad1 {
+	
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border:2px solid #888;
+    border-radius:4px;
+    position:relative; /* Necessary for correct mouse co-ords in Firefox */
+    background-image:url(img/casa2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+    cursor: pointer;
+}
+
 #clearbutton {
     font-size: 15px;
     padding: 10px;
     -webkit-appearance: none;
     background: #eee;
     border: 1px solid #888;
+	
+	background-image: url(img/clear.png); 
+    background-color: transparent; 
+    background-repeat: no-repeat;  
+    background-position: 0px 0px;  
+               
+    cursor: pointer;       
+    height: 50px;   
+	width: 110px;  	
+    padding-left: 16px;    
+    vertical-align: middle;
+	text-align: right;
 }
 
 
@@ -439,7 +527,7 @@ ul {
 
 <div class="top-container">
 	
-  <h1>Einstein riddles</h1>
+  <h1 style="background-color:black"><span style='color:white'>LA CASA</span><span style='color:red'> DE </span><span style='color:white'>PAPEL</span> </h1>
 
 </div>
 
@@ -448,39 +536,62 @@ ul {
 </div>
 
 <div class="content">
-  <h3>Einstein riddle - 1</h3>
+  <h3>LA CASA DE PAPEL</h3>
   
 
 	<hr>
-	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- site1 -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1005888209614542"
+		 data-ad-slot="5673539792"
+		 data-ad-format="horizontal"
+		 data-full-width-responsive="true"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
 	<hr>
 	
-	
 	<div class="content1">
-	
-	<p><span style='color:red'>RED</span> + <span style='color:orange'>ORANGE</span> + <span style='color:yellow'>YELLOW</span> + <span style='color:violet'>VIOLET</span> = 13
-	<br>
-	A + B + C + G = 13
-	<br>
-	<span style='color:red'>RED</span> + A + <span style='color:green'>GREEN</span> + D = ?
-	</p>
-
-	
-	<p>Hint: "Order and simplification are the first steps towards mastery of a subject"
-	<br>Thomas Mann </p>
-	
-	
+	<p><span style='color:red'>HELP</span> the Professor to escape!
+	<br><span style='color:blue'>The Professor</span></p>
 	</div>
 	 
-     <div class="content4">   
-            <canvas id="sketchpad" height="100" width="100">
-            </canvas>
-        
-    </div>
+	<div class="content4">   
+		<canvas id="sketchpad" height="100" width="100"></canvas>
+	</div>
 	
 	<div class="content1" align="center">
-             <input type="submit" value="Clear" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
-        </div>
+		<input type="submit" value="Clear" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
+	</div>
+	
+	<hr>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- site1 -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-1005888209614542"
+		 data-ad-slot="5673539792"
+		 data-ad-format="horizontal"
+		 data-full-width-responsive="true"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<hr>
+	
+	<div class="content1">
+	<p><span style='color:red'>HELP</span> Tokyo to escape!
+	<br><span style='color:blue'>Tokyo</span></p>
+	</div>
+	
+	<div class="content4">   
+		<canvas id="sketchpad1" height="100" width="100"></canvas>
+	</div>
+	
+	<div class="content1" align="center">
+		<input type="submit" value="Clear" id="clearbutton" onclick="clearCanvas(canvas1,ctx1);">
+	</div>
 	
 
 <script>
