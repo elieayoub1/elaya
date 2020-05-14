@@ -44,8 +44,9 @@ html {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
   margin: 8px;
+  border-radius: 15px;
 }
 
 .about-section {
@@ -121,7 +122,7 @@ img {
 
 </style>
 </head>
-<body onload="startTime()">
+<body onload="startTime()" style="background-color:white;">
 
 <div class="about-section">
 	<div class="progress-container">
@@ -140,13 +141,13 @@ img {
 <br>
 <br>
 <br>
-<h2 style="text-align:center">Daily Update</h2>
+<h3 style="text-align:center">Daily Update</h3>
 
 <hr>
 
-<div class="row">
-  <div class="column">
-    <div class="card">
+<div class="row" >
+  <div class="column" >
+    <div class="card" style="background-color:#F8F9F9;">
       <img src="img/fuel.png" alt="fuel" style="width:100%">
       <div class="container">
         <h2>Fuel Prices</h2>
@@ -159,7 +160,7 @@ img {
   </div>
 
   <div class="column">
-    <div class="card">
+    <div class="card" style="background-color:#F8F9F9;">
       <img src="img/usd.png" alt="usd" style="width:100%">
       <div class="container">
         <h2>USD/LBP</h2>
@@ -172,7 +173,7 @@ img {
   </div>
   
   <div class="column">
-    <div class="card">
+    <div class="card" style="background-color:#F8F9F9;">
       <img src="img/covid.png" alt="covid" style="width:100%">
       <div class="container">
         <h2>COVID-19</h2>
@@ -189,23 +190,23 @@ img {
 
 <div class="row">
   <div class="column">
-    <div class="card">
-	<h2 class="container">Top search queries on Google</h2>
+    <div class="card" style="background-color:#F8F9F9;">
+	<h2 class="container" align="center">Top search queries on Google</h2>
       <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2213_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"geo":"LB","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=LB","guestPath":"https://trends.google.com:443/trends/embed/"}); </script> 
     </div>
   </div>
 
   <div class="column">
-    <div class="card">
+    <div class="card" style="background-color:#F8F9F9;">
       <div class="container">
-        <h2>Current Time</h2>
+        <h2 align="center">Current Time</h2>
 		<p align="center" id="txt"></p>
       </div>
     </div>
   </div>
   
   <div class="column">
-    <div class="card">
+    <div class="card" style="background-color:#F8F9F9;">
       <div class="container">
         <a class="weatherwidget-io" href="https://forecast7.com/en/33d8535d86/lebanon/" data-label_1="LEBANON" data-label_2="WEATHER" data-theme="original" >LEBANON WEATHER</a>
 		<script>
