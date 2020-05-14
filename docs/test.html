@@ -49,10 +49,16 @@ html {
 }
 
 .about-section {
-  padding: 50px;
+  padding: 0px;
   text-align: center;
-  background-color: #474e5d;
-  color: white;
+  background-color: white;
+  color: green;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  
+  
 }
 
 .container {
@@ -99,17 +105,45 @@ img {
   padding: 8px;
 }
 
+
+.progress-container {
+  width: 100%;
+  height: 15px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 15px;
+  background: red;
+  width: 0%;
+}
+
+
 </style>
 </head>
 <body onload="startTime()">
 
 <div class="about-section">
-  <h1>About Us Page</h1>
-  <p>Some text about who we are and what we do.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
+	<div class="progress-container">
+		<div class="progress-bar" id="myBar"></div>
+	</div> 
+  
+  <h2>LEBANON IN 1</h2>
+
+	<div class="progress-container">
+		<div class="progress-bar" id="myBar1"></div>
+	</div> 
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
 <h2 style="text-align:center">Daily Update</h2>
+
+<hr>
+
 <div class="row">
   <div class="column">
     <div class="card">
@@ -172,17 +206,32 @@ img {
   
   <div class="column">
     <div class="card">
-      <img src="img/covid.png" alt="covid" style="width:100%">
       <div class="container">
-        <h2>COVID-19</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>john@example.com</p>
-        <p><button class="button">Contact</button></p>
+        <a class="weatherwidget-io" href="https://forecast7.com/en/33d8535d86/lebanon/" data-label_1="LEBANON" data-label_2="WEATHER" data-theme="original" >LEBANON WEATHER</a>
+		<script>
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+		</script>
       </div>
     </div>
   </div>
 </div>
+
+<br>
+<br>
+
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+  document.getElementById("myBar1").style.width = scrolled + "%";
+}
+</script>
+
 
 </body>
 </html>
