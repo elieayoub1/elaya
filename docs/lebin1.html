@@ -2,6 +2,27 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+
 <style>
 body {
   margin: 0;
@@ -19,7 +40,7 @@ body {
 
 .header h3 {
   text-align: center;
-  color: green;
+  color: #4FB61B;
 }
 
 .progress-container {
@@ -54,7 +75,7 @@ body {
 
 </style>
 </head>
-<body>
+<body onload="startTime()">
 
 <div class="header">
 
@@ -90,8 +111,13 @@ body {
 	</div>
 	
 	<div class="content1">
-	<p align="center">Top Search queries on Google</p>
+	<p align="center">Top search queries on Google</p>
 	<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2213_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"geo":"LB","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=LB","guestPath":"https://trends.google.com:443/trends/embed/"}); </script> 
+	</div>
+	
+	<div class="content1">
+	<p align="center">Current Time</p>
+	<p align="center" id="txt"></p>
 	</div>
 	
 	<br>
