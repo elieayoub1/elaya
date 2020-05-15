@@ -78,6 +78,16 @@ html {
   display: table;
 }
 
+.container1 {
+  padding: 0 4px;
+}
+
+.container1::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .title {
   color: grey;
 }
@@ -252,7 +262,7 @@ position: fixed;
   
   <div class="column">
     <div class="card" style="background-color:#F8F9F9;">
-			  
+			  <div class="container1">
 				<h2 align="center">Ads</h2>
 					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 					<!-- Display 2 - Horizontal -->
@@ -265,9 +275,9 @@ position: fixed;
 					<script>
 						 (adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
-				<p align="center">Encourage us by clicking 2 time on this  &#8679;</p>
+				<p align="center">Encourage us by clicking 3 time on this  &#8679;</p>
 				<br>
-			  
+			  </div>
     </div>
   </div>
   
