@@ -102,6 +102,40 @@ img {
   width: 0%;
 }
 
+.myul1 {
+
+position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 11px;
+}
+
+.myli1 {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+.myli1:last-child {
+  border-right: none;
+}
+
+.myli1 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.myli1 a:hover:not(.active) {
+  background-color: #111;
+}
 
 </style>
 </head>
@@ -197,7 +231,9 @@ img {
     <div class="card" style="background-color:#F8F9F9;">
       <div class="container">
         <h2 align="center">Unofficial exchange rate</h2>
-		<p align="center"><iframe src="https://lirarate.com/" width="280" height="380"></iframe></p>
+		
+		<p align="center"><iframe src="https://lirarate.com/" width="280" height="380" scrolling="no"></iframe></p>
+		
 		<br>
 		<br>
       </div>
@@ -207,7 +243,7 @@ img {
   <div class="column">
     <div class="card" style="background-color:#F8F9F9;">
       <div class="container">
-		<br>
+		<h2 align="center">Weather</h2>
         <a class="weatherwidget-io" href="https://forecast7.com/en/33d8535d86/lebanon/" data-label_1="LEBANON" data-label_2="WEATHER" data-theme="original" >LEBANON WEATHER</a>
 		<script>
 		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
@@ -239,9 +275,11 @@ img {
 
 <br>
 <br>
+<br>
 
-<div class="fb-share-button" data-href="https://fijjla.com/lebin1.html" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffijjla.com%2Flebin1.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-	
+<ul class="myul1">
+	  <div class="fb-share-button" data-href="https://fijjla.com/lebin1.html" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffijjla.com%2Flebin1.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+</ul>	
 
 <script>
 // When the user scrolls the page, execute myFunction 
