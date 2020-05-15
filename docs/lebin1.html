@@ -1,47 +1,131 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<title>LEBANON IN 1</title>
+
+<link rel="icon" 
+      type="image/png" 
+      href="https://fijjla.com/Favicon.ico">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
-function startTime() {
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('txt').innerHTML =
-  h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500);
-}
-function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-  return i;
-}
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "9c00a8da-786a-4c91-9ea2-2faab64b9fe4",
+    });
+  });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126945561-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126945561-3');
 </script>
 
 
 <style>
 body {
-  margin: 0;
-  font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
-.header {
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
+  margin: 8px;
+  border-radius: 15px;
+}
+
+.about-section {
+  padding: 0px;
+  text-align: center;
+  background-color: white;
+  color: green;
   position: fixed;
   top: 0;
   z-index: 1;
   width: 100%;
-  background-color: white;
+  
+  
 }
 
-.header h3 {
-  text-align: center;
-  color: #4FB61B;
+.container {
+  padding: 0 16px;
 }
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container1 {
+  padding: 0 0px;
+}
+
+.container1::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px;
+}
+
 
 .progress-container {
   width: 100%;
@@ -55,83 +139,207 @@ body {
   width: 0%;
 }
 
-.content {
-  padding: 100px 0;
-  margin: 50px auto 0 auto;
-  width: 80%;
+.myul1 {
+
+position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 11px;
 }
 
-.content1 {
-  padding: 8px;
-  margin: 8px;
-  border-radius: 15px;
-  background-color: #f1f1f1;
+.myli1 {
+  float: left;
+  border-right:1px solid #bbb;
 }
 
-.responsive {
-  max-width: 100%;
-  height: auto;
+.myli1:last-child {
+  border-right: none;
 }
+
+.myli1 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.myli1 a:hover:not(.active) {
+  background-color: #111;
+}
+
 
 </style>
 </head>
-<body onload="startTime()">
+<body  style="background-color:white;">
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"></script>
 
 
-<div class="header">
-
+<div class="about-section">
 	<div class="progress-container">
 		<div class="progress-bar" id="myBar"></div>
 	</div> 
-  <h3>Lebanon In 1</h3>
   
-	  <div class="progress-container">
+  <h2 style="margin: 0;">LEBANON IN 1</h2>
+  
+	<div class="progress-container">
 		<div class="progress-bar" id="myBar1"></div>
-	  </div>  
+	</div> 
 </div>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	
-	<div class="content1">
-		<p align="center">
-		<img src="img/fuel.png" alt="fuel" class="responsive" width="500" height="600"></p>
-	</div>
-	
-	<div class="content1">
-		<p align="center">
-		<img src="img/usd.png" alt="usd" class="responsive" width="500" height="600"></p>
-	</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3 style="text-align:center">Daily Update</h3>
 
-	<div class="content1">
-		<p align="center">
-		<img src="img/covid.png" alt="covid" class="responsive" width="500" height="600"></p>
+
+
+<div class="row" >
+  <div class="column" >
+    <div class="card" style="background-color:#F8F9F9;">
+      <img src="img/fuel.png" alt="fuel" style="width:100%">
+      <div class="container">
+        <h2>Fuel Prices</h2>
+        <p>- Prices of UN 95 & 98 and Diesel oil /20 Liters
+		<br>- Price of Gas (LPG) /10 Kg</p>
+        <p><button class="button" onclick=" window.open('https://www.iptgroup.com.lb/ipt/en/our-stations/fuel-prices','_blank')">Reference</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card" style="background-color:#F8F9F9;">
+      <img src="img/usd.png" alt="usd" style="width:100%">
+      <div class="container">
+        <h2>USD/LBP</h2>
+        <p>Official exchange rate</p>
+        <p><button class="button" onclick=" window.open('https://lebaneselira.org/','_blank')">Reference</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card" style="background-color:#F8F9F9;">
+      <img src="img/covid.png" alt="covid" style="width:100%">
+      <div class="container">
+        <h2>COVID-19</h2>
+        <p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.</p>
+        <p><button class="button" onclick=" window.open('https://www.worldometers.info/coronavirus/','_blank')">Reference</button></p>
+      </div>
+    </div>
+  </div>
+
+   <div class="column">
+    <div class="card" style="background-color:#F8F9F9;">
+      <img src="img/tuna.png" alt="tuna" style="width:100%">
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card" style="background-color:white">
+	<h2 class="container" align="center">Top search queries on Google</h2>
+      <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2213_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"geo":"LB","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=LB","guestPath":"https://trends.google.com:443/trends/embed/"}); </script> 
+    <br>
+	<br>
 	</div>
-	
-	<div class="content1">
-	<p align="center">Top search queries on Google</p>
-	<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2213_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"geo":"LB","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=LB","guestPath":"https://trends.google.com:443/trends/embed/"}); </script> 
-	</div>
-	
-	<div class="content1">
-	<p align="center">Current Time</p>
-	<p align="center" id="txt"></p>
-	</div>
-	
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	
-<div class="fb-share-button" data-href="https://fijjla.com/lebin1.html" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffijjla.com%2Flebin1.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-	
+  </div>
+
+  <div class="column">
+    <div class="card" style="background-color:#F8F9F9;">
+      <div class="container">
+        <h2 align="center">Local Time</h2>
+		<p align="center"><iframe src="https://www.timeanddate.com/worldclock/fullscreen.html?n=34" width="280" height="280"></iframe></p>
+		<br>
+		<br>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card" style="background-color:#F8F9F9;">
+			  <div class="container">
+				<h2 align="center">Ads</h2>
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- Display 2 - Horizontal -->
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-1005888209614542"
+						 data-ad-slot="5024306797"
+						 data-ad-format="auto"
+						 data-full-width-responsive="false"></ins>
+					<script>
+						 (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				<p align="center">Encourage us by clicking 1 time on this  <span style='color:red'><strong>&#8679;</strong></span></p> 
+				
+				<br>
+			  </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card" style="background-color:#F8F9F9;">
+      <div class="container">
+        <h2 align="center">Unofficial exchange rate</h2>
+		
+		<p align="center"><iframe src="https://lirarate.com/" width="280" height="380" scrolling="no"></iframe></p>
+		
+		<br>
+		<br>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card" style="background-color:#F8F9F9;">
+      <div class="container">
+		<h2 align="center">Weather</h2>
+        <a class="weatherwidget-io" href="https://forecast7.com/en/33d8535d86/lebanon/" data-label_1="LEBANON" data-label_2="WEATHER" data-theme="original" >LEBANON WEATHER</a>
+		<script>
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+		</script>
+		<br>
+      </div>
+    </div>
+  </div> 
+
+	<div class="column">
+    <div class="card" style="background-color:#F8F9F9;">
+      <div class="container" align="center">
+	  <h2>Today Music</h2>
+		<audio src="music/BellaCiao.mp3" controls>
+		<p>If you are reading this, it is because your browser does not support the audio element.</p>
+		</audio>
+        <p>Bella Ciao - Remix</p>
+      </div>
+    </div>
+  </div>  
+  
+</div>
+
+
+
+<div class="row">
+
+</div>
+
+<br>
+<br>
+<br>
+
+<ul class="myul1">
+	  <div class="fb-share-button" data-href="https://fijjla.com/lebin1.html" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffijjla.com%2Flebin1.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+</ul>	
 
 <script>
 // When the user scrolls the page, execute myFunction 
@@ -146,5 +354,6 @@ function myFunction() {
 }
 </script>
 
+
 </body>
-</html> 
+</html>
