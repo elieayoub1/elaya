@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>EOD</title>
+<title>LA CASA DE PAPEL</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -28,6 +28,235 @@
 </script>
 
 
+
+<script type="text/javascript">
+    // Variables for referencing the canvas and 2dcanvas context
+    var canvas,ctx;
+	var canvas1,ctx1;
+
+    // Variables to keep track of the mouse position and left-button status 
+    var mouseX,mouseY,mouseDown=0;
+
+    // Variables to keep track of the touch position
+    var touchX,touchY;
+
+    // Keep track of cycling through different hues each time a dot is drawn
+    var hue=0;
+
+    // Draws a dot at a specific position on the supplied canvas name
+    // Parameters are: A canvas context, the x position, the y position, the size of the dot
+    function drawDot(ctx,x,y,size) {
+	// Instead of using RGB (red/green/blue) format for the drawing colour, since we're cycling through
+	// hue values, it makes more sense to use HSLA, which is Hue, Saturation, Luminence
+	// We can use fixed values for Saturation, Luminence and alpha, and just use the Hue value from our hue variable.
+        sat=100; lum=50; a=255;
+
+        // Select a fill style
+        ctx.fillStyle = "hsla("+hue+","+sat+"%,"+lum+"%,"+(a/255)+")";
+
+        // Draw a filled circle
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI*2, true); 
+        ctx.closePath();
+        ctx.fill();
+
+	// Update the hue - increase the "2" value here for a faster cycle through the different colours
+	hue+=2;
+
+	// Go back to the first hue if we've reached the end of the hue range
+	if (hue>360) 
+	 hue=0;
+    } 
+
+    // Clear the canvas context using the canvas width and height
+    function clearCanvas(canvas,ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Keep track of the mouse button being pressed and draw a dot at current location
+    function sketchpad_mouseDown() {
+        mouseDown=1;
+        drawDot(ctx,mouseX,mouseY,5);
+    }
+	function sketchpad_mouseDown1() {
+        mouseDown=1;
+        drawDot(ctx1,mouseX,mouseY,5);
+    }
+
+    // Keep track of the mouse button being released
+    function sketchpad_mouseUp() {
+        mouseDown=0;
+    }
+	function sketchpad_mouseUp1() {
+        mouseDown=0;
+    }
+
+    // Keep track of the mouse position and draw a dot if mouse button is currently pressed
+    function sketchpad_mouseMove(e) { 
+        // Update the mouse co-ordinates when moved
+        getMousePos(e);
+
+        // Draw a dot if the mouse button is currently being pressed
+        if (mouseDown==1) {
+            drawDot(ctx,mouseX,mouseY,5);
+        }
+    }
+	function sketchpad_mouseMove1(e) { 
+        // Update the mouse co-ordinates when moved
+        getMousePos(e);
+
+        // Draw a dot if the mouse button is currently being pressed
+        if (mouseDown==1) {
+            drawDot(ctx1,mouseX,mouseY,5);
+        }
+    }
+
+    // Get the current mouse position relative to the top-left of the canvas
+    function getMousePos(e) {
+        if (!e)
+            var e = event;
+
+        if (e.offsetX) {
+            mouseX = e.offsetX;
+            mouseY = e.offsetY;
+        }
+        else if (e.layerX) {
+            mouseX = e.layerX;
+            mouseY = e.layerY;
+        }
+     }
+
+    // Draw something when a touch start is detected
+    function sketchpad_touchStart() {
+        // Update the touch co-ordinates
+        getTouchPos();
+
+        drawDot(ctx,touchX,touchY,5);
+
+        // Prevents an additional mousedown event being triggered
+        event.preventDefault();
+    }
+	function sketchpad_touchStart1() {
+        // Update the touch co-ordinates
+        getTouchPos();
+
+        drawDot(ctx1,touchX,touchY,5);
+
+        // Prevents an additional mousedown event being triggered
+        event.preventDefault();
+    }
+
+    // Draw something and prevent the default scrolling when touch movement is detected
+    function sketchpad_touchMove(e) { 
+        // Update the touch co-ordinates
+        getTouchPos(e);
+
+        // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
+        drawDot(ctx,touchX,touchY,5); 
+
+        // Prevent a scrolling action as a result of this touchmove triggering.
+        event.preventDefault();
+    }
+	function sketchpad_touchMove1(e) { 
+        // Update the touch co-ordinates
+        getTouchPos(e);
+
+        // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
+        drawDot(ctx1,touchX,touchY,5); 
+
+        // Prevent a scrolling action as a result of this touchmove triggering.
+        event.preventDefault();
+    }
+
+    // Get the touch position relative to the top-left of the canvas
+    // When we get the raw values of pageX and pageY below, they take into account the scrolling on the page
+    // but not the position relative to our target div. We'll adjust them using "target.offsetLeft" and
+    // "target.offsetTop" to get the correct values in relation to the top left of the canvas.
+    function getTouchPos(e) {
+        if (!e)
+            var e = event;
+
+        if(e.touches) {
+            if (e.touches.length == 1) { // Only deal with one finger
+                var touch = e.touches[0]; // Get the information for finger #1
+                touchX=touch.pageX-touch.target.offsetLeft;
+                touchY=touch.pageY-touch.target.offsetTop;
+            }
+        }
+    }
+
+
+    // Set-up the canvas and add our event handlers after the page has loaded
+    function init() {
+        // Get the specific canvas element from the HTML document
+        canvas = document.getElementById('sketchpad');
+		canvas1 = document.getElementById('sketchpad1');
+
+        // If the browser supports the canvas tag, get the 2d drawing context for this canvas
+        if (canvas.getContext)
+            ctx = canvas.getContext('2d');
+		if (canvas1.getContext)
+            ctx1 = canvas1.getContext('2d');
+
+        // Check that we have a valid context to draw on/with before adding event handlers
+        if (ctx) {
+            // React to mouse events on the canvas, and mouseup on the entire document
+            canvas.addEventListener('mousedown', sketchpad_mouseDown, false);
+            canvas.addEventListener('mousemove', sketchpad_mouseMove, false);
+            window.addEventListener('mouseup', sketchpad_mouseUp, false);
+
+            // React to touch events on the canvas
+            canvas.addEventListener('touchstart', sketchpad_touchStart, false);
+            canvas.addEventListener('touchmove', sketchpad_touchMove, false);
+        }
+		if (ctx1) {
+            // React to mouse events on the canvas, and mouseup on the entire document
+            canvas1.addEventListener('mousedown', sketchpad_mouseDown1, false);
+            canvas1.addEventListener('mousemove', sketchpad_mouseMove1, false);
+            window.addEventListener('mouseup', sketchpad_mouseUp1, false);
+
+            // React to touch events on the canvas
+            canvas1.addEventListener('touchstart', sketchpad_touchStart1, false);
+            canvas1.addEventListener('touchmove', sketchpad_touchMove1, false);
+        }
+		
+		if (canvas.width  < window.innerWidth)
+            {
+                canvas.width  = window.innerWidth - 90;
+				canvas.height = (window.innerWidth * 1.3) - 50;
+            }
+		//if (canvas.height < window.innerHeight)
+            //{
+                //canvas.height = window.innerHeight - 50;
+            //}
+		if ( window.innerWidth > 600)
+            {
+                canvas.width  = 500;
+				canvas.height = 500 * 1.3;
+            }	
+		
+		if (canvas1.width  < window.innerWidth)
+            {
+                canvas1.width  = window.innerWidth - 90;
+				canvas1.height = (window.innerWidth * 1.3) - 50;
+            }
+		//if (canvas.height < window.innerHeight)
+            //{
+                //canvas.height = window.innerHeight - 50;
+            //}
+		if ( window.innerWidth > 600)
+            {
+                canvas1.width  = 500;
+				canvas1.height = 500 * 1.3;
+            }	
+            
+    }
+</script>
+
+
+
+
+
 <style>
 
 html {
@@ -43,8 +272,13 @@ body {
 
 .top-container {
   background-color: #93EAD7;
-  padding: 30px;
+  padding: 90px;
   text-align: center;
+  
+  background-image:url(img/casa.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header {
@@ -72,6 +306,11 @@ body {
   background-color: #F5F5F5;
 }
 
+.addcontent {
+  padding: 16px;
+  margin: 8px;
+}
+
 .content2 {
   padding: 16px;
   
@@ -82,13 +321,18 @@ body {
 
 .content3 {
   padding: 4px;
-  width: 50%;
+  width: 80%;
   margin: 8px;
   border-radius: 15px;
   background-color: #93EAD7;
   margin-left: auto;
   margin-right: auto;
 
+}
+
+.content4 {
+  padding: 0px;
+  
 }
 
 .sticky {
@@ -137,6 +381,13 @@ body {
   margin-left: 50px;
 }
 
+.sidenav .closebtn1 {
+	position: absolute;
+	top: 10;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
 
 
 ul {
@@ -154,9 +405,6 @@ ul {
   max-width: 100%;
   height: auto;
 }
-
-
-
 
 
 .myul {
@@ -195,203 +443,273 @@ ul {
 
 
 
+
+
+
+.myul1 {
+
+position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 11px;
+}
+
+.myli1 {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+.myli1:last-child {
+  border-right: none;
+}
+
+.myli1 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.myli1 a:hover:not(.active) {
+  background-color: #111;
+}
+
+
+
+#sketchpadapp {
+    /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.leftside {
+    float:left;
+    width:220px;
+    height:285px;
+    background-color:#def;
+    padding:10px;
+    border-radius:4px;
+}
+.rightside {
+    float:left;
+    margin-left:10px;
+}
+#sketchpad {
+	
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border:2px solid #888;
+    border-radius:4px;
+    position:relative; /* Necessary for correct mouse co-ords in Firefox */
+    background-image:url(img/casa1.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+    cursor: pointer;
+}
+
+#sketchpad1 {
+	
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border:2px solid #888;
+    border-radius:4px;
+    position:relative; /* Necessary for correct mouse co-ords in Firefox */
+    background-image:url(img/casa2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+    cursor: pointer;
+}
+
+#clearbutton {
+    font-size: 15px;
+    padding: 10px;
+    -webkit-appearance: none;
+    background: #eee;
+    border: 1px solid #888;
+	
+	background-image: url(img/clear.png); 
+    background-color: transparent; 
+    background-repeat: no-repeat;  
+    background-position: 0px 0px;  
+               
+    cursor: pointer;       
+    height: 50px;   
+	width: 110px;  	
+    padding-left: 16px;    
+    vertical-align: middle;
+	text-align: right;
+}
+
+
+
 </style>
 
 </head>
-<body>
+
+<body onload="init()">
 
 <div id="mySidenav" class="sidenav">
   
   <h2><a href='index.html'>Menu</a></h2>
-    <a><input type="text" id="mySearch" onkeyup="myFunction1()" placeholder="Search.." title="Type in a category" ></a>
-    <ul id="myMenu">
-      <script src="menu.js"></script>
-    </ul>
-	
+  
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href='about.html'>About</a>
-  <a href='stayathome.html'><span style='color:red'>Stay Home</span></a>
-  <a href='https://www.youtube.com/watch?v=QCYMX9IY_NY&list=UUdQl_iHJiSH-wIGHXroJaBQ'>YouTube</a>
+  <a href='stayathome1.html'><span style='color:red'>Stay Home</span></a>
+  <a href='https://www.youtube.com/watch?v=siTrn5TBhew&list=PLmi5tLKsnodkI__heWRZw-MJtMneoQeeR'>YouTube</a>
+  
+  <br>
+  <a href='theprofessor.html'>The Professor</a>
+  <a href='tokyo.html'>Tokyo</a>
+  <a href='nairobi.html'>Nairobi</a>
+  <a href='berlin.html'>Berlin</a>
+  <a href='denver.html'>Denver</a>
+  <a href='rio.html'>Rio</a>
   
   
+  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
   
 </div>
 
 
 <div class="top-container">
 	
-	<span style="font-size:12px; vertical-align:middle; line-height: 40px; float:right" ><img src="icon1.png" alt="steps"  width="70"></img></span>
-	
-  <h1>End Of Day</h1>
-  <p>Click on Menu to change topic</p>
+  <h1 style="background-color:black"><span style='color:white'>LA CASA</span><span style='color:red'> DE </span><span style='color:white'>PAPEL</span> </h1>
+
 </div>
 
 <div class="header" id="myHeader">
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-  
 </div>
 
 <div class="content">
-  <h3>End Of Day</h3>
+  <h3>LA CASA DE PAPEL</h3>
   
-	<p align="center">
-	<img src="img/steps.png" alt="steps" class="responsive" width="600" height="400"></p>
-	
-	<p class="content3" align="center" >
-	<a href="#section1">1</a><span>&nbsp;&nbsp;</span>
-	<a href="#section2">2</a><span>&nbsp;&nbsp;</span>
-	<a href="#section3">3</a><span>&nbsp;&nbsp;</span>
-	<a href="#section4">4</a><span>&nbsp;&nbsp;</span>
-	<a href="#section5">5</a><span>&nbsp;&nbsp;</span></p>
+	<div class="content1" align="center">
+	<p>Bella Ciao - Play Music</p>
+	<audio src="music/BellaCiao.mp3" controls>
+	<p>If you are reading this, it is because your browser does not support the audio element.</p>
+	</audio>
+	</div>
+  
+	<div class="addcontent">
+	<hr>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-format="fluid"
+		 data-ad-layout-key="-gw-3+1f-3d+2z"
+		 data-ad-client="ca-pub-1005888209614542"
+		 data-ad-slot="9383411407"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<hr>
+	</div>
 	
 	<div class="content1">
-	<p><span style='color:red'>What is End of Day (EOD)?</span><br><br>
-		EOD is set of many batches/functions/processes that runs on a daily basis executed automatically and in specific sequence to tie up all the operations for the current financial day and prepare FLEXCUBE for the next working day as defined in the system calendar.<br><br>
-		Each branch can have different set of batches based on the services and products maintained to that branch. For example, if a branch provides loans for customer, then the EOD for this branch should include the CLBATCH responsible for loans while it’s not mandatory to set this batch to another branch that does not provide loans or not allowed to have such service.<br><br>
-		Therefore, the EOD execution time could be different form one branch to another; based on the number of batches, customers, transactions…<br><br>
-		Before starting the EOD operation, it’s mandatory to take a database backup, in case of any failure during the EOD; the DBA team can restore the backup, fix the problem and restart the EOD processes.<br><br>
-		The <a href='dbbackup.html'>database backup</a> is also covered in our site.<br>
-	</p>
+	<p><span style='color:red'>HELP</span> the Professor to escape!
+	<br><span style='color:blue'>The Professor</span></p>
 	</div>
-    <br>
-	
-	<div class="content1" id="section1">
-	<p><span style='color:red'>EOD steps</span></p>
-	
-	<p>Using oracle FLEXCUBE, run the pre-check screens to see if there is any pending maintenance, pending transactions, or any open till/vault.</p>
-	<p>All Transactions and maintenances should be authorized.</p>
-	<p>All Tills and Vaults should be closed.</p>
+	 
+	<div class="content4">   
+		<canvas id="sketchpad" height="100" width="100"></canvas>
 	</div>
 	
+	<div class="content1" align="center">
+		<input type="submit" value="Clear" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
+	</div>
+	
+	<div class="addcontent">
+	<hr>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- site1 -->
+	<!-- Display 2 - Horizontal -->
 	<ins class="adsbygoogle"
 		 style="display:block"
 		 data-ad-client="ca-pub-1005888209614542"
-		 data-ad-slot="5673539792"
-		 data-ad-format="horizontal"
+		 data-ad-slot="5024306797"
+		 data-ad-format="auto"
 		 data-full-width-responsive="true"></ins>
 	<script>
 		 (adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
-	
+	<hr>
+	</div>
 	
 	<div class="content1">
-	<p align="center"><font size="-1">Screen STSVWPEN: Pending Maintenances</font>
-	<br>
-	<img src="img/STSVWPEN.PNG" alt="STSVWPEN" class="responsive" width="800" height="400"></p>
+	<p><span style='color:red'>HELP</span> Tokyo to escape!
+	<br><span style='color:blue'>Tokyo</span></p>
+	</div>
 	
-	<p>In STSVWPEN screen, you can base your queries on any or all of the following parameters and fetch records:
-	<li>Product ID</li>
-	<li>Description</li></p>
-
-	<p>Select any or all of the above parameters for a query and click ‘Search’ button. The records meeting the selected criteria are displayed.
-	<br>
-	System displays the all the pending maintenance pertaining to this branch:
-	<li>Function ID</li>
-	<li>Language Code</li>
-	<li>Description</li></p>
+	<div class="content4">   
+		<canvas id="sketchpad1" height="100" width="100"></canvas>
+	</div>
+	
+	<div class="content1" align="center">
+		<input type="submit" value="Clear" id="clearbutton" onclick="clearCanvas(canvas1,ctx1);">
+	</div>
+	
+	<h4><span style='color:white'>sports, health, food, fashion, car, cosmetics</span></h1>
+	
+	
+	<div class="content3" align="center">
+	<p>
+	<br>One morning I woke up
+	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
+	<br>one morning I woke up
+	<br>and I found the invader.
+	 <br>
+	<br>Oh partisan2 take me away
+	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
+	<br>oh partisan take me away
+	<br>that I'm feeling like dying
+	 <br>
+	<br>And if I die as a partisan
+	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
+	<br>and if I die as a partisan
+	<br>you must bury me
+	 <br>
+	<br>You will bury me over there, on the mountain
+	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
+	<br>you will bury me over there on the mountain
+	<br>under the shadow of a wonderful flower
+	<br> 
+	<br>And all the people passing by
+	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
+	<br>and all the people passing by
+	<br>will say "what a wonderful flower!"
+	 <br>
+	<br>And this is the flower of the partisan
+	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
+	<br>dead for our freedom
+	<br>and this is the flower of the partisan
+	<br>dead for our freedom
+	</p>
 	</div>
 	
 	<br>
-	
-	<div class="content1">
-	<p align="center"><font size="-1">Screen EISVWPNT: Pending Transactions</font>
 	<br>
-	<img src="img/EISVWPNT.PNG" alt="EISVWPNT" class="responsive" width="800" height="400"></p>
-	
-	<p>In EISVWPNT screen, you can base your queries on any or all of the following parameters and fetch records:
-	<br>
-	<li>Branch</li>
-	<li>Module</li>
-	<li>Reference Number</li>
-	<li>Events</li>
-	<li>ID</li></p>
-	
-	<p>Select any or all of the above parameters for a query and click ‘Search’ button. The records meeting the selected criteria are displayed.
-	System displays the following details pertaining to the fetched records</p>
-	</div>
-
 	<br>
 	
-	<div class="content1">
-	<p align="center"><font size="-1">Screen 9012: Current Open Tills. Using head teller</font>
-	<br>
-	<img src="img/9012.PNG" alt="9012" class="responsive" width="800" height="400"></p>
-	
-	<p>The system defaults the current logged in branch code.<br>
-	The following details of the current branch are displayed for all the tellers:<br>
-	<li>User ID – the teller user ID</li>
-	<li>User Working – current log in status of the user</li>
-	<li><strong>Pending Transactions</strong> - number of transactions in the Pending Queue for the user</li>
-	<li>Tanked Transactions - number of transactions in the Tanked Queue for the user</li>
-	<li>Assigned Transactions - number of transactions in the Assigned Queue for the user</li>
-	<li>Unassigned Transactions - number of transactions in the Unassigned Queue for the user</li>
-	<li>Auto Reversal Pending - number of transaction pending to be auto reversed for the user</li></p>
-	</div>
-	
-	<br>
-	<div class="content2" id="section2">
-	<p>After checking all these 3 screens (EISVWPNT, EISVWPNT, and 9012), we should take <a href='dbbackup.html'>database backup</a></p>
-	</div>
-	<br>
-	
-	
-	<div class="content1" id="section3">
-	<p>After database backup completed, now we can continue the EOD using Oracle FLEXCUBE by running the EODM</p>
-	<p align="center"><font size="-1">Screen EODM: EOD Maintenance screen. To be execute for each branch.</font>
-	<br>
-	<img src="img/eodm.PNG" alt="EODM" class="responsive" width="800" height="400"></p>
-	
-	<p>Click ‘Run EOD’ button to run the EOD for the branch.<br>
-	The following validations are done before running EOD:<br>
-	<li>Only the user who runs the EOD should be logged into the branch.</li>
-	<li>There must be Holiday maintenance to get the Next working day.</li>
-	<li>Balancing and closure processes for Till and Vault should be completed. There should not be any transaction in ‘Pending’ or ‘Assigned’ stage for a user</li>
-	<br>Once these have been successfully validated, EOD proceeds with the system date change by moving the Branch posting date to the next date. The Branch transaction sequence will also get reset as a consequence of the execution of Branch EOD. This signifies the Beginning of Day (BOD) for the Branch for the next working day and the Branch is ready for Transaction Input.</p>
-	</div>
-	
-	<br>
-	
-	<div class="content1" id="section4">
-	<p align="center"><font size="-1">screen AEDSTART from the head office.</font>
-	<br>
-	<img src="img/aedstart.PNG" alt="AEDSTART" class="responsive" width="800" height="400"></p>
-	<p>Use the same options as shown in the above screen.</P>
-	</div>
-	
-	<br>
-	
-	<div class="content1">
-	<p>Note that the job BRNSCH is responsible for the EOD processing. This job should be scheduled.</p>
-	<p align="center"><font size="-1">Use the screen SMSJOBBR, to check the BRNSCH status.</font>
-	<br>
-	<img src="img/smsjobbr.PNG" alt="SMSJOBBR" class="responsive" width="800" height="400">
-	<br>If the job BRNSCH is not scheduled, click on BRNSCH and then click resume.</p>
-	</div>
-	
-	<br>
-	
-	<div class="content1">
-	<p>Now we have to check the status of the EOD</p>
-	<p align="center"><font size="-1">Using screen AESBRMTR: EOC Monitor</font>
-	<br>
-	<img src="img/aesbrmtr.PNG" alt="AESBRMTR" class="responsive" width="800" height="400">
-
-	<p>EOC Status:<br>
-	<li>N: not running</li>
-	<li>W: working</li>
-	<li>A: aborted</li>
-	<li>C: completed</li><p>
-	</div>
-	<br>
-	<div class="content2" id="section5">
-	<p>When the EOD compete (status =C) for all branches. We should take another <a href='dbbackup.html'>database backup</a></p>
-	</div>
-	
-  </div>
-
-
+	<ul class="myul1">
+	  <li class="myli1"><span style="font-size:25px;cursor:pointer" onclick="openNav()">&#9776; Menu</span></li>
+	</ul>
 
 <script>
 function openNav() {
@@ -402,21 +720,7 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
-function myFunction1() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("mySearch");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myMenu");
-  li = ul.getElementsByTagName("li");
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
-}
+
 
 
 window.onscroll = function() {myFunction()};
@@ -435,16 +739,7 @@ function myFunction() {
 
 </script>
 
-<ul class="myul" style="border-bottom:1px solid #bbb">
-  <li class="myli" style="float:right"><a  href='index.html'>Home</a></li>
-</ul>
 
-<ul class="myul">
-  <li class="myli"><a class="active" href='eod.html'>EOD</a></li>
-  <li class="myli"><a href='dbbackup.html'>Database Backup</a></li>
-  <li class="myli"><a href='bulkupload1.html'>Bulk Upload</a></li>
-  <li class="myli"><a href='creports.html'>Canned Reports</a></li>
-</ul>
    
 </body>
 </html> 
