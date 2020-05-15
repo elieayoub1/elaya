@@ -175,6 +175,27 @@ position: fixed;
 }
 
 
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
 </style>
 </head>
 <body  style="background-color:white;">
@@ -202,7 +223,15 @@ position: fixed;
 <br>
 <h3 style="text-align:center">Daily Update</h3>
 
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <h2 style="margin: 0;" align="center">
+	  <strong>Danger! 🐜<br></strong> 
+	إنتشار حشرات صغيرة الحجم بشكل كبير في بيروت
+	</h2>
+</div>
 
+<br>
 
 <div class="row" >
   <div class="column" >
