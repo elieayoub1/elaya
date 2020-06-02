@@ -2,9 +2,21 @@
 <html>
 <head>
 
-<title>LA CASA DE PAPEL</title>
+<title>Social Media</title>
 
+<link rel="icon" 
+      type="image/png" 
+      href="https://fijjla.com/Favicon.ico">
+	  
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:image" content="https://fijjla.com/img/fijjlalogofb.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image" content="https://fijjla.com/img/fijjlalogowapp.jpg" />
+<meta property="og:image:width" content="300" />
+<meta property="og:image:height" content="300" />
+
 <script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
@@ -29,717 +41,253 @@
 
 
 
-<script type="text/javascript">
-    // Variables for referencing the canvas and 2dcanvas context
-    var canvas,ctx;
-	var canvas1,ctx1;
-
-    // Variables to keep track of the mouse position and left-button status 
-    var mouseX,mouseY,mouseDown=0;
-
-    // Variables to keep track of the touch position
-    var touchX,touchY;
-
-    // Keep track of cycling through different hues each time a dot is drawn
-    var hue=0;
-
-    // Draws a dot at a specific position on the supplied canvas name
-    // Parameters are: A canvas context, the x position, the y position, the size of the dot
-    function drawDot(ctx,x,y,size) {
-	// Instead of using RGB (red/green/blue) format for the drawing colour, since we're cycling through
-	// hue values, it makes more sense to use HSLA, which is Hue, Saturation, Luminence
-	// We can use fixed values for Saturation, Luminence and alpha, and just use the Hue value from our hue variable.
-        sat=100; lum=50; a=255;
-
-        // Select a fill style
-        ctx.fillStyle = "hsla("+hue+","+sat+"%,"+lum+"%,"+(a/255)+")";
-
-        // Draw a filled circle
-        ctx.beginPath();
-        ctx.arc(x, y, size, 0, Math.PI*2, true); 
-        ctx.closePath();
-        ctx.fill();
-
-	// Update the hue - increase the "2" value here for a faster cycle through the different colours
-	hue+=2;
-
-	// Go back to the first hue if we've reached the end of the hue range
-	if (hue>360) 
-	 hue=0;
-    } 
-
-    // Clear the canvas context using the canvas width and height
-    function clearCanvas(canvas,ctx) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-
-    // Keep track of the mouse button being pressed and draw a dot at current location
-    function sketchpad_mouseDown() {
-        mouseDown=1;
-        drawDot(ctx,mouseX,mouseY,5);
-    }
-	function sketchpad_mouseDown1() {
-        mouseDown=1;
-        drawDot(ctx1,mouseX,mouseY,5);
-    }
-
-    // Keep track of the mouse button being released
-    function sketchpad_mouseUp() {
-        mouseDown=0;
-    }
-	function sketchpad_mouseUp1() {
-        mouseDown=0;
-    }
-
-    // Keep track of the mouse position and draw a dot if mouse button is currently pressed
-    function sketchpad_mouseMove(e) { 
-        // Update the mouse co-ordinates when moved
-        getMousePos(e);
-
-        // Draw a dot if the mouse button is currently being pressed
-        if (mouseDown==1) {
-            drawDot(ctx,mouseX,mouseY,5);
-        }
-    }
-	function sketchpad_mouseMove1(e) { 
-        // Update the mouse co-ordinates when moved
-        getMousePos(e);
-
-        // Draw a dot if the mouse button is currently being pressed
-        if (mouseDown==1) {
-            drawDot(ctx1,mouseX,mouseY,5);
-        }
-    }
-
-    // Get the current mouse position relative to the top-left of the canvas
-    function getMousePos(e) {
-        if (!e)
-            var e = event;
-
-        if (e.offsetX) {
-            mouseX = e.offsetX;
-            mouseY = e.offsetY;
-        }
-        else if (e.layerX) {
-            mouseX = e.layerX;
-            mouseY = e.layerY;
-        }
-     }
-
-    // Draw something when a touch start is detected
-    function sketchpad_touchStart() {
-        // Update the touch co-ordinates
-        getTouchPos();
-
-        drawDot(ctx,touchX,touchY,5);
-
-        // Prevents an additional mousedown event being triggered
-        event.preventDefault();
-    }
-	function sketchpad_touchStart1() {
-        // Update the touch co-ordinates
-        getTouchPos();
-
-        drawDot(ctx1,touchX,touchY,5);
-
-        // Prevents an additional mousedown event being triggered
-        event.preventDefault();
-    }
-
-    // Draw something and prevent the default scrolling when touch movement is detected
-    function sketchpad_touchMove(e) { 
-        // Update the touch co-ordinates
-        getTouchPos(e);
-
-        // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
-        drawDot(ctx,touchX,touchY,5); 
-
-        // Prevent a scrolling action as a result of this touchmove triggering.
-        event.preventDefault();
-    }
-	function sketchpad_touchMove1(e) { 
-        // Update the touch co-ordinates
-        getTouchPos(e);
-
-        // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
-        drawDot(ctx1,touchX,touchY,5); 
-
-        // Prevent a scrolling action as a result of this touchmove triggering.
-        event.preventDefault();
-    }
-
-    // Get the touch position relative to the top-left of the canvas
-    // When we get the raw values of pageX and pageY below, they take into account the scrolling on the page
-    // but not the position relative to our target div. We'll adjust them using "target.offsetLeft" and
-    // "target.offsetTop" to get the correct values in relation to the top left of the canvas.
-    function getTouchPos(e) {
-        if (!e)
-            var e = event;
-
-        if(e.touches) {
-            if (e.touches.length == 1) { // Only deal with one finger
-                var touch = e.touches[0]; // Get the information for finger #1
-                touchX=touch.pageX-touch.target.offsetLeft;
-                touchY=touch.pageY-touch.target.offsetTop;
-            }
-        }
-    }
-
-
-    // Set-up the canvas and add our event handlers after the page has loaded
-    function init() {
-        // Get the specific canvas element from the HTML document
-        canvas = document.getElementById('sketchpad');
-		canvas1 = document.getElementById('sketchpad1');
-
-        // If the browser supports the canvas tag, get the 2d drawing context for this canvas
-        if (canvas.getContext)
-            ctx = canvas.getContext('2d');
-		if (canvas1.getContext)
-            ctx1 = canvas1.getContext('2d');
-
-        // Check that we have a valid context to draw on/with before adding event handlers
-        if (ctx) {
-            // React to mouse events on the canvas, and mouseup on the entire document
-            canvas.addEventListener('mousedown', sketchpad_mouseDown, false);
-            canvas.addEventListener('mousemove', sketchpad_mouseMove, false);
-            window.addEventListener('mouseup', sketchpad_mouseUp, false);
-
-            // React to touch events on the canvas
-            canvas.addEventListener('touchstart', sketchpad_touchStart, false);
-            canvas.addEventListener('touchmove', sketchpad_touchMove, false);
-        }
-		if (ctx1) {
-            // React to mouse events on the canvas, and mouseup on the entire document
-            canvas1.addEventListener('mousedown', sketchpad_mouseDown1, false);
-            canvas1.addEventListener('mousemove', sketchpad_mouseMove1, false);
-            window.addEventListener('mouseup', sketchpad_mouseUp1, false);
-
-            // React to touch events on the canvas
-            canvas1.addEventListener('touchstart', sketchpad_touchStart1, false);
-            canvas1.addEventListener('touchmove', sketchpad_touchMove1, false);
-        }
-		
-		if (canvas.width  < window.innerWidth)
-            {
-                canvas.width  = window.innerWidth - 90;
-				canvas.height = (window.innerWidth * 1.3) - 50;
-            }
-		//if (canvas.height < window.innerHeight)
-            //{
-                //canvas.height = window.innerHeight - 50;
-            //}
-		if ( window.innerWidth > 600)
-            {
-                canvas.width  = 500;
-				canvas.height = 500 * 1.3;
-            }	
-		
-		if (canvas1.width  < window.innerWidth)
-            {
-                canvas1.width  = window.innerWidth - 90;
-				canvas1.height = (window.innerWidth * 1.3) - 50;
-            }
-		//if (canvas.height < window.innerHeight)
-            //{
-                //canvas.height = window.innerHeight - 50;
-            //}
-		if ( window.innerWidth > 600)
-            {
-                canvas1.width  = 500;
-				canvas1.height = 500 * 1.3;
-            }	
-            
-    }
-</script>
-
-
-
-
-
 <style>
-
-html {
-  scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: "Lato", sans-serif;
-  font-size: 14px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
 }
 
-
-.top-container {
-  background-color: #93EAD7;
-  padding: 90px;
-  text-align: center;
-  
-  background-image:url(img/casa.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
 }
 
-.header {
-  padding: 10px 16px;
-  background: #555;
-  color: #f1f1f1;
+h1 {
+  font-size: 50px;
+  word-break: break-all;
 }
 
-.footer {
-  padding: 10px 16px;
-  background: #DAD8D8;
-  color: #FFFFFF;
+.row {
+  margin: 10px -16px;
 }
 
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
 .content {
-  padding: 16px;
-  
+  background-color: white;
+  padding: 10px;
 }
 
-.content1 {
-  padding: 16px;
-  
-  margin: 8px;
-  border-radius: 15px;
-  background-color: #F5F5F5;
-}
-
-.addcontent {
-  padding: 16px;
-  margin: 8px;
-}
-
-.content2 {
-  padding: 16px;
-  
-  margin: 8px;
-  border-radius: 15px;
-  background-color: #93EAD7;
-}
-
-.content3 {
-  padding: 4px;
-  width: 80%;
-  margin: 8px;
-  border-radius: 15px;
-  background-color: #93EAD7;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-.content4 {
-  padding: 0px;
-  
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.sticky + .content {
-  padding-top: 102px;
-}
-
-
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 16px;
-  color: #818181;
+/* The "show" class is added to the filtered elements */
+.show {
   display: block;
-  transition: 0.3s;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
 }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.btn:hover {
+  background-color: #ddd;
 }
 
-.sidenav .closebtn1 {
-	position: absolute;
-	top: 10;
-	right: 25px;
-	font-size: 36px;
-	margin-left: 50px;
-}
-
-
-ul {
+.btn.active {
+  background-color: #666;
   color: white;
 }
-
-
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-.responsive {
-  max-width: 100%;
-  height: auto;
-}
-
-
-.myul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  font-size: 11px;
-}
-
-.myli {
-  float: left;
-  border-right:1px solid #bbb;
-}
-
-.myli:last-child {
-  border-right: none;
-}
-
-.myli a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.myli a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #4CAF50;
-}
-
-
-
-
-
-
-.myul1 {
-
-position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 5px;
-  overflow: hidden;
-  background-color: #333;
-  font-size: 11px;
-}
-
-.myli1 {
-  float: left;
-  border-right:1px solid #bbb;
-}
-
-.myli1:last-child {
-  border-right: none;
-}
-
-.myli1 a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.myli1 a:hover:not(.active) {
-  background-color: #111;
-}
-
-
-
-#sketchpadapp {
-    /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.leftside {
-    float:left;
-    width:220px;
-    height:285px;
-    background-color:#def;
-    padding:10px;
-    border-radius:4px;
-}
-.rightside {
-    float:left;
-    margin-left:10px;
-}
-#sketchpad {
-	
-    padding-left: 4px;
-    padding-right: 4px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    border:2px solid #888;
-    border-radius:4px;
-    position:relative; /* Necessary for correct mouse co-ords in Firefox */
-    background-image:url(img/casa1.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-    cursor: pointer;
-}
-
-#sketchpad1 {
-	
-    padding-left: 4px;
-    padding-right: 4px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    border:2px solid #888;
-    border-radius:4px;
-    position:relative; /* Necessary for correct mouse co-ords in Firefox */
-    background-image:url(img/casa2.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-    cursor: pointer;
-}
-
-#clearbutton {
-    font-size: 15px;
-    padding: 10px;
-    -webkit-appearance: none;
-    background: #eee;
-    border: 1px solid #888;
-	
-	background-image: url(img/clear.png); 
-    background-color: transparent; 
-    background-repeat: no-repeat;  
-    background-position: 0px 0px;  
-               
-    cursor: pointer;       
-    height: 50px;   
-	width: 110px;  	
-    padding-left: 16px;    
-    vertical-align: middle;
-	text-align: right;
-}
-
-
-
 </style>
-
 </head>
+<body>
 
-<body onload="init()">
+<!-- MAIN (Center website) -->
+<div class="main">
 
-<div id="mySidenav" class="sidenav">
-  
-  <h2><a href='index.html'>Menu</a></h2>
-  
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href='stayathome1.html'><span style='color:red'>Stay Home</span></a>
-  <a href='https://www.youtube.com/watch?v=siTrn5TBhew&list=PLmi5tLKsnodkI__heWRZw-MJtMneoQeeR'>YouTube</a>
-  
-  <br>
-  <a href='theprofessor.html'>The Professor</a>
-  <a href='tokyo.html'>Tokyo</a>
-  <a href='nairobi.html'>Nairobi</a>
-  <a href='berlin.html'>Berlin</a>
-  <a href='denver.html'>Denver</a>
-  <a href='rio.html'>Rio</a>
-  
-  
-  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
-  
+<h1>FIJJLA.COM</h1>
+<hr>
+
+<h2>CONTENT</h2>
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('oracle')"> Oracle</button>
+  <button class="btn" onclick="filterSelection('english')"> English</button>
+  <button class="btn" onclick="filterSelection('fashion')"> Fashion</button>
+  <button class="btn" onclick="filterSelection('social')"> Social</button>
+  <button class="btn" onclick="filterSelection('games')"> Games</button>
 </div>
 
-
-<div class="top-container">
+<!-- Portfolio Gallery Grid -->
+<div class="row">
 	
-  <h1 style="background-color:black"><span style='color:white'>LA CASA</span><span style='color:red'> DE </span><span style='color:white'>PAPEL</span> </h1>
+  <div class="column oracle">
+  <a href="http://fijjla.com/oracle.html" target="_blank">
+    <div class="content">
+      <img src="img/oraclelink.jpg" alt="Oracle" style="width:100%">
+      <h4>Oracle</h4>
+      <p>FLEXCUBE 14.1</p>
+    </div>
+	</a>
+  </div>
+	
 
+  
+  <div class="column social">
+  <a href="http://fijjla.com/socialmedia.html" target="_blank">
+    <div class="content">
+      <img src="img/medialink.jpg" alt="Social" style="width:100%">
+      <h4>Social</h4>
+      <p>Social Media</p>
+    </div>
+	</a>
+  </div>
+  
+  
+  
+  <div class="column fashion">
+  <a href="http://fijjla.com/fashion1.html" target="_blank">
+    <div class="content">
+      <img src="img/fashionlink.jpg" alt="Fashion" style="width:100%">
+      <h4>Fashion</h4>
+      <p>Tips and Tricks</p>
+    </div>
+	</a>
+  </div>
+  
+  
+  
+  <div class="column english">
+  <a href="http://fijjla.com/teacher.html" target="_blank">
+    <div class="content">
+      <img src="img/teacherlink.jpg" alt="English" style="width:100%">
+      <h4>English</h4>
+      <p>Smart Teacher</p>
+    </div>
+	</a>
+  </div>
+	
+
+
+  <!-- Games -->
+  
+  <div class="column games">
+  <a href="http://fijjla.com/towers.html" target="_blank">
+    <div class="content">
+      <img src="img/towerslink.jpg" alt="Towers" style="width:100%">
+      <h4>Move Towers</h4>
+      <p>Famous Tower Game</p>
+    </div>
+	</a>
+  </div>
+  
+  
+  
+  <div class="column games">
+  <a href="http://fijjla.com/duckhunt.html" target="_blank">
+    <div class="content">
+    <img src="img/duckhuntlink.jpg" alt="DuckHunt" style="width:100%">
+      <h4>Duck Hunt</h4>
+      <p>Do you remember this!</p>
+    </div>
+	</a>
+  </div>
+  
+  
+  
+  <div class="column games">
+  <a href="http://fijjla.com/casa.html" target="_blank">
+    <div class="content">
+    <img src="img/casalink.jpg" alt="Professor" style="width:100%">
+      <h4>LA CASA DE PAPEL</h4>
+      <p>Help The Professor</p>
+    </div>
+	</a>
+  </div>
+  
+  
+  
+   <div class="column games">
+   <a href="http://fijjla.com/riddles.html" target="_blank">
+    <div class="content">
+    <img src="img/riddlelink.jpg" alt="Riddle" style="width:100%">
+      <h4>Riddle</h4>
+      <p>Einstein riddle</p>
+    </div>
+	</a>
+  </div>
+  
+  
+  <!-- End Games -->
+<!-- END GRID -->
 </div>
 
-<div class="header" id="myHeader">
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+<!-- END MAIN -->
 </div>
-
-<div class="content">
-  <h3>LA CASA DE PAPEL</h3>
-  
-	<div class="content1" align="center">
-	<p>Bella Ciao - Play Music</p>
-	<audio src="music/BellaCiao.mp3" controls>
-	<p>If you are reading this, it is because your browser does not support the audio element.</p>
-	</audio>
-	</div>
-  
-	<div class="addcontent">
-	<hr>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<ins class="adsbygoogle"
-		 style="display:block"
-		 data-ad-format="fluid"
-		 data-ad-layout-key="-gw-3+1f-3d+2z"
-		 data-ad-client="ca-pub-1005888209614542"
-		 data-ad-slot="9383411407"></ins>
-	<script>
-		 (adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-	<hr>
-	</div>
-	
-	<div class="content1">
-	<p><span style='color:red'>HELP</span> the Professor to escape!
-	<br><span style='color:blue'>The Professor</span></p>
-	</div>
-	 
-	<div class="content4">   
-		<canvas id="sketchpad" height="100" width="100"></canvas>
-	</div>
-	
-	<div class="content1" align="center">
-		<input type="submit" value="Clear" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
-	</div>
-	
-	<div class="addcontent">
-	<hr>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- Display 2 - Horizontal -->
-	<ins class="adsbygoogle"
-		 style="display:block"
-		 data-ad-client="ca-pub-1005888209614542"
-		 data-ad-slot="5024306797"
-		 data-ad-format="auto"
-		 data-full-width-responsive="true"></ins>
-	<script>
-		 (adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-	<hr>
-	</div>
-	
-	<div class="content1">
-	<p><span style='color:red'>HELP</span> Tokyo to escape!
-	<br><span style='color:blue'>Tokyo</span></p>
-	</div>
-	
-	<div class="content4">   
-		<canvas id="sketchpad1" height="100" width="100"></canvas>
-	</div>
-	
-	<div class="content1" align="center">
-		<input type="submit" value="Clear" id="clearbutton" onclick="clearCanvas(canvas1,ctx1);">
-	</div>
-	
-	<h4><span style='color:white'>sports, health, food, fashion, car, cosmetics</span></h1>
-	
-	
-	<div class="content3" align="center">
-	<p>
-	<br>One morning I woke up
-	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
-	<br>one morning I woke up
-	<br>and I found the invader.
-	 <br>
-	<br>Oh partisan2 take me away
-	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
-	<br>oh partisan take me away
-	<br>that I'm feeling like dying
-	 <br>
-	<br>And if I die as a partisan
-	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
-	<br>and if I die as a partisan
-	<br>you must bury me
-	 <br>
-	<br>You will bury me over there, on the mountain
-	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
-	<br>you will bury me over there on the mountain
-	<br>under the shadow of a wonderful flower
-	<br> 
-	<br>And all the people passing by
-	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
-	<br>and all the people passing by
-	<br>will say "what a wonderful flower!"
-	 <br>
-	<br>And this is the flower of the partisan
-	<br>goodbye my Beautiful, goodbye my Beautiful, goodbye my Beautiful, goodbye
-	<br>dead for our freedom
-	<br>and this is the flower of the partisan
-	<br>dead for our freedom
-	</p>
-	</div>
-	
-	<br>
-	<br>
-	<br>
-	
-	<ul class="myul1">
-	  <li class="myli1"><span style="font-size:25px;cursor:pointer" onclick="openNav()">&#9776; Menu</span></li>
-	</ul>
 
 <script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-
-
-
-
-window.onscroll = function() {myFunction()};
-
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
 
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
 
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
 </script>
 
-
-   
 </body>
-</html> 
+</html>
