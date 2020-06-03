@@ -41,6 +41,31 @@
 
 
 
+
+
+
+
+
+<script type="text/javascript">
+    function init() {
+
+		var x = document.getElementsByClassName("column");
+		if ( window.innerWidth >= 800) {         
+				for (i = 0; i < x.length; i++) {
+					x[i].style.width = "33%";
+				  }
+            }
+		else {
+			for (i = 0; i < x.length; i++) {
+					x[i].style.width = "50%";
+				  }
+		}
+            
+    }
+	window.onload = init;
+</script>
+
+
 <style>
 * {
   box-sizing: border-box;
@@ -78,6 +103,14 @@ h1 {
   float: left;
   width: 50%;
   display: none; /* Hide all elements by default */
+}
+
+.column33 {
+  width: 33%;
+}
+
+.column50 {
+  width: 50%;
 }
 
 /* Clear floats after rows */ 
@@ -118,7 +151,7 @@ h1 {
 }
 </style>
 </head>
-<body>
+<body >
 
 <!-- MAIN (Center website) -->
 <div class="main">
