@@ -55,11 +55,7 @@
 					x[i].style.width = "50%";
 				  }
             }
-		else {
-			for (i = 0; i < x.length; i++) {
-					x[i].style.width = "100%";
-				  }
-		}
+		
             
     }
 	window.onload = init;
@@ -127,7 +123,7 @@ h1 {
 }
 
 .content1 {
-  padding: 10px;
+  padding: 2px;
 }
 
 /* The "show" class is added to the filtered elements */
@@ -165,12 +161,41 @@ h1 {
   margin: auto;
 }
 
-.grid-container > div {
+.grid-container > a {
   background-color: rgba(255, 255, 255, 0.8);
-  border: 5px solid white;
+  border: 10px solid white;
   text-align: center;
   font-size: 30px;
   margin: auto;
+}
+
+
+
+/* Create two equal columns that floats next to each other */
+.linkcolumn {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  background-color: gray;
+  color: white;
+ 
+}
+
+.linkcolumn > a{
+
+  color: white;
+ 
+}
+
+/* Clear floats after the columns */
+.linkrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.linkcolumn:hover {
+  background-color: black;
 }
 
 
@@ -183,7 +208,7 @@ h1 {
 
 <h1>FIJJLA.COM</h1>
 <hr>
-<h2 align="center" style='color:blue'>فَلا تَعْلَمُ نَفْسٌ مَا أُخْفِيَ لَهُمْ مِنْ قُرَّةِ أَعْيُنٍ جَزَاءً بِمَا كَانُوا يَعْمَلُونَ</h2>
+<h4 align="center" style='color:blue'>فَلا تَعْلَمُ نَفْسٌ مَا أُخْفِيَ لَهُمْ مِنْ قُرَّةِ أَعْيُنٍ جَزَاءً بِمَا كَانُوا يَعْمَلُونَ</h4>
 <hr>
 
 <h2 dir="rtl">طريقة سهلة لمساعدة الأطفال على حفظ وممارسة وفهم كيفية إنشاء جميع جداول الضرب</h2>
@@ -340,9 +365,9 @@ h1 {
   </a>
 </div>
 
-
+</div><!-- END GRID -->
 <!-- END MAIN -->
-</div>
+
 
 <hr>
 
@@ -366,6 +391,22 @@ h1 {
     </div>
   </div>
 </div>
+
+
+<div class="linkrow">
+  <div class="linkcolumn" >
+  	<a href="http://fijjla.com/teacher.html" target="_blank">
+    <h3 align="center"><< PREV</h3>
+    </a>
+  </div>
+  <div class="linkcolumn" >
+    <a href="http://fijjla.com/fashion1.html" target="_blank">
+    <h3 align="center">NEXT >></h3>
+    </a>
+  </div>
+</div>
+
+
 </div>
 
 </body>
