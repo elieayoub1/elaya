@@ -274,12 +274,86 @@ position: fixed;
     height: 100%;
 }
 
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  width : 100%;
+  
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+  
+}
+
+.overlay .closebtn1 {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px; 
+}
+
+.overlay .closebtn2 {
+  position: absolute;
+  bottom: 20px;
+  right: 45px;
+  font-size: 60px; 
+}
+
 </style>
 </head>
 <body  style="background-color:white;">
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"></script>
+
+
+<div id="myNav" class="overlay">
+
+	<h2 style="margin: 5;" align="center">
+	  <span style='color:white'>إعلان</span>
+	</h2>
+  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- Display 2 - Horizontal -->
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-1005888209614542"
+						 data-ad-slot="5024306797"
+						 data-ad-format="auto"
+						 data-full-width-responsive="true"></ins>
+					<script>
+						 (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+  </div>
+  <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
+</div>
+
 
 
 <div class="about-section">
@@ -422,6 +496,15 @@ function myFunction() {
   document.getElementById("myBar").style.width = scrolled + "%";
   document.getElementById("myBar1").style.width = scrolled + "%";
 }
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
 </script>
 
 
