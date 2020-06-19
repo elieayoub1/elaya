@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 350px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>Responsive Image Grid</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+    <img src="sun/sun1.jpg" style="width:100%">
+    <img src="sun/sun2.jpg" style="width:100%">
+    <img src="sun/sun3.jpg" style="width:100%">
+    <img src="sun/sun4.jpg" style="width:100%">
+    <img src="sun/sun5.jpeg" style="width:100%">
+    <img src="sun/sun6.jpg" style="width:100%">
+    <img src="sun/sun7.jpg" style="width:100%">
+	<img src="sun/sun8.jpg" style="width:100%">
+    <img src="sun/sun9.jpg" style="width:100%">
+    <img src="sun/sun10.jpg" style="width:100%">
+  </div>
+  
+  <div class="column">
+    
+    <img src="sun/sun11.jpg" style="width:100%">
+    <img src="sun/sun12.jpg" style="width:100%">
+    <img src="sun/sun13.jpg" style="width:100%">
+    <img src="sun/sun14.jpg" style="width:100%">
+	<img src="sun/sun15.jpg" style="width:100%">
+    <img src="sun/sun16.jpg" style="width:100%">
+    <img src="sun/sun17.jpg" style="width:100%">
+    <img src="sun/sun18.jpg" style="width:100%">
+    <img src="sun/sun19.jpg" style="width:100%">
+    <img src="sun/sun20.jpg" style="width:100%">
+  </div>
+  
+  <div class="column">
+    
+    <img src="sun/sun21.jpg" style="width:100%">
+	<img src="sun/sun22.jpeg" style="width:100%">
+    <img src="sun/sun23.jpeg" style="width:100%">
+    <img src="sun/sun24.jpeg" style="width:100%">
+    <img src="sun/sun25.jpeg" style="width:100%">
+    <img src="sun/sun26.jpg" style="width:100%">
+    <img src="sun/sun27.jpg" style="width:100%">
+    <img src="sun/sun28.jpg" style="width:100%">
+	<img src="sun/sun29.jpg" style="width:100%">
+    <img src="sun/sun30.jpg" style="width:100%">
+  </div>
+  
+  
+  <div class="column">
+    
+    <img src="sun/sun31.jpg" style="width:100%">
+    <img src="sun/sun32.jpg" style="width:100%">
+    <img src="sun/sun33.jpg" style="width:100%">
+    <img src="sun/sun34.jpg" style="width:100%">
+    <img src="sun/sun35.jpg" style="width:100%">
+	<img src="sun/sun36.jpg" style="width:100%">
+    <img src="sun/sun37.jpg" style="width:100%">
+    <img src="sun/sun38.jpg" style="width:100%">
+    <img src="sun/sun39.jpg" style="width:100%">
+    <img src="sun/sun40.jpg" style="width:100%">
+	
+	<img src="sun/sun41.jpg" style="width:100%">
+    <img src="sun/sun42.jpg" style="width:100%">
+	<img src="sun/sun43.jpg" style="width:100%">
+  </div>
+  
+  
+  
+</div>
+
+</body>
+</html>
