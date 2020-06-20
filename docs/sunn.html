@@ -146,9 +146,10 @@ body {
  }
  
  .imgbox2 {
-            display: grid;
+            
             height: 100%;
-			display: none;
+			display: grid;
+			background: yellow;
  }
  
 .center-fit1 {
@@ -158,6 +159,18 @@ body {
         object-fit: contain;
 		margin: auto;
 		display: block;
+}
+
+.centerAd {
+    position:fixed; /* change this to fixed */
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    background:#fff;
+	display: none;
 }
 
 
@@ -173,11 +186,9 @@ body {
 
   <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
 	 
-	<div class="imgbox1">
-		<img id="mainImage" class="center-fit1" src="sun/sun10.jpg" onclick="closeNav()">
-	</div>
+
 	
-	<div class="imgbox2" id="myad">
+	<div class="centerAd" id="myad">
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- Display 2 - Horizontal -->
 		<ins class="adsbygoogle"
@@ -189,6 +200,10 @@ body {
 		<script>
 		(adsbygoogle = window.adsbygoogle || []).push({});
 		</script> 
+	</div>
+	
+	<div class="imgbox1">
+		<img id="mainImage" class="center-fit1" src="sun/sun10.jpg" onclick="closeNav()">
 	</div>
 	 
   <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
@@ -288,7 +303,7 @@ function openImg1() {
   document.getElementById("myNav").style.width = "100%";
   document.getElementById("mainImage").src = "sun/sun1.jpg";
   
-  document.getElementById("mainImage").style.display = "block";
+  document.getElementById("mainImage").style.display = "grid";
   document.getElementById("myad").style.display = "none";
 }
 
@@ -296,7 +311,7 @@ function openImg2() {
   document.getElementById("myNav").style.width = "100%";
   document.getElementById("mainImage").src = "sun/sun2.jpg";
   
-  document.getElementById("myad").style.display = "block";
+  document.getElementById("myad").style.display = "grid";
   document.getElementById("mainImage").style.display = "none";
 }
 
@@ -512,6 +527,7 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
+  document.getElementById("myad").style.display = "none";
 }
 
 </script>
