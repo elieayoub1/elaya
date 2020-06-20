@@ -230,7 +230,7 @@ body {
 
 <!-- Header -->
 <div class="header">
-  <h1>Responsive 3</h1>
+  <h1>Responsive 4</h1>
   <p>Resize the browser window to see the responsive effect.</p>
 </div>
 
@@ -340,6 +340,11 @@ function displayAd() {
 		document.getElementById("mainImage").style.display = "none";
 	}
 	
+	if(x % 7 == 0)
+	{
+		window.location.reload();
+	}
+	
 }
 
 
@@ -359,6 +364,7 @@ function openImg3() {
   document.getElementById("myNav").style.width = "100%";
   document.getElementById("mainImage").src = "sun/sun3.jpg";
   displayAd();
+  
 }
 
 function openImg4() {
