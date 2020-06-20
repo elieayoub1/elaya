@@ -162,15 +162,28 @@ body {
 }
 
 .centerAd {
+   position:fixed; /* change this to fixed */
+    top: 5%;
+    left: 10%;
+    margin-top: 0%;
+    margin-left: -5%;
+    width: 90%;
+    height: 90%;
+    background:red;
+	display: none;
+}
+
+.centerAd1 {
     position:fixed; /* change this to fixed */
-    top: 50%;
-    left: 50%;
+    top: 50px;
+    left: 50px;
     margin-top: -50px;
     margin-left: -50px;
-    width: 100px;
-    height: 100px;
-    background:#fff;
+    width: 90%;
+    height: 90%;
+    background:red;
 	display: none;
+	
 }
 
 
@@ -184,10 +197,6 @@ body {
 <!-- overlay -->
 <div id="myNav" class="overlay" onclick="closeNav()">
 
-  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
-	 
-
-	
 	<div class="centerAd" id="myad">
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- Display 2 - Horizontal -->
@@ -205,7 +214,8 @@ body {
 	<div class="imgbox1">
 		<img id="mainImage" class="center-fit1" src="sun/sun10.jpg" onclick="closeNav()">
 	</div>
-	 
+	
+  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a> 
   <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
 </div>
 
@@ -217,7 +227,7 @@ body {
 
 <!-- Header -->
 <div class="header">
-  <h1>Responsive 2</h1>
+  <h1>Responsive 4</h1>
   <p>Resize the browser window to see the responsive effect.</p>
 </div>
 
