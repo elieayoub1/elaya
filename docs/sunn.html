@@ -54,8 +54,98 @@ body {
     max-width: 100%;
   }
 }
+
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  width : 100%;
+  
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+  display: block;
+  
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+  
+}
+
+.overlay .closebtn1 {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px; 
+}
+
+.overlay .closebtn2 {
+  position: absolute;
+  bottom: 20px;
+  right: 45px;
+  font-size: 60px; 
+}
+
+.img1 {
+   
+width: 100%;
+  height: auto;
+   
+}
+
+.imgbox {
+            display: grid;
+            height: 100%;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+
 </style>
 <body>
+
+
+
+
+<!-- overlay -->
+<div id="myNav" class="overlay">
+
+  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
+  
+	<div class="imgbox">
+		<img id="mainImage" class="center-fit" src="sun/sun10.jpg">
+	</div>
+	
+  <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
+</div>
+
+
+
+
+
+
 
 <!-- Header -->
 <div class="header">
@@ -66,70 +156,133 @@ body {
 <!-- Photo Grid -->
 <div class="row"> 
   <div class="column">
-    <img src="sun/sun1.jpg" style="width:100%">
-    <img src="sun/sun2.jpg" style="width:100%">
-    <img src="sun/sun3.jpg" style="width:100%">
-    <img src="sun/sun4.jpg" style="width:100%">
-    <img src="sun/sun5.jpeg" style="width:100%">
-    <img src="sun/sun6.jpg" style="width:100%">
-    <img src="sun/sun7.jpg" style="width:100%">
-	<img src="sun/sun8.jpg" style="width:100%">
-    <img src="sun/sun9.jpg" style="width:100%">
-    <img src="sun/sun10.jpg" style="width:100%">
-	<img src="sun/sun11.jpg" style="width:100%">
+    <img src="sun/sun1.jpg" style="width:100%" onclick="openImg1()">
+    <img src="sun/sun2.jpg" style="width:100%" onclick="openImg2()">
+    <img src="sun/sun3.jpg" style="width:100%" onclick="openImg3()">
+    <img src="sun/sun4.jpg" style="width:100%" onclick="openImg4()">
+    <img src="sun/sun5.jpeg" style="width:100%" onclick="openImg5()">
+    <img src="sun/sun6.jpg" style="width:100%" onclick="openImg6()">
+    <img src="sun/sun7.jpg" style="width:100%" onclick="openImg7()">
+	<img src="sun/sun8.jpg" style="width:100%" onclick="openImg8()">
+    <img src="sun/sun9.jpg" style="width:100%" onclick="openImg9()">
+    <img src="sun/sun10.jpg" style="width:100%" onclick="openImg10()">
+	<img src="sun/sun11.jpg" style="width:100%" onclick="openImg11()">
   </div>
   
   <div class="column">
     
-    <img src="sun/sun11.jpg" style="width:100%">
-    <img src="sun/sun12.jpg" style="width:100%">
-    <img src="sun/sun13.jpg" style="width:100%">
-    <img src="sun/sun14.jpg" style="width:100%">
-	<img src="sun/sun15.jpg" style="width:100%">
-    <img src="sun/sun16.jpg" style="width:100%">
-    <img src="sun/sun17.jpg" style="width:100%">
-    <img src="sun/sun18.jpg" style="width:100%">
-    <img src="sun/sun19.jpg" style="width:100%">
-    <img src="sun/sun20.jpg" style="width:100%">
+    <img src="sun/sun11.jpg" style="width:100%" onclick="openImg11()">
+    <img src="sun/sun12.jpg" style="width:100%" onclick="openImg12()">
+    <img src="sun/sun13.jpg" style="width:100%" onclick="openImg13()">
+    <img src="sun/sun14.jpg" style="width:100%" onclick="openImg14()">
+	<img src="sun/sun15.jpg" style="width:100%" onclick="openImg15()">
+    <img src="sun/sun16.jpg" style="width:100%" onclick="openImg16()">
+    <img src="sun/sun17.jpg" style="width:100%" onclick="openImg17()">
+    <img src="sun/sun18.jpg" style="width:100%" onclick="openImg18()">
+    <img src="sun/sun19.jpg" style="width:100%" onclick="openImg19()">
+    <img src="sun/sun20.jpg" style="width:100%" onclick="openImg20()">
   </div>
   
   <div class="column">
     
-    <img src="sun/sun21.jpg" style="width:100%">
-	<img src="sun/sun22.jpeg" style="width:100%">
-    <img src="sun/sun23.jpeg" style="width:100%">
-    <img src="sun/sun24.jpeg" style="width:100%">
-    <img src="sun/sun25.jpeg" style="width:100%">
-    <img src="sun/sun26.jpg" style="width:100%">
-    <img src="sun/sun27.jpg" style="width:100%">
-    <img src="sun/sun28.jpg" style="width:100%">
-	<img src="sun/sun29.jpg" style="width:100%">
-    <img src="sun/sun30.jpg" style="width:100%">
-	<img src="sun/sun31.jpg" style="width:100%">
+    <img src="sun/sun21.jpg" style="width:100%" onclick="openImg21()">
+	<img src="sun/sun22.jpeg" style="width:100%" onclick="openImg22()">
+    <img src="sun/sun23.jpeg" style="width:100%" onclick="openImg23()">
+    <img src="sun/sun24.jpeg" style="width:100%" onclick="openImg24()">
+    <img src="sun/sun25.jpeg" style="width:100%" onclick="openImg25()">
+    <img src="sun/sun26.jpg" style="width:100%" onclick="openImg26()">
+    <img src="sun/sun27.jpg" style="width:100%" onclick="openImg27()">
+    <img src="sun/sun28.jpg" style="width:100%" onclick="openImg28()">
+	<img src="sun/sun29.jpg" style="width:100%" onclick="openImg29()">
+    <img src="sun/sun30.jpg" style="width:100%" onclick="openImg30()">
+	<img src="sun/sun31.jpg" style="width:100%" onclick="openImg31()">
   </div>
   
   
   <div class="column">
     
-    <img src="sun/sun31.jpg" style="width:100%">
-    <img src="sun/sun32.jpg" style="width:100%">
-    <img src="sun/sun33.jpg" style="width:100%">
-    <img src="sun/sun34.jpg" style="width:100%">
-    <img src="sun/sun35.jpg" style="width:100%">
-	<img src="sun/sun36.jpg" style="width:100%">
-    <img src="sun/sun37.jpg" style="width:100%">
-    <img src="sun/sun38.jpg" style="width:100%">
-    <img src="sun/sun39.jpg" style="width:100%">
-    <img src="sun/sun40.jpg" style="width:100%">
+    <img src="sun/sun31.jpg" style="width:100%" onclick="openImg31()">
+    <img src="sun/sun32.jpg" style="width:100%" onclick="openImg32()">
+    <img src="sun/sun33.jpg" style="width:100%" onclick="openImg33()">
+    <img src="sun/sun34.jpg" style="width:100%" onclick="openImg34()">
+    <img src="sun/sun35.jpg" style="width:100%" onclick="openImg35()">
+	<img src="sun/sun36.jpg" style="width:100%" onclick="openImg36()">
+    <img src="sun/sun37.jpg" style="width:100%" onclick="openImg37()">
+    <img src="sun/sun38.jpg" style="width:100%" onclick="openImg38()">
+    <img src="sun/sun39.jpg" style="width:100%" onclick="openImg39()">
+    <img src="sun/sun40.jpg" style="width:100%" onclick="openImg40()">
 	
-	<img src="sun/sun41.jpg" style="width:100%">
-    <img src="sun/sun42.jpg" style="width:100%">
-	<img src="sun/sun43.jpg" style="width:100%">
+	<img src="sun/sun41.jpg" style="width:100%" onclick="openImg41()">
+    <img src="sun/sun42.jpg" style="width:100%" onclick="openImg42()">
+	<img src="sun/sun43.jpg" style="width:100%" onclick="openImg43()">
   </div>
   
   
   
 </div>
+
+<script>
+
+function openImg1() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mainImage").src = "sun/sun1.jpg";
+}
+
+function openImg2() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mainImage").src = "sun/sun2.jpg";
+}
+
+function openImg3() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mainImage").src = "sun/sun3.jpg";
+}
+
+function openImg4() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mainImage").src = "sun/sun4.jpg";
+}
+
+function openImg5() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mainImage").src = "sun/sun5.jpeg";
+}
+
+function openImg6() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mainImage").src = "sun/sun6.jpg";
+}
+
+function openImg7() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mainImage").src = "sun/sun7.jpg";
+}
+
+function openImg8() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mainImage").src = "sun/sun8.jpg";
+}
+
+function openImg9() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mainImage").src = "sun/sun9.jpg";
+}
+
+function openImg10() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("mainImage").src = "sun/sun10.jpg";
+}
+
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+</script>
 
 </body>
 </html>
