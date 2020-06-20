@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>الناس القصيرون مميزون جدا</title>
+<title>SUN</title>
 
 <link rel="icon" 
       type="image/png" 
@@ -144,12 +144,20 @@ body {
             height: 100%;
 			
  }
+ 
+ .imgbox2 {
+            display: grid;
+            height: 100%;
+			display: none;
+ }
+ 
 .center-fit1 {
         width: 96%;
         height: auto;
 		max-height: 70vh;
         object-fit: contain;
 		margin: auto;
+		display: block;
 }
 
 
@@ -164,16 +172,24 @@ body {
 <div id="myNav" class="overlay" onclick="closeNav()">
 
   <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
-	<!-- overlay
-	<div class="imgbox">
-		<img id="mainImage" class="center-fit" src="sun/sun10.jpg" onclick="closeNav()">
-	</div>
-	 -->
 	 
 	<div class="imgbox1">
 		<img id="mainImage" class="center-fit1" src="sun/sun10.jpg" onclick="closeNav()">
 	</div>
-	 
+	
+	<div class="imgbox1" id="myad">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Display 2 - Horizontal -->
+		<ins class="adsbygoogle"
+		style="display:block"
+		data-ad-client="ca-pub-1005888209614542"
+		data-ad-slot="5024306797"
+		data-ad-format="auto"
+		data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script> 
+	</div>
 	 
   <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
 </div>
@@ -186,7 +202,7 @@ body {
 
 <!-- Header -->
 <div class="header">
-  <h1>Responsive 9</h1>
+  <h1>Responsive 1</h1>
   <p>Resize the browser window to see the responsive effect.</p>
 </div>
 
@@ -271,11 +287,17 @@ body {
 function openImg1() {
   document.getElementById("myNav").style.width = "100%";
   document.getElementById("mainImage").src = "sun/sun1.jpg";
+  
+  document.getElementById("mainImage").style.display = "block";
+  document.getElementById("myad").style.display = "none";
 }
 
 function openImg2() {
   document.getElementById("myNav").style.width = "100%";
   document.getElementById("mainImage").src = "sun/sun2.jpg";
+  
+  document.getElementById("myad").style.display = "block";
+  document.getElementById("mainImage").style.display = "none";
 }
 
 function openImg3() {
