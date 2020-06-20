@@ -118,6 +118,19 @@ body {
 }
 
 
+.imgbox1 {
+            display: grid;
+            height: 100%;
+			
+ }
+.center-fit1 {
+        width: 96%;
+        height: auto;
+		max-height: 70vh;
+        object-fit: contain;
+		margin: auto;
+}
+
 
 </style>
 <body>
@@ -129,11 +142,17 @@ body {
 <div id="myNav" class="overlay" onclick="closeNav()">
 
   <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
-
+	<!-- overlay
 	<div class="imgbox">
 		<img id="mainImage" class="center-fit" src="sun/sun10.jpg" onclick="closeNav()">
 	</div>
-	
+	 -->
+	 
+	<div class="imgbox1">
+		<img id="mainImage" class="center-fit1" src="sun/sun10.jpg" onclick="closeNav()">
+	</div>
+	 
+	 
   <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
 </div>
 
