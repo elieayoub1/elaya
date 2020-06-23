@@ -285,6 +285,90 @@ img {vertical-align: middle;}
   .text {font-size: 11px}
 }
 
+
+
+
+
+
+
+/*welcome ads*/
+.splitup {
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  color: white;
+  
+}
+
+.splitdown {
+  height: 90%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.85);
+  
+}
+
+.myup {
+  top: 0;
+  left: 0;
+  background-color: #111;
+}
+
+.mydown {
+  bottom: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.85);
+  
+}
+
+.centereddown {
+  
+  background-color: rgba(0,0,0, 0.1);
+  position: absolute;
+  bottom: 5%;
+  top: 5%;
+  height: 100%;
+  width: 100%;
+  
+  
+}
+
+.centeredup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.closebtn1 {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+.splitup a {
+  padding: 0px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  
+}
+
+.centereddown img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.overlaymain {
+  display: block;
+}
+
+/*end of welcome ads*/
+
 </style>
 </head>
 <body >
@@ -293,6 +377,34 @@ img {vertical-align: middle;}
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0" nonce="Pu2cWjr6"></script>
+
+
+<div id="myNav" class="overlaymain">
+	<div class="splitup myup">
+	<a href="javascript:void(0)" class="closebtn1" onclick="closeNav()"><h1 style="margin: 0;">&times;</h1></a>
+	  <div class="centeredup">
+		<h2><span style="background-color: #DA016A; color: white;">W</span>ELCOME</h2>
+	  </div>
+	</div>
+
+	<div class="splitdown mydown">
+	  	<div class="centereddown">		
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Welcome ad -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-1005888209614542"
+			 data-ad-slot="2486730647"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+		</div>			
+	</div>
+</div>
+
+
 
 
 <!-- MAIN (Center website) -->
@@ -603,8 +715,9 @@ img {vertical-align: middle;}
    <div class="column">
     <div class="content1">
 				<br>
+				<!-- Display 2 - Horizontal -->
+				
 					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<!-- Display 2 - Horizontal -->
 					<ins class="adsbygoogle"
 						 style="display:block"
 						 data-ad-client="ca-pub-1005888209614542"
@@ -614,6 +727,7 @@ img {vertical-align: middle;}
 					<script>
 						 (adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
+					
 				<br>
     </div>
   </div>
@@ -657,6 +771,16 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 3500); // Change image every 2 seconds
 }
+
+
+function openNav() {
+  document.getElementById("myNav").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.display = "none";
+}
+
 </script>
 
 
