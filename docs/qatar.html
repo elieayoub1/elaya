@@ -299,6 +299,7 @@ img {vertical-align: middle;}
   z-index: 2;
   color: white;
   
+  
 }
 
 .splitdown {
@@ -314,7 +315,9 @@ img {vertical-align: middle;}
 .myup {
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: rgba(0,0,0, 0.85);
+  width: 100%;
+  text-align: center;
 }
 
 .mydown {
@@ -339,15 +342,15 @@ img {vertical-align: middle;}
 
 .centeredup {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  
 }
 
-.closebtn1 {
+.closebtnads {
   position: absolute;
   top: 0px;
   right: 10px;
+  z-index: 3;
 }
 
 .splitup a {
@@ -355,6 +358,7 @@ img {vertical-align: middle;}
   text-decoration: none;
   color: white;
   display: block;
+  
   
 }
 
@@ -381,9 +385,10 @@ img {vertical-align: middle;}
 
 <div id="myNav" class="overlaymain">
 	<div class="splitup myup">
-	<a href="javascript:void(0)" class="closebtn1" onclick="closeNav()"><h1 style="margin: 0;">&times;</h1></a>
+	<a href="javascript:void(0)" class="closebtnads" onclick="closeNav()"><h1 style="margin: 0;">&times;</h1></a>
 	  <div class="centeredup">
 		<h2><span style="background-color: #DA016A; color: white;">W</span>ELCOME</h2>
+		<hr>
 	  </div>
 	</div>
 
