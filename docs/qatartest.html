@@ -306,7 +306,8 @@ img {vertical-align: middle;}
   width: 100%;
   position: fixed;
   z-index: 1;
-  
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.85);
   
 }
 
@@ -321,13 +322,17 @@ img {vertical-align: middle;}
   left: 0;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.85);
+  
 }
 
 .centereddown {
+  background-color: red;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 5%;
+  top: 5%;
+  height: 100%;
+  width: 100%;
+  
   
 }
 
@@ -359,6 +364,7 @@ img {vertical-align: middle;}
 
 .overlaymain {
   display: block;
+  background-color: red;
 }
 
 /*end of welcome ads*/
@@ -374,30 +380,28 @@ img {vertical-align: middle;}
 
 
 <div id="myNav" class="overlaymain">
-<div class="splitup myup">
-<a href="javascript:void(0)" class="closebtn1" onclick="closeNav()"><h1>&times;</h1></a>
-  <div class="centeredup">
-    <h2>Welcome</h2>
-  </div>
-</div>
+	<div class="splitup myup">
+	<a href="javascript:void(0)" class="closebtn1" onclick="closeNav()"><h1>&times;</h1></a>
+	  <div class="centeredup">
+		<h2>Welcome1</h2>
+	  </div>
+	</div>
 
-<div class="splitdown mydown">
-  <div class="centereddown">
-				
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- Welcome ad -->
-	<ins class="adsbygoogle"
-		 style="display:block"
-		 data-ad-client="ca-pub-1005888209614542"
-		 data-ad-slot="2486730647"
-		 data-ad-format="auto"
-		 data-full-width-responsive="true"></ins>
-	<script>
-		 (adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-				
-  </div>
-</div>
+	<div class="splitdown mydown">
+	  	<div class="centereddown">		
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Welcome ad -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-1005888209614542"
+			 data-ad-slot="2486730647"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+		</div>			
+	</div>
 </div>
 
 
