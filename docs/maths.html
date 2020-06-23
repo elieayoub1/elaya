@@ -199,9 +199,120 @@ h1 {
 }
 
 
+/*welcome ads*/
+.splitup {
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  color: white;
+  
+  
+}
+
+.splitdown {
+  height: 90%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.85);
+  
+}
+
+.myup {
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.85);
+  width: 100%;
+  text-align: center;
+}
+
+.mydown {
+  bottom: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.85);
+  
+}
+
+.centereddown {
+  
+  background-color: rgba(0,0,0, 0.1);
+  position: absolute;
+  bottom: 5%;
+  top: 5%;
+  height: 100%;
+  width: 100%;
+  
+  
+}
+
+.centeredup {
+  position: absolute;
+  width: 100%;
+  
+}
+
+.closebtnads {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  z-index: 3;
+}
+
+.splitup a {
+  padding: 0px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  
+  
+}
+
+.centereddown img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.overlaymain {
+  display: block;
+}
+
+/*end of welcome ads*/
+
+
 </style>
 </head>
 <body >
+
+
+<div id="myNav" class="overlaymain">
+	<div class="splitup myup">
+	<a href="javascript:void(0)" class="closebtnads" onclick="closeNav()"><h1 style="margin: 0;">&times;</h1></a>
+	  <div class="centeredup">
+		<h2><span style="background-color: #DA016A; color: white;">W</span>ELCOME</h2>
+		<hr>
+	  </div>
+	</div>
+
+	<div class="splitdown mydown">
+	  	<div class="centereddown">		
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Welcome ad -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-1005888209614542"
+			 data-ad-slot="2486730647"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+		</div>			
+	</div>
+</div>
+
 
 <!-- MAIN (Center website) -->
 <div class="main">
@@ -408,6 +519,19 @@ h1 {
 
 
 </div>
+
+<script>
+
+function openNav() {
+  document.getElementById("myNav").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.display = "none";
+}
+
+</script>
+
 
 </body>
 </html>
