@@ -499,148 +499,32 @@ img {vertical-align: middle;}
  <!-- calculator here --> 
 <div class="mainframe">
 
-	<table style="width:100%" >
-	<tr>
-	<th>
-	<p>___</p>	
-	</th>
-    <th>
-		<button class="button" onclick="setEnglish()">English</button>
-	</th>
-	<th>
-		<img src="img/translate.png" alt="FIJJLA" style="width:35px; height:35px">
-	</th>
-    <th>
-		<button class="button" onclick="setArabic()">عربي</button>
-	</th>
-	<th>
-	<p>___</p>	
-	</th>
-	</tr>
-	</table>
+
 	
 	
-	<h2 align="center" style="padding-top: 10px;" id="txt1">Select your birthday</h2>
+	<h2 align="center" style="padding-top: 10px;" id="txt1">Select Time</h2>
 	<p align="center" style="padding-top: 0px;margin: 0;">
 	<input type="time" name="dateofbirth" id="dateofbirth" onchange="handler(event);" >
 	</p>
 
 	<hr>
 	
-	<h1 align="center" id="txt2">AGE</h1>
 	
-	<h2 align="center" style="margin: 0;" id="txt3">TODAY’S DATE</h2>
+	<h2 align="center" style="margin: 0;" id="txt3">Time as numbers</h2>
 	<div class="subrec">
 		<h2 align="center" style="margin: 4px;" id="today">-- -- --</h2>
 	</div>
 	<br>
-	<h2 align="center" style="margin: 0;" id="txt4">YOUR BIRTHDAY</h2>
+	<h2 align="center" style="margin: 0;" id="txt4">Time as text</h2>
 	<div class="subrec">
 		<h2 align="center" style="margin: 4px;" id="yourbd">-- -- --</h2>
 	</div>
-	
-	
-	
-	<table style="width:100%">
-	<tr>
-    <th>
-		<div class="subcir">
-		<p align="center" style="margin: 0;" id="years">--</p>
-		</div>
-	</th>
-    <th>
-		<div class="subcir">
-		<p align="center" style="margin: 0;" id="months">--</p>
-		</div>
-	</th>
-    <th>
-		<div class="subcir">
-		<p align="center" style="margin: 0;" id="days">--</p>
-		</div>
-	</th>
-	</tr>
-	</table>
-	
-	
-	<table style="width:100%">
-	<tr>
-    <th>
-		<div class="subcir1">
-		<p align="center" style="margin: 0;" id="txt5">YEAR</p>
-		</div>
-	</th>
-    <th>
-		<div class="subcir1">
-		<p align="center" style="margin: 0;" id="txt6">MONTHS</p>
-		</div>
-	</th>
-    <th>
-		<div class="subcir1">
-		<p align="center" style="margin: 0;" id="txt7">DAYS</p>
-		</div>
-	</th>
-	</tr>
-	</table>
+		
+
 	
 	<br>
 	<hr>
 	
-	<h1 align="center" id="txt12">NEXT BIRTHDAY</h1>
-	<div class="subrec">
-		<h2 align="center" style="margin: 4px;" id="nextbd">-- -- --</h2>
-		<h2 align="center" style="margin: 4px;" id="dayname">--</h2>
-	</div>
-	
-	<table style="width:100%">
-	<tr>
-    <th>
-		<div class="subcir">
-		<p align="center" style="margin: 0;" id="nextdays">--</p>
-		</div>
-	</th>
-    <th>
-		<div class="subcir">
-		<p align="center" style="margin: 0;" id="hours">--</p>
-		</div>
-	</th>
-    <th>
-		<div class="subcir">
-		<p align="center" style="margin: 0;" id="minutes">--</p>
-		</div>
-	</th>
-	<th>
-		<div class="subcir seconds">
-		<p align="center" style="margin: 0;" id="seconds">--</p>
-		</div>
-	</th>
-	</tr>
-	</table>
-	
-	
-	<table style="width:100%">
-	<tr>
-    <th>
-		<div class="subcir1">
-		<p align="center" style="margin: 0;" id="txt8">DAYS</p>
-		</div>
-	</th>
-    <th>
-		<div class="subcir1">
-		<p align="center" style="margin: 0;" id="txt9">HOURS</p>
-		</div>
-	</th>
-    <th>
-		<div class="subcir1">
-		<p align="center" style="margin: 0;" id="txt10">minutes</p>
-		</div>
-	</th>
-	<th>
-		<div class="subcir1">
-		<p align="center" style="margin: 0;" id="txt11">seconds</p>
-		</div>
-	</th>
-	</tr>
-	</table>
 	<br>
 	
 </div>
@@ -794,55 +678,85 @@ function closeNav() {
 
 
 
-
-var lang = 'en';
-
-
 function handler(e){
 
+	
+	var time = e.target.value;
+	var hours = time.split(":")[0];
+    var minutes = time.split(":")[1];
+	var text = '';
+	
+	hours = Number(hours);
+	minutes = Number(minutes);
+	
+	if (hours >=12)
+	{
+		hours = hours - 12;
+	}
+	
+	if(hours ==0)
+	{
+		hours = 12;
+	}
+	
+	if(hours == 12 & minutes == 0)
+	{
+		text = "it's 12 o'clock";
+	}
+	else if(hours != 0 & minutes == 0)
+	{
+		text = "it's "+ hours.toString() +" o'clock";
+	}
+	else if ((minutes < 15 & minutes > 0) | (minutes < 30 & minutes > 15) )
+	{
+		text = "it's " + minutes.toString() + " past " + hours.toString();
+	}
+	else if (minutes == 15 )
+	{
+		text = "it's quarter past "  + hours.toString();
+	}
+	else if (minutes == 30 )
+	{
+		text = "it's half past "  + hours.toString();
+	}
+	else if (minutes == 45 )
+	{
+		hours = hours + 1;
+		if (hours == 13)
+		{
+			hours = 1;
+		}
+		text = "it's quarter to "  + hours.toString();
+	}
+	else if ((minutes > 30 & minutes < 45) | (minutes > 45 & minutes <= 59) )
+	{
+		hours = hours + 1;
+		if (hours == 13)
+		{
+			hours = 1;
+		}
+		text = "it's " + (60 - minutes).toString() + " to " + hours.toString();
+	}
+	
+	
+	document.getElementById("today").innerHTML = text;
+	document.getElementById("yourbd").innerHTML = e.target.value;
+	say(text);
 			
 }
 
-
-
-function setEnglish() {
-	
-	lang = 'en';
-  document.getElementById("txt1").innerHTML = "Select your birthday";
-  document.getElementById("txt2").innerHTML = "AGE";
-  document.getElementById("txt3").innerHTML = "TODAY’S DATE";
-  document.getElementById("txt4").innerHTML = "YOUR BIRTHDAY";
-  document.getElementById("txt5").innerHTML = "YEAR";
-  document.getElementById("txt6").innerHTML = "MONTHS";
-  document.getElementById("txt7").innerHTML = "DAYS";
-  document.getElementById("txt8").innerHTML = "DAYS";
-  document.getElementById("txt9").innerHTML = "HOURS";
-  document.getElementById("txt10").innerHTML = "minutes";
-  document.getElementById("txt11").innerHTML = "seconds";
-  document.getElementById("txt12").innerHTML = "NEXT BIRTHDAY";
+function say(m) {
+  var msg = new SpeechSynthesisUtterance();
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[4];
+  msg.voiceURI = "native";
+  msg.volume = 1;
+  msg.rate = 1;
+  msg.pitch = 0.8;
+  msg.text = m;
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
 }
-
-function setArabic() {
-
-	lang = 'ar';
-  document.getElementById("txt1").innerHTML = "حدد تاريخ ميلادك";
-  document.getElementById("txt2").innerHTML = "العمر";
-  document.getElementById("txt3").innerHTML = "تاريخ اليوم";
-  document.getElementById("txt4").innerHTML = "تاريخ ميلادك";
-  document.getElementById("txt5").innerHTML = "عام";
-  document.getElementById("txt6").innerHTML = "شهر";
-  document.getElementById("txt7").innerHTML = "يوم";
-  document.getElementById("txt8").innerHTML = "يوم";
-  document.getElementById("txt9").innerHTML = "ساعة";
-  document.getElementById("txt10").innerHTML = "دقيقة";
-  document.getElementById("txt11").innerHTML = "ثانية";
-  document.getElementById("txt12").innerHTML = "ميلادك القادم";
-}
-
-
-
-
-
 
 
 
