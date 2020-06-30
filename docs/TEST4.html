@@ -72,7 +72,7 @@
   font-size: 16px;
   margin: 0px 0px;
   cursor: pointer;
-  width: 120px;
+  width: 110px;
   height: 35px;
 }
 
@@ -84,13 +84,16 @@
 
 <div class="mainframe">
 
-	<table style="width:100%">
+	<table style="width:100%" >
 	<tr>
 	<th>
 	<p>___</p>	
 	</th>
     <th>
 		<button class="button" onclick="setEnglish()">English</button>
+	</th>
+	<th>
+		<img src="img/translate.png" alt="FIJJLA" style="width:35px; height:35px">
 	</th>
     <th>
 		<button class="button" onclick="setArabic()">عربي</button>
@@ -101,7 +104,7 @@
 	</tr>
 	</table>
 	
-	<h2 align="center" style="padding-top: 10px;" id="txt1">Select your birthday3</h2>
+	<h2 align="center" style="padding-top: 10px;" id="txt1">Select your birthday</h2>
 	<p align="center" style="padding-top: 0px;margin: 0;">
 	<input type="date" name="dateofbirth" id="dateofbirth" onchange="handler(event);" value="1988-09-29" >
 	</p>
