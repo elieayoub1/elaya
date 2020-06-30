@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>TEST</title>
+
+<link rel="icon" 
+      type="image/png" 
+      href="https://fijjla.com/Favicon.ico">
+	  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<style>
+
+.mainframe {
+  max-width: 500px;
+  margin: auto;
+  background-color: #002060;
+  color: white;
+  border-radius: 35px;
+  
+  //background-image: url('img/birthdaybg1.jpg');
+  //background-repeat: no-repeat;
+  //background-size: 100% 100%;
+  
+}
+
+.subrec {
+  max-width: 80%;
+  margin: auto;
+  border-radius: 25px;
+  border: 2px solid white;
+}
+
+.subcir {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 28px;
+  color: #fff;
+  line-height: 45px;
+  text-align: center;
+  background: #000;
+  border: 2px solid white;
+  margin: auto;
+  margin-top: 8px;
+}
+
+.seconds {
+	color: #DA016A;
+}
+
+.subcir1 {
+  width: 80px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  background: blue;
+  margin: auto;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 4px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  //margin: 4px 2px;
+  cursor: pointer;
+  width: 100px;
+}
+
+</style>
+
+</head>
+
+<body >
+
+<div class="mainframe">
+
+	<p align="center">
+	<button class="button" onclick="setEnglish()">English</button>
+	<button class="button" onclick="setArabic()">عربي</button>
+	</p>
+	
+	<h2 align="center" style="padding-top: 10px;" id="txt1">Select your birthday</h2>
+	<p align="center" style="padding-top: 0px;margin: 0;">
+	<input type="date" name="dateofbirth" id="dateofbirth" onchange="handler(event);" value="1988-09-29" >
+	</p>
+
+	<hr>
+	
+	<h1 align="center" id="txt2">AGE</h1>
+	
+	<h2 align="center" style="margin: 0;" id="txt3">TODAY’S DATE</h2>
+	<div class="subrec">
+		<h2 align="center" style="margin: 4px;" id="today">-- -- --</h2>
+	</div>
+	<br>
+	<h2 align="center" style="margin: 0;" id="txt4">YOUR BIRTHDAY</h2>
+	<div class="subrec">
+		<h2 align="center" style="margin: 4px;" id="yourbd">-- -- --</h2>
+	</div>
+	
+	
+	
+	<table style="width:100%">
+	<tr>
+    <th>
+		<div class="subcir">
+		<p align="center" style="margin: 0;" id="years">--</p>
+		</div>
+	</th>
+    <th>
+		<div class="subcir">
+		<p align="center" style="margin: 0;" id="months">--</p>
+		</div>
+	</th>
+    <th>
+		<div class="subcir">
+		<p align="center" style="margin: 0;" id="days">--</p>
+		</div>
+	</th>
+	</tr>
+	</table>
+	
+	
+	<table style="width:100%">
+	<tr>
+    <th>
+		<div class="subcir1">
+		<p align="center" style="margin: 0;" id="txt5">YEAR</p>
+		</div>
+	</th>
+    <th>
+		<div class="subcir1">
+		<p align="center" style="margin: 0;" id="txt6">MONTHS</p>
+		</div>
+	</th>
+    <th>
+		<div class="subcir1">
+		<p align="center" style="margin: 0;" id="txt7">DAYS</p>
+		</div>
+	</th>
+	</tr>
+	</table>
+	
+	<br>
+	<hr>
+	
+	<h1 align="center" id="txt12">NEXT BIRTHDAY</h1>
+	<div class="subrec">
+		<h2 align="center" style="margin: 4px;" id="nextbd">-- -- --</h2>
+		<h2 align="center" style="margin: 4px;" id="dayname">--</h2>
+	</div>
+	
+	<table style="width:100%">
+	<tr>
+    <th>
+		<div class="subcir">
+		<p align="center" style="margin: 0;" id="nextdays">--</p>
+		</div>
+	</th>
+    <th>
+		<div class="subcir">
+		<p align="center" style="margin: 0;" id="hours">--</p>
+		</div>
+	</th>
+    <th>
+		<div class="subcir">
+		<p align="center" style="margin: 0;" id="minutes">--</p>
+		</div>
+	</th>
+	<th>
+		<div class="subcir seconds">
+		<p align="center" style="margin: 0;" id="seconds">--</p>
+		</div>
+	</th>
+	</tr>
+	</table>
+	
+	
+	<table style="width:100%">
+	<tr>
+    <th>
+		<div class="subcir1">
+		<p align="center" style="margin: 0;" id="txt8">DAYS</p>
+		</div>
+	</th>
+    <th>
+		<div class="subcir1">
+		<p align="center" style="margin: 0;" id="txt9">HOURS</p>
+		</div>
+	</th>
+    <th>
+		<div class="subcir1">
+		<p align="center" style="margin: 0;" id="txt10">minutes</p>
+		</div>
+	</th>
+	<th>
+		<div class="subcir1">
+		<p align="center" style="margin: 0;" id="txt11">seconds</p>
+		</div>
+	</th>
+	</tr>
+	</table>
+	<br>
+	
+</div>
+
+
+<script>
+
+var lang = 'en';
+
+function handler(e){
+
+	var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() +1;
+    var yyyy = today.getFullYear();
+	
+	var bd = new Date(e.target.value);
+    var bddd = bd.getDate();
+    var bdmm = bd.getMonth() +1;
+    var bdyyyy = bd.getFullYear();
+	
+	
+	var nextyear;
+	
+	var diff = Math.floor(today.getTime() - bd.getTime());
+    var day = 1000 * 60 * 60 * 24;
+    var days = Math.floor(diff/day);
+    var years = Math.floor(days/365.2422);
+    
+    var months = Math.floor((((days/365.2422) - years) * 12 ));
+	
+	var days2 = Math.round(((((days/365.2422) - years) * 12 ) - months ) * (365.2422/12));
+	
+	
+	today = dd + '-' + mm + '-' + yyyy;
+	bd = bddd + '-' + bdmm + '-' + bdyyyy;
+	
+	document.getElementById('yourbd').innerHTML = bd;
+	document.getElementById('today').innerHTML = today;
+	
+	document.getElementById('years').innerHTML = years;
+	document.getElementById('months').innerHTML = months;
+	document.getElementById('days').innerHTML = days2;
+	
+	nextyear = yyyy + 0;
+	document.getElementById('nextbd').innerHTML = bddd + '-' + bdmm + '-' + nextyear;
+	
+	
+	var a = new Date(nextyear + '-' + bdmm + '-' + bddd);
+	var b = new Date(yyyy + '-' + mm + '-' + dd);
+        var days = new Array(7);
+		
+		if(lang == 'en') {
+        days[0] = "Sunday";
+        days[1] = "Monday";
+        days[2] = "Tuesday";
+        days[3] = "Wednesday";
+        days[4] = "Thursday";
+        days[5] = "Friday";
+        days[6] = "Saturday";
+		}
+		
+		if(lang == 'ar') {
+        days[0] = "الأحد";
+        days[1] = "الإثنين";
+        days[2] = "الثلاثاء";
+        days[3] = "الأربعاء";
+        days[4] = "الخميس";
+        days[5] = "الجمعة";
+        days[6] = "السبت";
+		}
+		
+        var r = days[a.getDay()];
+	
+    document.getElementById('dayname').innerHTML = r;
+	
+	var nextdiff = Math.floor(a.getTime() - b.getTime());
+    var nextday = 1000 * 60 * 60 * 24;
+    var nextdays = Math.floor(nextdiff/nextday) -1;
+	document.getElementById('nextdays').innerHTML = nextdays;
+	
+	//countDownDate = new Date("2030-09-30 00:00:00").getTime();
+		
+}
+
+// Set the date we're counting down to
+var countDownDate = new Date("2045-01-01 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("seconds").innerHTML = seconds;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("hours").innerHTML = hours;
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+
+function setEnglish() {
+	
+	lang = 'en';
+  document.getElementById("txt1").innerHTML = "Select your birthday";
+  document.getElementById("txt2").innerHTML = "AGE";
+  document.getElementById("txt3").innerHTML = "TODAY’S DATE";
+  document.getElementById("txt4").innerHTML = "YOUR BIRTHDAY";
+  document.getElementById("txt5").innerHTML = "YEAR";
+  document.getElementById("txt6").innerHTML = "MONTHS";
+  document.getElementById("txt7").innerHTML = "DAYS";
+  document.getElementById("txt8").innerHTML = "DAYS";
+  document.getElementById("txt9").innerHTML = "HOURS";
+  document.getElementById("txt10").innerHTML = "minutes";
+  document.getElementById("txt11").innerHTML = "seconds";
+  document.getElementById("txt12").innerHTML = "NEXT BIRTHDAY";
+}
+
+function setArabic() {
+
+	lang = 'ar';
+  document.getElementById("txt1").innerHTML = "حدد تاريخ ميلادك";
+  document.getElementById("txt2").innerHTML = "العمر";
+  document.getElementById("txt3").innerHTML = "تاريخ اليوم";
+  document.getElementById("txt4").innerHTML = "تاريخ ميلادك";
+  document.getElementById("txt5").innerHTML = "عام";
+  document.getElementById("txt6").innerHTML = "شهر";
+  document.getElementById("txt7").innerHTML = "أيام";
+  document.getElementById("txt8").innerHTML = "أيام";
+  document.getElementById("txt9").innerHTML = "ساعة";
+  document.getElementById("txt10").innerHTML = "دقيقة";
+  document.getElementById("txt11").innerHTML = "ثواني";
+  document.getElementById("txt12").innerHTML = "ميلادك القادم";
+}
+
+</script>
+
+</body>
+</html>
