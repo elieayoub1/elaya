@@ -841,7 +841,7 @@ function handler(e){
 	{
 		document.getElementById("txt12").innerHTML = "ميلادك القادم";
 	}
-	
+	//bddd 4 dd 1
 	if(mm == bdmm )
 	{
 		if(dd > bddd)
@@ -865,6 +865,9 @@ function handler(e){
 			}
 			
 		}
+		else {
+			nextyear = yyyy + 0;
+		}
 		
 	}
 	else if(mm > bdmm )
@@ -876,9 +879,9 @@ function handler(e){
 		nextyear = yyyy + 0;
 	}
 	document.getElementById('nextbd').innerHTML = bddd + '-' + bdmm + '-' + nextyear;
-	
-	
-	var a = new Date(nextyear + '-' + bdmm + '-' + bddd);
+	//(nextyear, bdmm, bddd, 00, 00, 0)
+	var a = new Date(nextyear, bdmm, bddd, 00, 00, 0);
+	//var a = new Date(nextyear + '-' + bdmm + '-' + bddd);
 	var b = new Date(yyyy + '-' + mm + '-' + dd);
         var days = new Array(7);
 		
@@ -911,10 +914,12 @@ function handler(e){
     var nextdays = Math.floor(nextdiff/nextday) -1;
 	//document.getElementById('nextdays').innerHTML = nextdays;
 	
-	var nextdate = nextyear + '-' + bdmm + '-' + bddd + ' 00:00:00';
 	
-	countDownDate = new Date(nextdate).getTime();
-		
+	var nextdate = nextyear + "-" + bdmm + "-" + bddd;
+	
+	countDownDate =  new Date(nextyear, bdmm, bddd, 00, 00, 0).getTime();
+	
+	document.getElementById('nextbd').innerHTML = 	nextdate;
 }
 
 // Set the date we're counting down to
