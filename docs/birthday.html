@@ -529,7 +529,7 @@ img {vertical-align: middle;}
 	
 	<h1 align="center" id="txt2">AGE</h1>
 	
-	<h2 align="center" style="margin: 0;" id="txt3">TODAY’S DATE</h2>
+	<h2 align="center" style="margin: 0;" id="txt3">TODAY'S DATE</h2>
 	<div class="subrec">
 		<h2 align="center" style="margin: 4px;" id="today">-- -- --</h2>
 	</div>
@@ -918,7 +918,7 @@ function handler(e){
 }
 
 // Set the date we're counting down to
-var countDownDate = new Date("2022-01-01 00:00:00").getTime();
+var countDownDate = new Date("2022-01-01").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -954,7 +954,7 @@ function setEnglish() {
 	lang = 'en';
   document.getElementById("txt1").innerHTML = "Select your birthday";
   document.getElementById("txt2").innerHTML = "AGE";
-  document.getElementById("txt3").innerHTML = "TODAY’S DATE";
+  document.getElementById("txt3").innerHTML = "TODAY'S DATE";
   document.getElementById("txt4").innerHTML = "YOUR BIRTHDAY";
   document.getElementById("txt5").innerHTML = "YEAR";
   document.getElementById("txt6").innerHTML = "MONTHS";
