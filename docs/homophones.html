@@ -359,7 +359,7 @@ img {vertical-align: middle;}
 	<div class="splitup myup">
 	<a href="javascript:void(0)" class="closebtnads" onclick="closeNav()"><h1 style="margin: 0;">&times;</h1></a>
 	  <div class="centeredup">
-		<h2><span style="background-color: #DA016A; color: white;">W</span>ELCOME</h2>
+		<h2 id="myH2"><span style="background-color: #DA016A; color: white;">W</span>ELCOME</h2>
 		<hr>
 	  </div>
 	</div>
@@ -606,8 +606,36 @@ function showSlides() {
 }
 
 
+var counts = 0;
+
+// Initial state
+var scrollPos = 0;
+// adding scroll event
+window.addEventListener('scroll', function(){
+
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  
+  // detects new state and compares it with the new one
+  if ((document.body.getBoundingClientRect()).top > scrollPos)
+	{
+		if(scrolled >90)
+		{
+			openNav(); // up
+			counts ++;
+		}
+	}
+	//else
+		//closeNav(); // down
+	// saves the new position for iteration.
+	scrollPos = (document.body.getBoundingClientRect()).top;
+});
+
 function openNav() {
-  document.getElementById("myNav").style.display = "block";
+document.getElementById("myH2").innerHTML = 'Advertisement';
+	if(counts  ==0) {
+  document.getElementById("myNav").style.display = "block";}
 }
 
 function closeNav() {
