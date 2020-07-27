@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>art01</title>
+
+<link rel="icon" 
+      type="image/png" 
+      href="https://fijjla.com/Favicon.ico">
+	  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:image" content="https://fijjla.com/img/art01fb.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image" content="https://fijjla.com/img/art01wapp.jpg" />
+<meta property="og:image:width" content="300" />
+<meta property="og:image:height" content="300" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="بعض كلمات الملياردير ستيف جوبز الأخيرة" />
+<meta property="og:description" 
+  content="كلام نحتاجه في هذا الوقت الصعب" />
+
+<script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126945561-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-126945561-3');
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 8px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h3 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 4px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 100%;
+  display: block; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 0px;
+}
+
+.content1 {
+  padding: 2px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  margin: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 0px;
+  background-color: white;
+  padding: 10px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.grid-container > a {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 10px solid white;
+  text-align: center;
+  font-size: 30px;
+  margin: auto;
+}
+
+.grid-container1 {
+  background-color: white;
+  margin: auto;
+  max-width: 700px; 
+  padding: 20px;
+}
+
+
+/* Create two equal columns that floats next to each other */
+.linkcolumn {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  background-color: gray;
+  color: white;
+}
+
+.linkcolumn2 {
+  float: left;
+  width: 33.3%;
+  padding: 5px;
+  background-color: gray;
+  color: white;
+  z-index: 2;
+}
+
+.linkcolumn2 > a{
+  color: white;
+}
+
+.linkcolumn2:hover {
+  background-color: black;
+}
+
+
+.linkcolumn > a{
+  color: white;
+}
+
+/* Clear floats after the columns */
+.linkrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.linkcolumn:hover {
+  background-color: black;
+}
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/*welcome ads*/
+.splitup {
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  color: white;
+}
+
+.splitdown {
+  height: 90%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.85);
+}
+
+.myup {
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.85);
+  width: 100%;
+  text-align: center;
+}
+
+.mydown {
+  bottom: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.85);
+}
+
+.centereddown {
+  background-color: rgba(0,0,0, 0.1);
+  position: absolute;
+  bottom: 5%;
+  top: 5%;
+  height: 100%;
+  width: 100%;
+}
+
+.centeredup {
+  position: absolute;
+  width: 100%;
+}
+
+.closebtnads {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  z-index: 3;
+}
+
+.splitup a {
+  padding: 0px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.centereddown img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.overlaymain {
+  display: block;
+}
+
+/*end of welcome ads*/
+.mainframe {
+  //max-width: 500px;
+  max-width: 500px;
+  margin: auto;
+  background-color: #002060;
+  color: white;
+  //border-radius: 35px;
+  //background-image: url('img/birthdaybg1.jpg');
+  //background-repeat: no-repeat;
+  //background-size: 100% 100%;
+}
+
+.mainframe1 {
+  max-width: 500px;
+  margin: auto;
+  background-color: #002060;  
+}
+
+.subrec {
+  max-width: 80%;
+  margin: auto;
+  border-radius: 25px;
+  border: 2px solid white;
+}
+
+.subcir {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 22px;
+  color: #fff;
+  line-height: 45px;
+  text-align: center;
+  background: #000;
+  border: 2px solid white;
+  margin: auto;
+  margin-top: 8px;
+}
+
+.seconds {
+	color: #DA016A;
+}
+
+.subcir1 {
+  width: 70px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  background: blue;
+  margin: auto;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 4px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px;
+  cursor: pointer;
+  width: 110px;
+  height: 35px;
+}
+
+.profileimg {
+	height: 60px;
+	width: 60px;
+	border-radius: 50px;
+	padding: 4px;
+	
+}
+
+</style>
+</head>
+<body >
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<h1><span style="background-color: #DA016A; color: white;">FIJJLA</span>.COM</h1>
+
+<br>
+
+</div>
+
+ <!-- calculator here --> 
+<div class="mainframe">
+<br>
+<p align="center" style="font-size: 12px">
+<img class="profileimg" src="img/artprofile.jpg" alt="FIJJLA" >	
+<br>
+Dayane Allam
+<br>
+22-07-2020
+</p>
+<hr>
+
+
+<iframe src="A1Lesson01.pdf" width="100%" height="600px">
+</iframe>
+
+<h2 align="center">
+بعض كلمات الملياردير ستيف جوبز الأخيرة
+<br>
+كلام نحتاجه في هذا الوقت الصعب
+</h2>
+	
+<p dir="rtl" style="padding: 10px;" align="justify">
+توفي الملياردير ستيف جوبز، أحد أقطاب الأعمال في الولايات المتحدة. رئيس مجلس إدارة شركة آبل. عن عمر يناهز 56 عامًا من سرطان البنكرياس. وخلف ثروة قدرها 7 مليارات دولار 
+<br><br>
+<img src="img/SteveJobs.jpg" alt="FIJJLA" style="width:100%">
+<br><br>
+
+<br><br>
+
+وإليك بعض كلماته الأخيرة:
+<br><br>
+من وجهة نظري الآن، حياتي هي جوهر النجاح ، لكنني ليس لدي فرح كبير بما أملكه. في النهاية الثروة أصبحت مجرد رقم أو شيء من الأشياء التي اعتدت عليها
+<br><br>
+في هذه اللحظة ، وأنا مستلق على سريري ، مريض وأتذكر شريط حياتي ، أدرك أن كل سمعتي والثروة التي أمتلكها لا معنى لها في وجه الموت الوشيك
+<br><br>
+إنه يمكنك استئجار شخص ما لقيادة سيارتك ، أو خادم لقضاء أغراضك، أو توظيف قياديين لإدارة أعمالك وكسب المزيد من المال والشهرة..
+ولكن - وبالتأكيد - لا يمكنك استئجار شخص ما، وبأي ثمن، لحمل الألم أو المرض نيابة عنك
+<br><br>
+يمكن للمرء أن يقتني أشياء مادية كما يحب ، ولكن هناك شيء واحد لا يمكن العثور عليه عند فقده الحياة
+<br><br>
+كلما تقدمنا في السن أصبحنا أكثر ذكاءً ، فندرك أن ساعة تبلغ قيمتها 30 دولارًا أو 3000 دولار  كلاهما يعرض نفس الوقت بالدقيقة والثانية
+<br><br>
+وندرك سواء كنا نحمل محفظة بقيمة 30 دولارًا أو 500 دولار، يظل مبلغ المال فيها كما هو
+<br><br>
+وسواءً كنا نقود سيارة بقيمة 150،000 دولار أو 15000 دولار.. الطريق والمسافة التي تُقطع متساوية، وسنصل في النهاية إلى نفس الوجهة
+<br><br>
+إذا كان المنزل الذي نعيش فيه هو 300 متر مربع ، أو 3000 متر مربع. الوحدة هي نفسها. ولن تتحرك أو تنام على مساحة أكثر من بضعة أمتار
+<br><br>
+سعادتك الداخلية الحقيقية لا تأتي من الأشياء المادية التي تملكها. سواء كنت تسافر في الدرجة الأولى، أو الدرجة الاقتصادية. إذا تحطمت الطائرة ، تحطم معها الجميع
+<br><br>
+لذا ، آمل أن تفهم أنه عندما يكون لديك هدف سامي في الحياة، ويكون لك مآثر أسعدت بها الغير، فهذه هي السعادة الحقيقية
+<br><br>
+وهناك بضع حقائق لا بد أن نلتفت إليها:
+ <br><br>
+١- لا تعلم أطفالك أن يكونوا أغنياء. علمهم أن يكونوا سعداء. - لذلك عندما يكبرون سيعرفون قيمة الأشياء ، وليس تكلفة الأشياء
+<br><br>
+٢- تناول طعامك كدواء ، وإلا ستحتاج إلى تناول الدواء كغذاء.
+<br><br>
+٣- إترك مالك في الشمس.. واجلس في الظل...
+لا تقصِّر على نفسك وعلى من حولك..
+فالمال جُعِلَ لنحيا به لا لنحيا من أجله..
+<br><br>
+٤- أحب الناس الذين أرسلهم لك الله، وأحسن إليهم، يومًا ما ستحتاجون بعضكم.
+<br><br>
+٥- إذا كنت تريد أن تعيش ثريا اذهب وحيدا! ولكن إذا كنت تريد أن تعيش سعيدا، اذهب مع الآخرين!
+<br>
+
+	</p>
+
+	<div class="content1">
+				<br>
+					
+					<!-- Display 2 - 7357693535 -->
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-1005888209614542"
+						 data-ad-slot="7357693535"
+						 data-ad-format="auto"
+						 data-full-width-responsive="false"></ins>
+					<script>
+						 (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				<br>
+    </div>
+	
+<br>
+<hr>
+<p align="center">
+اقرأ أيضا
+</p>
+
+<div class="linkrow">
+  <div class="linkcolumn2" >
+  	<a href="tm01.html" target="_blank">
+    <h4 align="center">اسرار تجعلكِ تبدين اصغر</h3>
+    </a>
+  </div>
+  <div class="linkcolumn2" >
+    <a href="tm02.html" target="_blank">
+    <h4 align="center">هل تنسى كثيرا؟</h3>
+    </a>
+  </div>
+  <div class="linkcolumn2" >
+    <a href="tm03.html" target="_blank">
+    <h4 align="center">كيف تواكبين التطور باناقة</h3>
+    </a>
+  </div>
+</div>
+
+		
+</div>
+ <!-- calculator here --> 
+<div class="main"> 
+<div class="row">
+   <div class="column">
+    <div class="content1">
+				<br>
+					<!-- Display 2 - 7357693535 -->
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-1005888209614542"
+						 data-ad-slot="7357693535"
+						 data-ad-format="auto"
+						 data-full-width-responsive="false"></ins>
+					<script>
+						 (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				<br>
+    </div>
+  </div>
+</div>
+  
+<hr>
+
+<h2 align="center" style='color:gray'>FIJJLA.COM</h2>
+
+<div class="grid-container1">
+  <a href="http://fijjla.com/teacher.html" target="_blank">
+  <div><img src="img/teacherlink.jpg" alt="FIJJLA" style="width:100%"></div>
+  </a>
+</div>
+
+<div class="grid-container">
+  <a href="http://fijjla.com/towers.html" target="_blank">
+  <div><img src="img/towerslink.jpg" alt="FIJJLA" style="width:100%"></div>
+  </a>
+  
+  <a href="http://fijjla.com/duckhunt.html" target="_blank">
+  <div><img src="img/duckhuntlink.jpg" alt="FIJJLA" style="width:100%"></div>
+  </a>
+</div>
+
+</div><!-- END GRID -->
+<!-- END MAIN -->
+
+<hr>
+
+</body>
+</html>
