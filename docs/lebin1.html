@@ -276,7 +276,10 @@ position: fixed;
       <div class="container">
         <h2 align="center">Unofficial exchange rate</h2>
 		
-		<p align="center"><iframe src="https://lirarate.com/" width="280" height="480" scrolling="no"></iframe></p>
+		<p  id="usd">USD</p>
+		
+		<p align="center">
+		<iframe id="myFrame" src="https://lirarate.com/" width="280" height="1000" scrolling="no"></iframe></p>
 		
 		<br>
 		<br>
@@ -333,8 +336,15 @@ function myFunction() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
+  
+		
+ 
   document.getElementById("myBar").style.width = scrolled + "%";
   document.getElementById("myBar1").style.width = scrolled + "%";
+  
+
+
+  
 }
 </script>
 
