@@ -335,28 +335,6 @@ position: fixed;
 
 
 
-<div id="myNav" class="overlay">
-
-	<h2 style="margin: 5;" align="center">
-	  <span style='color:white'>إعلان</span>
-	</h2>
-  <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-					
-					
-					<ins class="adsbygoogle"
-						 style="display:block"
-						 data-ad-client="ca-pub-1005888209614542"
-						 data-ad-slot="2486730647"
-						 data-ad-format="auto"
-						 data-full-width-responsive="true"></ins>
-					<script>
-						 (adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-  </div>
-  <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
-</div>
-
 
 
 <div class="about-section">
@@ -384,6 +362,9 @@ position: fixed;
   <h2 style="margin: 0;" align="center">
 	  طريقة سهلة لحفظ الكلمات
 	</h2>
+	
+	<p id="countdown" align="center"></p>
+	
 </div>
 
 <br>
@@ -506,6 +487,38 @@ function closeNav1() {
 
 </script>
 
+<script>
+	
+	var counter = 10;
+	var seconds = 0;
+      function countdownTimer() {
+        
+		counter = counter +1;
+		
+		if(counter >= 90)
+		{
+			counter = 10;
+			seconds = seconds +1;
+		}
+		
+		if(seconds >= 59)
+		{
+			seconds = 0;
+		}
+		
+		if(seconds >=10)
+        {	
+			document.getElementById("countdown").innerHTML = seconds + ":" + counter;
+		}
+		else
+		{
+			document.getElementById("countdown").innerHTML = "0" + seconds + ":" + counter;
+		}
+      }
+
+      countdownTimer();
+      setInterval(countdownTimer, 12);
+</script>
 
 </body>
 </html>
