@@ -46,21 +46,9 @@ body {
   //background-size: 100% 100%;
   
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 500% 500%;
-	animation: gradient 6s ease infinite;
+
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
 
 h3 {
   font-size: 50px;
@@ -435,13 +423,13 @@ img {vertical-align: middle;}
 <div class="mainframe">
 <br>
 
-<h2 align="center">
+<h2 style="padding: 10px;">
 Summer 2020
-<br>
-What I planned vs what happened
 </h2>
 
- <p id="countdown" align="center"></p>
+
+<img src="img/summerxx.gif" alt="Summer 2020" style="width:100%">
+
 
 <br>
 <!-- Display 2 - 7357693535 -->
@@ -458,21 +446,21 @@ What I planned vs what happened
 <br>
 	
 <p  style="padding: 10px;" align="center">
-I got mini pool on my balcony
+1- I got mini pool on my balcony
 <br>
 <img src="img/summer2020_1.webp" alt="Summer 2020" style="width:100%">
 <br><br><br>
 </p>
 	
 <p  style="padding: 10px;" align="center">
-I am performing to my mirror
+2- I am performing to my mirror
 <br>
 <img src="img/summer2020_2.webp" alt="Summer 2020" style="width:100%">
 <br><br><br>
 </p>
 
 <p  style="padding: 10px;" align="center">
-I am travelling to my kitchen
+3- I am travelling to my kitchen
 <br>
 <img src="img/summer2020_3.webp" alt="Summer 2020" style="width:100%">
 <br><br><br>
@@ -495,14 +483,14 @@ I am travelling to my kitchen
 
 
 <p  style="padding: 10px;" align="center">
-Bodybuilding! ofcourse
+4- Bodybuilding! ofcourse
 <br>
 <img src="img/summer2020_4.webp" alt="Summer 2020" style="width:100%">
 <br><br><br>
 </p>
 
 <p  style="padding: 10px;" align="center">
-No comment
+5- No comment
 <br>
 <img src="img/summer2020_5.webp" alt="Summer 2020" style="width:100%">
 <br><br><br>
@@ -511,7 +499,7 @@ No comment
 
 <p  style="padding: 10px;" align="justify">
 Due to several problems, we had to stay at home. this summer, we couldn't go to places that we love, we couldn't discover new places. we couldnt take our kids to enjoy the nature and do some activities. today, we are sad humans with happy images. we used to take a vacation every year, but maybe, this time, our planet need to take a vacation from us so he can rest and restart. maybe the planet need this to fix all damages that we made. we are saving our planet by just staying at home. 
-This summer our activities was just about online shppong, movies, cooking, and some home tasks.
+This summer our activities was just about online shopping, movies, cooking, and some home tasks.
 <br><br>
 However, human allways find love and joy between sadness. we used to survive, adapt and overcome. 
 </p>
@@ -552,38 +540,6 @@ function closeNav() {
   gtag('config', 'UA-126945561-3');
 </script>
 
-<script>
-	
-	var counter = 10;
-	var seconds = 0;
-      function countdownTimer() {
-        
-		counter = counter +1;
-		
-		if(counter >= 90)
-		{
-			counter = 10;
-			seconds = seconds +1;
-		}
-		
-		if(seconds >= 59)
-		{
-			seconds = 0;
-		}
-		
-		if(seconds >=10)
-        {	
-			document.getElementById("countdown").innerHTML = seconds + ":" + counter;
-		}
-		else
-		{
-			document.getElementById("countdown").innerHTML = "0" + seconds + ":" + counter;
-		}
-      }
-
-      countdownTimer();
-      setInterval(countdownTimer, 200);
-</script>
 
 </body>
 </html>
