@@ -32,3 +32,13 @@ https://fijjla.com/theprofessor.html
 https://fijjla.com/tokyo.html
 https://fijjla.com/towers.html
 https://fijjla.com/art04.html
+https://fijjla.com/eng/lessonA01to10.html
+https://fijjla.com/eng/lessonA11to20.html
+https://fijjla.com/eng/lessonA21to30.html
+https://fijjla.com/eng/lessonA31to40.html
+https://fijjla.com/eng/lessonA41to50.html
+https://fijjla.com/eng/lessonB01to10.html
+https://fijjla.com/eng/lessonB11to20.html
+https://fijjla.com/eng/lessonB21to30.html
+https://fijjla.com/eng/lessonB31to40.html
+https://fijjla.com/eng/lessonB41to50.html
