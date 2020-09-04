@@ -1,0 +1,3303 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Smart Teachers</title>
+
+<link rel="icon" 
+      type="image/png" 
+      href="https://fijjla.com/Favicon.ico">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:image" content="https://fijjla.com/img/fbshare2.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image" content="https://fijjla.com/img/wpshare.png" />
+<meta property="og:image:width" content="300" />
+<meta property="og:image:height" content="300" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Smart Teachers" />
+<meta property="og:description" 
+  content="طريقة سهلة لحفظ الكلمات" />
+
+<script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126945561-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-126945561-3');
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 8px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h3 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 4px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 100%;
+  display: block; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 0px;
+}
+
+.content1 {
+  padding: 2px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  margin: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 0px;
+  background-color: white;
+  padding: 10px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.grid-container > a {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 10px solid white;
+  text-align: center;
+  font-size: 30px;
+  margin: auto;
+}
+
+.grid-container1 {
+  background-color: white;
+  margin: auto;
+  max-width: 700px; 
+  padding: 20px;
+}
+
+
+/* Create two equal columns that floats next to each other */
+.linkcolumn {
+  float: left;
+  width: 100%;
+  padding: 0px;
+  background-color: black;
+  color: white;
+  border: 0px solid #002060;
+}
+
+.linkcolumn2 {
+  float: left;
+  width: 33.3%;
+  padding: 5px;
+  background-color: gray;
+  color: white;
+  z-index: 2;
+}
+
+.linkcolumn2 > a{
+  color: white;
+  
+}
+
+.linkcolumn2:hover {
+  background-color: black;
+}
+
+
+.linkcolumn > a{
+  color: white;
+  text-decoration: none;
+}
+
+/* Clear floats after the columns */
+.linkrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.linkcolumn:hover {
+  background-color: gray;
+}
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/*welcome ads*/
+.splitup {
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  color: white;
+}
+
+.splitdown {
+  height: 90%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.85);
+}
+
+.myup {
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.85);
+  width: 100%;
+  text-align: center;
+}
+
+.mydown {
+  bottom: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.85);
+}
+
+.centereddown {
+  background-color: rgba(0,0,0, 0.1);
+  position: absolute;
+  bottom: 5%;
+  top: 5%;
+  height: 100%;
+  width: 100%;
+}
+
+.centeredup {
+  position: absolute;
+  width: 100%;
+}
+
+.closebtnads {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  z-index: 3;
+}
+
+.splitup a {
+  padding: 0px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.centereddown img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.overlaymain {
+  display: block;
+}
+
+/*end of welcome ads*/
+.mainframe {
+  //max-width: 500px;
+  max-width: 500px;
+  margin: auto;
+  background-color: #002060;
+  color: white;
+  //border-radius: 35px;
+  //background-image: url('img/birthdaybg1.jpg');
+  //background-repeat: no-repeat;
+  //background-size: 100% 100%;
+}
+
+.mainframe1 {
+  max-width: 500px;
+  margin: auto;
+  background-color: #002060;  
+}
+
+.subrec {
+  max-width: 80%;
+  margin: auto;
+  border-radius: 25px;
+  border: 2px solid white;
+}
+
+.subcir {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 22px;
+  color: #fff;
+  line-height: 45px;
+  text-align: center;
+  background: #000;
+  border: 2px solid white;
+  margin: auto;
+  margin-top: 8px;
+}
+
+.seconds {
+	color: #DA016A;
+}
+
+.subcir1 {
+  width: 70px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  background: blue;
+  margin: auto;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 4px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px;
+  cursor: pointer;
+  width: 110px;
+  height: 35px;
+}
+
+.profileimg {
+	height: 60px;
+	width: 60px;
+	border-radius: 50px;
+	padding: 4px;
+	
+}
+
+</style>
+</head>
+<body >
+
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<h1><span style="background-color: #DA016A; color: white;">FIJJLA</span>.COM</h1>
+
+<br>
+
+</div>
+
+ <!-- calculator here --> 
+<div class="mainframe">
+<br>
+
+<h2 align="center">
+Smart Teachers
+<br><br>
+طريقة سهلة لحفظ الكلمات
+</h2>
+
+
+<table style="width:100%">
+<!-- table start here -->
+ 
+ <table style="width:100%">
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;'>
+  <td  colspan=2 style='border:solid black 1.0pt;
+  background:white;'>
+  <p  align=center style='
+  text-align:center;line-height:normal'><b><span style='font-size:18.0pt;
+  
+  color:red;'>CAR</span></b><b><span style='font-size:
+  14.0pt;'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>سيارة</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>E</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>رعاية,&nbsp;عناية , اهتم</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>D</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>بطاقة</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>RY</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>حمل</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>GO</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>البضائع</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>VE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>نحت,&nbsp;نقش,&nbsp;حفر</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>ROT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>جزرة</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>EER</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>مسار مهني مسار وظيفي</span><span style='font-size:
+  14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>EFUL</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>حذر,&nbsp;متحفظ,&nbsp;محترس</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>AVAN</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>المنزل المتنقل</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;mso-yfti-lastrow:yes;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>CAR</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>DBOARD</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>ورق مقوى</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+<br>
+
+<table style="width:100%">
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;'>
+  <td  colspan=2 style='border:solid black 1.0pt;
+  background:white;'>
+  <p  align=center style='
+  text-align:center;line-height:normal'><b><span style='font-size:18.0pt;
+  
+  color:#0070C0;'>EAT</span></b><b><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>EAT</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>أكل</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>B</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>EAT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>تغلب</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>H</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>EAT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>الحرارة</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>S</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>EAT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>مقعد</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>N</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>EAT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>أنيق,&nbsp;ظريف,&nbsp;متأنق</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>M</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>EAT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>لحم</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>CH</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>EAT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>غش</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>CL</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>EAT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>وتد</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>BL</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>EAT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>ثغاء</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>TR</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>EAT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>يعالج</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;mso-yfti-lastrow:yes;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>WH</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>EAT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>قمح</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+<br>
+
+<table style="width:100%">
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;'>
+  <td  colspan=2 style='border:solid black 1.0pt;
+  background:white;'>
+  <p  align=center style='
+  text-align:center;line-height:normal'><b><span style='font-size:18.0pt;
+  
+  color:red;'>RAIN</span></b><b><span style='font-size:
+  14.0pt;'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>RAIN</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>تمطر</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>B</span><span
+  style='font-size:14.0pt;
+  color:red;'>RAIN</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>الدماغ</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>G</span><span
+  style='font-size:14.0pt;
+  color:red;'>RAIN</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>S</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>بقوليات</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>T</span><span
+  style='font-size:14.0pt;
+  color:red;'>RAIN</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>قطار</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>T</span><span
+  style='font-size:14.0pt;
+  color:red;'>RAIN</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>ER</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>مدرب</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>T</span><span
+  style='font-size:14.0pt;
+  color:red;'>RAIN</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>EE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>المتدرب</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>RAIN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>BOW</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>قوس قزح</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>RAIN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>FALL</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>كمية
+  المطر</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>RAIN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>FOREST</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>غابه استوائيه</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;mso-yfti-lastrow:yes;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>B</span><span
+  style='font-size:14.0pt;
+  color:red;'>RAIN</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>WAVE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>فكرة
+  رائعة</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+<br>
+
+<table style="width:100%">
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;'>
+  <td  colspan=2 style='border:solid black 1.0pt;
+  background:white;'>
+  <p  align=center style='
+  text-align:center;line-height:normal'><b><span style='font-size:18.0pt;
+  
+  color:#0070C0;'>ICE</span></b><b><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>ICE</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>جليد,&nbsp;ثلج,&nbsp;برود</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>NI</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>CE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>لطيف</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>VO</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>ICE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>صوت</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>SL</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>ICE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>شريحة</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>PR</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>ICE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>سعر,&nbsp;ثمن</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>JU</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>ICE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>عصير</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>TW</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>ICE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>مرتين,&nbsp;ضعف</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>OFF</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>ICE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>مكتب. مقر. مركز</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>ADV</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>ICE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>نصيحة,&nbsp;مشورة</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>DEV</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>ICE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>جهاز</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;mso-yfti-lastrow:yes;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>SERV</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>ICE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>خدمة</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+<br>
+
+<table style="width:100%">
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;'>
+  <td  colspan=2 style='border:solid black 1.0pt;
+  background:white;'>
+  <p  align=center style='
+  text-align:center;line-height:normal'><b><span style='font-size:18.0pt;
+  
+  color:red;'>MAN</span></b><b><span style='font-size:
+  14.0pt;'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>رجل</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>Y</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>كثير</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>GO</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>مانجو فاكهة</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>NER</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>طريقة,&nbsp;أسلوب,&nbsp;منهج</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>IAC</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>معتوه</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>UAL</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>كتيب</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>DATE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>تفويض,&nbsp;انتداب,&nbsp;أمر
+  رسمي,&nbsp;وصاية</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>HOOD</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>رجولة</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>OEUVRE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>المناورة</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>ICURE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>صباغة
+  الاظافر</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;mso-yfti-lastrow:yes;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>MAN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>DATORY</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>إلزامي</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+<br>
+
+<table style="width:100%">
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;'>
+  <td  colspan=2 style='border:solid black 1.0pt;
+  background:white;'>
+  <p  align=center style='
+  text-align:center;line-height:normal'><b><span style='font-size:18.0pt;
+  
+  color:#0070C0;'>LAND</span></b><b><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>LAND</span><span style='font-size:
+  14.0pt;'><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>أرض</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>LAND</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>ING</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>الهبوط</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>LAND</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>LINE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>هاتف ارضي</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>LAND </span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>MINE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>لغم أرضي</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>LAND</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>MASS</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>اليابسة</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>LAND</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>SLIDE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>انهيار أرضي</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>LAND</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>MARK</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>نقطة
+  الإستدلال</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>LAND</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>LORD</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>صاحب
+  المكان</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;mso-yfti-lastrow:yes;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>LAND</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>SCAPE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>المناظر
+  الطبيعيه</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+<br>
+
+<table style="width:100%">
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;'>
+  <td  colspan=2 style='border:solid black 1.0pt;
+  background:white;'>
+  <p  align=center style='
+  text-align:center;line-height:normal'><b><span style='font-size:18.0pt;
+  
+  color:red;'>USE</span></b><b><span style='font-size:
+  14.0pt;'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>USE</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>استعمال,&nbsp;فائدة,&nbsp;نفع</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>CA</span><span
+  style='font-size:14.0pt;
+  color:red;'>USE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>سبب</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>AB</span><span
+  style='font-size:14.0pt;
+  color:red;'>USE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>إساءة</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>HO</span><span
+  style='font-size:14.0pt;
+  color:red;'>USE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>منزل</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>MO</span><span
+  style='font-size:14.0pt;
+  color:red;'>USE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>الفأر</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>RE</span><span
+  style='font-size:14.0pt;
+  color:red;'>USE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>إعادة استخدام</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>AM</span><span
+  style='font-size:14.0pt;
+  color:red;'>USE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>يسلى</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>EXC</span><span
+  style='font-size:14.0pt;
+  color:red;'>USE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>عذر</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>ACC</span><span
+  style='font-size:14.0pt;
+  color:red;'>USE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>اتهم</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>REF</span><span
+  style='font-size:14.0pt;
+  color:red;'>USE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>رفض</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;mso-yfti-lastrow:yes;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>CONF</span><span
+  style='font-size:14.0pt;
+  color:red;'>USE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>ارتبك</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+<br>
+
+<table style="width:100%">
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;'>
+  <td  colspan=2 style='border:solid black 1.0pt;
+  background:white;'>
+  <p  align=center style='
+  text-align:center;line-height:normal'><b><span style='font-size:18.0pt;
+  
+  color:#0070C0;'>WATER</span></b><b><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>WATER</span><span style='font-size:
+  14.0pt;'><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>ماء</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>WATER</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>FALL</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>شلال</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>WATER</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>FRONT</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>الواجهة البحرية</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>WATER</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>POWER</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>قوة الماء</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>WATER</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>MELON</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>البطيخ</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>WATER</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>COLORS</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>الألوان
+  المائية</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>WATER</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>PROOF</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>ضد للماء</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>WATER</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>MARK</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>علامة
+  مائية</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>ROSE</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>WATER</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>ماء الورد</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>GROUND</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>WATER</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>المياه
+  الجوفية</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;mso-yfti-lastrow:yes;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>WATER</span><span style='font-size:
+  14.0pt;
+  color:black;mso-themecolor:text1;'>LOGGED</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>مشبع
+  بالماء</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+<br>
+
+<table style="width:100%">
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;'>
+  <td  colspan=2 style='border:solid black 1.0pt;
+  background:white;'>
+  <p  align=center style='
+  text-align:center;line-height:normal'><b><span style='font-size:18.0pt;
+  
+  color:red;'>ONE</span></b><b><span style='font-size:
+  14.0pt;'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:red;'>ONE</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>واحد</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>B</span><span
+  style='font-size:14.0pt;
+  color:red;'>ONE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>عظم</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>N</span><span
+  style='font-size:14.0pt;
+  color:red;'>ONE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>لا شيء</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>Z</span><span
+  style='font-size:14.0pt;
+  color:red;'>ONE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>منطقة</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>ST</span><span
+  style='font-size:14.0pt;
+  color:red;'>ONE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>حصاة</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>AL</span><span
+  style='font-size:14.0pt;
+  color:red;'>ONE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>وحيد</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>H</span><span
+  style='font-size:14.0pt;
+  color:red;'>ONE</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>Y</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>عسل</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>THR</span><span
+  style='font-size:14.0pt;
+  color:red;'>ONE</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>عرش</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>H</span><span
+  style='font-size:14.0pt;
+  color:red;'>ONE</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>ST</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>صادق</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>L</span><span
+  style='font-size:14.0pt;
+  color:red;'>ONE</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>LY</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>وحيد</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;mso-yfti-lastrow:yes;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:dark1;'>L</span><span
+  style='font-size:14.0pt;
+  color:red;'>ONE</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;'>SOME</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>مهجور</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+<br>
+
+<table style="width:100%">
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;'>
+  <td  colspan=2 style='border:solid black 1.0pt;
+  background:white;'>
+  <p  align=center style='
+  text-align:center;line-height:normal'><b><span style='font-size:18.0pt;
+  
+  color:#0070C0;'>TEN</span></b><b><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>TEN</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>عشرة</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>TEN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>T</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>خيمة</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>TEN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>D</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>تميل</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>OF</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>TEN</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>غالبا</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>EX</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>TEN</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>T</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>مدى</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>EX</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>TEN</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>D</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>تمديد</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>AT</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>TEN</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>D</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>حضر</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>IN</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>TEN</span><span
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:text1;'>T</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>نوايا</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>KIT</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>TEN</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  mso-fareast-theme-font:minor-fareast;color:black;
+  mso-themecolor:dark1;mso-bidi-language:AR-IQ'>قطه
+  صغيرة</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:#0070C0;'>TEN</span><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>NIS</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:white;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>تنس</span><span style='font-size:14.0pt;'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;mso-yfti-lastrow:yes;'>
+  <td  style='border:solid black 1.0pt;border-top:none;
+  mso-border-top-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  
+  color:black;mso-themecolor:text1;'>LIS</span><span
+  style='font-size:14.0pt;
+  color:#0070C0;'>TEN</span><span
+  style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+  <td  style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;background:#EFF3EA;
+  '>
+  <p  align=center style='
+  text-align:center;line-height:normal'><span lang=AR-IQ dir=RTL
+  style='font-size:14.0pt;
+  color:black;mso-themecolor:dark1;
+  mso-bidi-language:AR-IQ'>استمع, أصغى, نصت</span><span style='font-size:14.0pt;
+  '><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+
+<br>
+<br>
+
+<!-- table end here -->
+
+
+
+
+
+<br>
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0" nonce="Pu2cWjr6"></script>
+
+<br>
+<h2 align="center">
+للمزيد يمكنكم ضغط زر الاعجاب على صفحتنا
+</h2>
+
+  <div  align="center" class="fb-page" data-href="https://www.facebook.com/Fijjlacom-107975257611185/" data-tabs="" data-width="500" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+	  <blockquote cite="https://www.facebook.com/Fijjlacom-107975257611185/" class="fb-xfbml-parse-ignore">
+		<a href="https://www.facebook.com/Fijjlacom-107975257611185/">Fijjla.com</a>
+	  </blockquote>
+  </div>
+
+<br>  
+<br>
+<br>
+		
+</div>
+
+
+<hr>
+
+</body>
+</html>
