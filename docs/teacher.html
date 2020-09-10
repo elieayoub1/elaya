@@ -4,6 +4,7 @@
 
 <title>Smart Teachers</title>
 
+
 <link rel="icon" 
       type="image/png" 
       href="https://fijjla.com/Favicon.ico">
@@ -2728,7 +2729,8 @@ Smart Teachers
 
 
 
-
+<input type="button" style="float: right;" value="test1" onclick="say1('listen')">
+<input type="button" style="float: right;" value="test2" onclick="say2('listen')">
 <br>
 
 
@@ -2772,6 +2774,8 @@ for (i = 0; i < coll.length; i++) {
 
 
 function say(m) {
+
+
   var msg = new SpeechSynthesisUtterance();
   var voices = window.speechSynthesis.getVoices();
   msg.voice = voices[4];
@@ -2782,8 +2786,18 @@ function say(m) {
   msg.text = m;
   msg.lang = 'en-US';
   speechSynthesis.speak(msg);
+  
 }
 
+function say1(m) {
+  const ut = new SpeechSynthesisUtterance('No warning should arise');
+	speechSynthesis.speak(ut);
+}
+function say2(m) {
+var synth = window.speechSynthesis;
+var utterance1 = new SpeechSynthesisUtterance('How about we say this now? This is quite a long sentence to say.');
+synth.speak(utterance1);
+}
 
 </script>
 
