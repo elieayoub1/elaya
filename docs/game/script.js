@@ -9,7 +9,7 @@
 
     var slotMachine = function(){
 
-        var credits = 15,
+        var credits = 10,
             spinning = 3,
             spin = [0,0,0],
             slotsTypes = {
@@ -51,7 +51,7 @@
             endSlot = function(){
 
                 $('#slot-block').show();
-                $('#slot-credits').text('VERLOREN!!!');
+                $('#slot-credits').text('GAME OVER!!');
 
                 setInterval(blink($('#slot-credits')), 1000);
 
