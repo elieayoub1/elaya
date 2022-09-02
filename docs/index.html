@@ -387,7 +387,7 @@ Property Finder
 <h3>Contact Us</h3>
 
 <div class="container">
-  <form action="">
+  <form >
     <label for="fname">Full Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your full name..">
 
@@ -399,7 +399,7 @@ Property Finder
     <label for="subject">Subject</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
 
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" onclick="createRecord()">
   </form>
 </div>
 
@@ -437,5 +437,13 @@ Property Finder
   gtag('config', 'UA-126945561-3');
 </script>
 
+<script>
+function createRecord(){	
+	event.preventDefault();
+	//window.location.reload();
+	location.href = "index.html";
+	
+}
+</script>
 </body>
 </html>
