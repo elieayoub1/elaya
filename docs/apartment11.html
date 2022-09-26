@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Property Finder</title>
+
+
+<link rel="icon" 
+      type="image/png" 
+      href="https://fijjla.com/Favicon.ico">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:image" content="https://fijjla.com/img/fijjla-facebook-1200.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image" content="https://fijjla.com/img/fijjla-whatsapp-300.jpg" />
+<meta property="og:image:width" content="300" />
+<meta property="og:image:height" content="300" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Property Finder" />
+<meta property="og:description" content="Property Finder, Properties for sale" />
+
+<meta name="Description" content="Property Finder, Properties for sale">
+
+<meta property="og:url" content="https://fijjla.com" />
+
+
+<meta name="keywords" content="Property Finder, Properties for sale, Apartments for rent, Apartments for Sale">
+<meta name="author" content="fijjla.com">
+<meta name="copyright" content="Copyright © 2022 fijjla.com">
+<meta name="robots" content="index,follow,all">
+<meta name="distribution" content="global">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Property Finder">
+
+
+<script data-ad-client="ca-pub-1005888209614542" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  padding: 0px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+  //background-image: url("img/mainbg.png");
+  background-color: white;
+}
+
+
+.addiv {
+	width: 100%;
+	position: relative;
+	//left: calc(-45vw + 50%);
+	margin: auto;
+	background-color: white;
+	display: block;
+	align-content: center;
+}
+
+
+.mainframe {
+  //max-width: 50vw;
+  margin: auto;
+  background-color: white;
+  color: black;
+  //margin-top : 60px;
+}
+
+
+td, th, tr, p {
+  padding: 0px;
+  margin: 2px;  
+}
+
+
+
+
+
+.contentxy {
+  //max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: gray;
+  width: 92%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.contentxy1 {
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #002044;
+  width: 92%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 500px) {
+  .side, .middle {
+    width: 100%;
+  }
+  .right {
+    display: none;
+  }
+}
+
+
+.topright {
+  float: right;
+  text-decoration: none;
+  background-color: #72abba;
+  //border: 3px solid gray;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  height: 50px;
+  font-size: 24px;
+  margin-top: -50px;
+  
+}
+
+.topleft {
+  float: left;
+  text-decoration: none;
+  background-color: #1b0c0a;
+  //border: 3px solid gray;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  height: 50px;
+  font-size: 24px;
+  width: 100%;
+}
+
+
+
+
+
+
+.pagination {
+  display: inline-block;
+  display:flex;
+     height:100%;
+     width:100%;
+     justify-content:center;
+     align-items:center;
+	background-color: #1b0c0a;
+	color: white;
+	font-size: 24px;
+}
+
+.pagination a {
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #72abba;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+
+
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 5px;
+  text-align: left;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+</style>
+</head>
+<body >
+
+
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<script async src="https://cse.google.com/cse.js?cx=63badd37557a0e137"></script>
+<div class="gcse-search"></div>
+
+<span class="topleft">Fijjla.com</span>
+<a class="topright" href="index.html">
+&#171;
+Home
+</a>
+<img src="img/header1.png" alt="HTML5 Icon" width="100%" >
+
+
+
+
+ <!-- calculator here --> 
+<div class="mainframe">
+
+<h1 align="center">
+Property Finder
+
+</h1>
+
+<p  style="padding: 10px;">
+We have a wide range of properties for sale or to rent from top real estate agencies. The leading real estate marketplace. Search over 100K listings for sale and rentals. Search By Location. Search Directly on Map. Local Real Estate Agents. Save Favorite Listing.
+<br>
+</p>
+
+
+
+
+<!-- speekaboo ad -->
+<div class="addiv">
+<br>
+	<p align="center">
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-1005888209614542"
+			 data-ad-slot="4741866610"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+	</p>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+</div>
+
+
+<br>
+
+
+<!-- images  -->
+
+
+<h2>Find Your Dream Home</h2>
+
+<h3>Prime Location Apartments for Sale</h3>
+
+
+
+<!-- Apartment 41 -->
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img/apartment-41.jpeg">
+      <img src="img/apartment-41-small.jpg" alt="apartment-41" width="600" height="400">
+    </a>
+    <div class="desc">
+Apartment in Bourj Hammoud
+<br>
+Size: 72 sqm
+<br>
+Price: $ 20,000
+<br>
+Mode of Payment: Cash Only
+<br>
+<br>
+Detailed Overview:
+<br>
+Floor Level: F1
+<br>
+Parking Spaces: 0
+<br>
+<br>
+Interior:
+<br>
+- 1  bedrooms
+<br>
+- 2  bathrooms
+<br>
+- 1  Reception
+<br>
+<br>
+Reference number: FJ-52041
+<br>
+fijjla.com
+<br>
+Property Finder</div>
+  </div>
+</div>
+
+<!-- Apartment 42 -->
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img/apartment-42.jpg">
+      <img src="img/apartment-42-small.jpg" alt="apartment-42" width="600" height="400">
+    </a>
+    <div class="desc">
+Apartment in Mansourieh
+<br>
+Size: 125 sqm
+<br>
+Price: $ 30,500
+<br>
+Mode of Payment: Cash Only
+<br>
+<br>
+Detailed Overview:
+<br>
+Floor Level: F1
+<br>
+Parking Spaces: 1
+<br>
+<br>
+Interior:
+<br>
+- 2  bedrooms
+<br>
+- 2  bathrooms
+<br>
+- 1  Reception
+<br>
+<br>
+Reference number: FJ-52042
+<br>
+fijjla.com
+<br>
+Property Finder</div>
+  </div>
+</div>
+
+
+<!-- Apartment 43 -->
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img/apartment-43.jpg">
+      <img src="img/apartment-43-small.jpg" alt="apartment-43" width="600" height="400">
+    </a>
+    <div class="desc">
+Apartment in Raodah 
+<br>
+Size: 100 sqm
+<br>
+Price: $ 30,000
+<br>
+Mode of Payment: Cash Only
+<br>
+<br>
+Detailed Overview:
+<br>
+Floor Level: GF
+<br>
+Parking Spaces: 1
+<br>
+<br>
+Interior:
+<br>
+- 2  bedrooms
+<br>
+- 2  bathrooms
+<br>
+- 1  Reception
+<br>
+<br>
+Reference number: FJ-52043
+<br>
+fijjla.com
+<br>
+Property Finder</div>
+  </div>
+</div>
+
+
+<!-- Apartment 44 -->
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img/apartment-44.webp">
+      <img src="img/apartment-44-small.jpg" alt="apartment-44" width="600" height="400">
+    </a>
+    <div class="desc">
+Apartment in Ain Saadeh
+<br>
+Size: 85 sqm
+<br>
+Price: $ 30,200
+<br>
+Mode of Payment: Cash Only
+<br>
+<br>
+Detailed Overview:
+<br>
+Floor Level: F2
+<br>
+Parking Spaces: 2
+<br>
+<br>
+Interior:
+<br>
+- 2  bedrooms
+<br>
+- 2  bathrooms
+<br>
+- 1  Reception
+<br>
+<br>
+Reference number: FJ-52044
+<br>
+fijjla.com
+<br>
+Property Finder</div>
+  </div>
+</div>
+
+
+
+
+<div class="clearfix"></div>
+
+
+<br>
+<br>
+<div style="padding:6px;">
+  <p>We are ready to help you right now, or when you need us. Please let us know what you are looking for.</p>
+  <p>Complete the form and the agent will call you back or alternatively call us.</p>
+</div>
+
+<!-- images  -->
+
+<!-- table start here -->
+
+
+  <!-- Contact -->
+<h3>Contact Us</h3>
+
+<div class="container">
+  <form >
+    <label for="fname">Full Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your full name..">
+
+    <label for="lname">Email</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your email..">
+
+    
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+
+    <input type="submit" value="Submit" onclick="createRecord()">
+  </form>
+</div>
+
+
+<!-- table end here -->
+
+<br>
+<br>
+
+
+
+<div class="pagination">
+  <a href="apartment6.html">&laquo;</a>
+  <a class="active" href="apartment11.html">11</a>
+  <a href="apartment12.html">12</a>
+  <a href="apartment13.html">13</a>
+  <a href="apartment14.html">14</a>
+  <a href="apartment15.html">15</a>
+  <a href="apartment15.html">&raquo;</a>
+</div>
+
+<!-- table end here -->
+
+</div>
+</div>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126945561-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126945561-3');
+</script>
+
+<script>
+function createRecord(){	
+	event.preventDefault();
+	//window.location.reload();
+	location.href = "index.html";
+	
+}
+</script>
+</body>
+</html>
